@@ -1,0 +1,1222 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Mixere.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Mixere.ico"
+IDI_CFDIPLESS           ICON    DISCARDABLE     "res\\cfdipless.ico"
+IDI_LOOPD               ICON    DISCARDABLE     "res\\loopd.ico"
+IDI_LOOPU               ICON    DISCARDABLE     "res\\loopu.ico"
+IDI_PAUSED              ICON    DISCARDABLE     "res\\paused.ico"
+IDI_PAUSEU              ICON    DISCARDABLE     "res\\pauseu.ico"
+IDI_PLAYD               ICON    DISCARDABLE     "res\\playd.ico"
+IDI_PLAYU               ICON    DISCARDABLE     "res\\playu.ico"
+IDI_STOPD               ICON    DISCARDABLE     "res\\stopd.ico"
+IDI_STOPU               ICON    DISCARDABLE     "res\\stopu.ico"
+IDI_MINUTESU            ICON    DISCARDABLE     "res\\minutesu.ico"
+IDI_MINUTESD            ICON    DISCARDABLE     "res\\minutesd.ico"
+IDI_MUTEU               ICON    DISCARDABLE     "res\\muteu.ico"
+IDI_MUTED               ICON    DISCARDABLE     "res\\muted.ico"
+IDI_SOLOD               ICON    DISCARDABLE     "res\\solod.ico"
+IDI_SOLOU               ICON    DISCARDABLE     "res\\solou.ico"
+IDR_MIXERETYPE          ICON    DISCARDABLE     "res\\MixereDoc.ico"
+IDI_STAGGER             ICON    DISCARDABLE     "res\\stagger.ico"
+IDI_CFLINEAR            ICON    DISCARDABLE     "res\\cflinear.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Master Volume\tShift+V",     ID_TOOLS_MASTERVOL
+        MENUITEM "&Crossfader\tX",              ID_CROSSFADER
+        MENUITEM SEPARATOR
+        MENUITEM "&Options...",                 ID_TOOLS_OPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics\tF1",            ID_HELP_INDEX
+        MENUITEM "Mixere on the &Web",          ID_HOME_PAGE
+        MENUITEM SEPARATOR
+        MENUITEM "&About Mixere...",            ID_APP_ABOUT
+    END
+END
+
+IDR_MIXERETYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Load Audio...\tCtrl+L",      ID_LOAD_AUDIO
+        MENUITEM "&Take Snapshot...\tCtrl+T",   ID_TAKE_SNAPSHOT
+        MENUITEM "Propert&ies...",              ID_FILE_PROPERTIES
+        MENUITEM "Set &Defaults",               ID_SET_DEFAULTS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM "&Redo\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "&Insert\tIns",                ID_EDIT_INSERT
+        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECT_ALL
+        MENUITEM "Dese&lect\tEsc",              ID_EDIT_DESELECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Find\tCtrl+F",               ID_EDIT_FIND
+        MENUITEM SEPARATOR
+        MENUITEM "Edit &Snapshots...\tCtrl+E",  ID_EDIT_SNAPSHOTS
+    END
+    POPUP "&Track"
+    BEGIN
+        MENUITEM "Toggle\tSpace",               ID_TOGGLE_PLAY
+        MENUITEM "&Play\tP",                    ID_PLAY
+        MENUITEM "Pa&use\tU",                   ID_PAUSE
+        MENUITEM "&Stop\tS",                    ID_STOP
+        MENUITEM "&Loop\tL",                    ID_TOGGLE_LOOP
+        MENUITEM "&Go\tShift+Space",            ID_GO
+        MENUITEM SEPARATOR
+        MENUITEM "&Mute\tM",                    ID_TOGGLE_MUTE
+        MENUITEM "S&olo\t/",                    ID_TOGGLE_SOLO
+        MENUITEM "&End Solo\t\\",               ID_END_SOLO
+        MENUITEM "&Keep Solo\tK",               ID_KEEP_SOLO
+        MENUITEM SEPARATOR
+        MENUITEM "Re&name\tF2",                 ID_EDIT_NAME
+        MENUITEM "&Volume...\tF5",              ID_AUTO_VOLUME
+        MENUITEM "P&an...\tF6",                 ID_AUTO_PAN
+        MENUITEM "P&itch...\tF7",               ID_AUTO_PITCH
+        MENUITEM "&Trigger...\tF8",             ID_AUTO_POS
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Volume\tV",                  ID_MIXER_VOLUME
+        MENUITEM "S&napshots\tN",               ID_SNAPSHOTS
+        MENUITEM "M/S &Fade\tF",                ID_MS_FADE
+        MENUITEM "T&empo\tT",                   ID_MIXER_TEMPO
+        MENUITEM SEPARATOR
+        MENUITEM "&Master Volume\tShift+V",     ID_TOOLS_MASTERVOL
+        MENUITEM "&Crossfader\tX",              ID_CROSSFADER
+        MENUITEM SEPARATOR
+        MENUITEM "&Options...",                 ID_TOOLS_OPTIONS
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile Horizontally",          ID_WINDOW_TILE_HORZ
+        MENUITEM "Tile &Vertically",            ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics\tF1",            ID_HELP_INDEX
+        MENUITEM "Mixere on the &Web",          ID_HOME_PAGE
+        MENUITEM SEPARATOR
+        MENUITEM "&About Mixere...",            ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Load Audio",                  ID_LOAD_AUDIO
+        MENUITEM SEPARATOR
+        MENUITEM "Play",                        ID_PLAY
+        MENUITEM "Pause",                       ID_PAUSE
+        MENUITEM "Stop",                        ID_STOP
+        MENUITEM "Loop",                        ID_TOGGLE_LOOP
+        MENUITEM SEPARATOR
+        MENUITEM "Mute",                        ID_TOGGLE_MUTE
+        MENUITEM "Solo",                        ID_TOGGLE_SOLO
+        MENUITEM "End Solo",                    ID_END_SOLO
+        MENUITEM "&Keep Solo\t",                ID_KEEP_SOLO
+        MENUITEM SEPARATOR
+        MENUITEM "&Copy",                       ID_CONTEXT_COPY
+        MENUITEM "Cu&t",                        ID_CONTEXT_CUT
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM "&Insert",                     ID_CONTEXT_INSERT
+        MENUITEM "&Delete",                     ID_CONTEXT_DELETE
+        MENUITEM "Deselect",                    ID_EDIT_DESELECT
+        MENUITEM SEPARATOR
+        MENUITEM "Set Defaults",                ID_SET_DEFAULTS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    191,            ID_TOGGLE_SOLO,         VIRTKEY, NOINVERT
+    220,            ID_END_SOLO,            VIRTKEY, NOINVERT
+    "A",            ID_TOGGLE_AUTO_DLG,     VIRTKEY, NOINVERT
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_EDIT_SNAPSHOTS,      VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_MS_FADE,             VIRTKEY, NOINVERT
+    "F",            ID_EDIT_FIND,           VIRTKEY, CONTROL, NOINVERT
+    "K",            ID_KEEP_SOLO,           VIRTKEY, NOINVERT
+    "L",            ID_TOGGLE_LOOP,         VIRTKEY, NOINVERT
+    "L",            ID_LOAD_AUDIO,          VIRTKEY, CONTROL, NOINVERT
+    "M",            ID_TOGGLE_MUTE,         VIRTKEY, NOINVERT
+    "N",            ID_SNAPSHOTS,           VIRTKEY, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_PLAY,                VIRTKEY, NOINVERT
+    "S",            ID_STOP,                VIRTKEY, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_MIXER_TEMPO,         VIRTKEY, NOINVERT
+    "T",            ID_TAKE_SNAPSHOT,       VIRTKEY, CONTROL, NOINVERT
+    "U",            ID_PAUSE,               VIRTKEY, NOINVERT
+    "V",            ID_MIXER_VOLUME,        VIRTKEY, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_TOOLS_MASTERVOL,     VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_DELETE,         VIRTKEY, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_ESCAPE,      ID_EDIT_DESELECT,       VIRTKEY, NOINVERT
+    VK_F1,          ID_HELP_INDEX,          VIRTKEY, NOINVERT
+    VK_F2,          ID_EDIT_NAME,           VIRTKEY, NOINVERT
+    VK_F5,          ID_AUTO_VOLUME,         VIRTKEY, NOINVERT
+    VK_F6,          ID_AUTO_PAN,            VIRTKEY, NOINVERT
+    VK_F7,          ID_AUTO_PITCH,          VIRTKEY, NOINVERT
+    VK_F8,          ID_AUTO_POS,            VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_INSERT,         VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_SPACE,       ID_TOGGLE_PLAY,         VIRTKEY, NOINVERT
+    VK_SPACE,       ID_GO,                  VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_CROSSFADER,          VIRTKEY, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_AUTO_SLIDER ACCELERATORS DISCARDABLE 
+BEGIN
+    "A",            ID_TOGGLE_AUTO_DLG,     VIRTKEY, NOINVERT
+END
+
+IDR_MULTI_AUTO_DLG ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_F5,          ID_AUTO_VOLUME,         VIRTKEY, NOINVERT
+    VK_F6,          ID_AUTO_PAN,            VIRTKEY, NOINVERT
+    VK_F7,          ID_AUTO_PITCH,          VIRTKEY, NOINVERT
+    VK_F8,          ID_AUTO_POS,            VIRTKEY, NOINVERT
+END
+
+IDR_AUTO_DLG ACCELERATORS DISCARDABLE 
+BEGIN
+    "A",            ID_TOGGLE_AUTO_DLG,     VIRTKEY, NOINVERT
+    "L",            ID_AUTO_TOGGLE_LOOP,    VIRTKEY, NOINVERT
+    "M",            ID_AUTO_TOGGLE_MINUTES, VIRTKEY, NOINVERT
+    "P",            ID_AUTO_PLAY,           VIRTKEY, NOINVERT
+    "S",            ID_AUTO_STOP,           VIRTKEY, NOINVERT
+    "U",            ID_AUTO_PAUSE,          VIRTKEY, NOINVERT
+    VK_SPACE,       ID_AUTO_TOGGLE_PLAY,    VIRTKEY, NOINVERT
+    VK_SPACE,       ID_GO,                  VIRTKEY, SHIFT, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 207, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Mixere"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
+    DEFPUSHBUTTON   "OK",IDOK,160,7,40,14,WS_GROUP
+    EDITTEXT        IDC_LICENSE,7,48,193,51,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    LTEXT           "Mixere\nPowered by Audiere\nCopyLeft 2004 Chris Korda",
+                    IDC_ABOUT_TEXT,40,7,110,24
+    LTEXT           "http://mixere.sourceforge.net",IDC_ABOUT_URL,40,31,110,
+                    8,SS_NOTIFY
+END
+
+IDD_FORMLIST_FORM DIALOG DISCARDABLE  0, 0, 358, 181
+STYLE WS_CHILD | WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_CHANNEL DIALOGEX 0, 0, 529, 16
+STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CTEXT           "",IDC_CH_NUMBER,0,3,16,10,SS_CENTERIMAGE
+    LTEXT           "",IDC_CH_NAME,17,1,112,14,SS_NOPREFIX | SS_NOTIFY | 
+                    SS_CENTERIMAGE,WS_EX_DLGMODALFRAME
+    CONTROL         "Play",IDC_CH_PLAY,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,134,1,14,14
+    CONTROL         "Pause",IDC_CH_PAUSE,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,151,1,14,14
+    CONTROL         "Stop",IDC_CH_STOP,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,168,1,14,14
+    CONTROL         "Loop",IDC_CH_LOOP,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,185,1,14,14
+    CONTROL         "Mute",IDC_CH_MUTE,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,202,1,14,14
+    CONTROL         "Solo",IDC_CH_SOLO,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,219,1,14,14
+    CONTROL         "Volume",IDC_CH_VOL,"msctls_trackbar32",
+                    TBS_ENABLESELRANGE | WS_TABSTOP,238,0,72,16
+    CONTROL         "Pan",IDC_CH_PAN,"msctls_trackbar32",TBS_ENABLESELRANGE | 
+                    WS_TABSTOP,310,0,72,16
+    CONTROL         "Pitch",IDC_CH_PITCH,"msctls_trackbar32",
+                    TBS_ENABLESELRANGE | WS_TABSTOP,382,0,72,16
+    CONTROL         "Position",IDC_CH_POS,"msctls_trackbar32",
+                    TBS_ENABLESELRANGE | WS_TABSTOP,453,0,72,16
+END
+
+IDD_PROPERTIES_DLG DIALOG DISCARDABLE  0, 0, 150, 58
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Channel Count:",IDC_STATIC,27,13,50,8
+    EDITTEXT        IDC_CHANNEL_COUNT,81,11,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,19,37,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,37,50,14
+END
+
+IDD_AUTO_DLG DIALOG DISCARDABLE  0, 0, 161, 62
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Automation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Auto Time",IDC_AUTO_TIME_POS,"msctls_trackbar32",
+                    WS_TABSTOP,5,5,151,16
+    CONTROL         "Auto Play",IDC_AUTO_PLAY,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,5,25,14,14
+    CONTROL         "Auto Pause",IDC_AUTO_PAUSE,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,21,25,14,14
+    CONTROL         "Auto Stop",IDC_AUTO_STOP,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,37,25,14,14
+    CONTROL         "Auto Loop",IDC_AUTO_LOOP,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,53,25,14,14
+    CONTROL         "Auto Minutes",IDC_AUTO_MINUTES,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,69,25,14,14
+    EDITTEXT        IDC_AUTO_TIME_EDIT,85,25,71,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    CONTROL         "Auto Time",IDC_AUTO_TIME_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,25,11,
+                    14
+    COMBOBOX        IDC_AUTO_WAVEFORM,5,44,72,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Close",IDOK,85,43,71,14
+END
+
+IDD_MISSING_FILES_DLG DIALOG DISCARDABLE  0, 0, 316, 28
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Missing Files"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Search && Proceed",IDOK,7,7,70,14
+    PUSHBUTTON      "Proceed",IDC_PROCEED,85,7,70,14
+    PUSHBUTTON      "Open Dialog...",IDC_OPENDLG,162,7,70,14
+    PUSHBUTTON      "Cancel",IDCANCEL,239,7,70,14
+END
+
+IDD_REPLACE_FILES_DLG DIALOG DISCARDABLE  0, 0, 273, 242
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Replace Files"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,7,259,176
+    PUSHBUTTON      "Browse...",IDC_BROWSE,14,190,72,14
+    PUSHBUTTON      "Search Folder...",IDC_SEARCH_FOLDER,100,190,72,14
+    PUSHBUTTON      "Search All",IDC_SEARCH_ALL,186,190,72,14
+    DEFPUSHBUTTON   "OK",IDOK,134,221,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,195,221,50,14
+END
+
+IDD_FILE_SEARCH_DLG DIALOG DISCARDABLE  0, 0, 154, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "File Search"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,52,26,50,14
+    CTEXT           "Searching...",IDC_STATUS,7,7,140,8
+END
+
+IDD_MULTI_AUTO_DLG DIALOG DISCARDABLE  0, 0, 161, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Auto Slider",IDC_AUTO_SLIDER,"msctls_trackbar32",
+                    TBS_ENABLESELRANGE | WS_TABSTOP,5,5,132,16
+    CHECKBOX        "Auto Stagger",IDC_AUTO_STAGGER,142,5,14,14,BS_ICON | 
+                    BS_PUSHLIKE
+    LTEXT           "Current:",IDC_STATIC,6,22,26,8
+    LTEXT           "Start:",IDC_STATIC,58,22,18,8
+    LTEXT           "End:",IDC_STATIC,108,22,16,8
+    EDITTEXT        IDC_AUTO_POS_EDIT,5,31,48,14,ES_AUTOHSCROLL
+    CONTROL         "Auto Time",IDC_AUTO_POS_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,44,31,11,
+                    14
+    EDITTEXT        IDC_AUTO_START_EDIT,57,31,48,14,ES_AUTOHSCROLL
+    CONTROL         "Auto Time",IDC_AUTO_START_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,96,31,11,
+                    14
+    EDITTEXT        IDC_AUTO_END_EDIT,108,31,48,14,ES_AUTOHSCROLL
+    CONTROL         "Auto Time",IDC_AUTO_END_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,31,11,
+                    14
+    CONTROL         "Auto Time",IDC_AUTO_TIME_POS,"msctls_trackbar32",
+                    WS_TABSTOP,5,49,151,16
+    CONTROL         "Auto Play",IDC_AUTO_PLAY,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,5,69,14,14
+    CONTROL         "Auto Pause",IDC_AUTO_PAUSE,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,21,69,14,14
+    CONTROL         "Auto Stop",IDC_AUTO_STOP,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,37,69,14,14
+    CONTROL         "Auto Loop",IDC_AUTO_LOOP,"Button",BS_3STATE | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,53,69,14,14
+    CONTROL         "Auto Minutes",IDC_AUTO_MINUTES,"Button",BS_AUTOCHECKBOX | 
+                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,69,69,14,14
+    EDITTEXT        IDC_AUTO_TIME_EDIT,85,69,71,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    CONTROL         "Auto Time",IDC_AUTO_TIME_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,69,11,
+                    14
+    COMBOBOX        IDC_AUTO_WAVEFORM,5,88,72,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Close",IDOK,85,87,71,14
+END
+
+IDD_CROSSFADER_BAR DIALOG DISCARDABLE  0, 0, 243, 19
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_SOURCE_A,4,3,72,56,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider3",IDC_AUTO_SLIDER,"msctls_trackbar32",
+                    TBS_ENABLESELRANGE | WS_TABSTOP,78,1,72,16
+    COMBOBOX        IDC_SOURCE_B,152,3,72,56,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_FADER_TYPE,"Button",BS_AUTOCHECKBOX | BS_ICON | 
+                    BS_PUSHLIKE | WS_TABSTOP,227,3,12,12
+END
+
+IDD_VOLUME_BAR DIALOG DISCARDABLE  0, 0, 80, 19
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Volume",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_NOTICKS | 
+                    TBS_ENABLESELRANGE | WS_TABSTOP,3,1,72,16
+END
+
+IDD_TEMPO_BAR DIALOG DISCARDABLE  0, 0, 134, 19
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tempo",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_NOTICKS | 
+                    TBS_ENABLESELRANGE | WS_TABSTOP,3,1,72,16
+    EDITTEXT        IDC_BPM_EDIT,78,2,52,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BPM_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,124,2,10,14
+END
+
+IDD_MS_FADE_BAR DIALOG DISCARDABLE  0, 0, 168, 19
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "M/S Fade",IDC_MS_FADE_SLIDER,"msctls_trackbar32",
+                    WS_TABSTOP,3,1,72,16
+    CONTROL         "M/S Minutes",IDC_MS_FADE_MINUTES,"Button",
+                    BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,78,
+                    2,14,14
+    EDITTEXT        IDC_MS_FADE_EDIT,94,2,70,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_MS_FADE_SPIN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,156,2,12,
+                    14
+END
+
+IDD_OPTS_SLIDERS_DLG DIALOG DISCARDABLE  0, 0, 170, 101
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Sliders"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display Smoothness:",IDC_STATIC,57,7,66,8
+    RTEXT           "Min",IDC_ANIM_SPEED_MIN,15,21,12,8
+    CONTROL         "Slider1",IDC_ANIM_SPEED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | WS_TABSTOP,33,18,100,20
+    LTEXT           "Max",IDC_ANIM_SPEED_MAX,139,21,14,8
+    CONTROL         "Middle-click shows auto dialog",IDC_AUTO_MIDDLE_CLICK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,46,112,10
+    CONTROL         "Automate volume unpauses audio",IDC_AUTO_VOL_UNPAUSE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,60,123,10
+    CONTROL         "Auto-trigger turns off audio looping",
+                    IDC_AUTO_TRIG_LOOP_OFF,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,75,123,10
+END
+
+IDD_OPTS_GENERAL_DLG DIALOG DISCARDABLE  0, 0, 170, 101
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Undo",IDC_STATIC,14,7,140,33
+    RTEXT           "Levels:",IDC_STATIC,27,20,24,8
+    EDITTEXT        IDC_UNDO_LEVELS,54,18,30,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Unlimited",IDC_UNDO_UNLIMITED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,20,45,10
+    CONTROL         "Display Tooltips",IDC_DISPLAY_TOOLTIPS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,52,50,65,10
+    RTEXT           "Audio Device:",IDC_STATIC,22,73,46,8
+    COMBOBOX        IDC_AUDIO_DEVICE,73,71,71,55,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_OPTS_APPEAR_DLG DIALOG DISCARDABLE  0, 0, 168, 101
+STYLE WS_POPUP | WS_DISABLED | WS_CAPTION
+CAPTION "Appearance"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Font",IDC_STATIC,7,7,154,51
+    PUSHBUTTON      "Choose...",IDC_CHOOSE_FONT,16,17,50,14
+    PUSHBUTTON      "Default",IDC_DEFAULT_FONT,72,17,50,14
+    CONTROL         "",IDC_FONT_SAMPLE,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_SUNKEN | WS_GROUP,16,36,136,14
+    GROUPBOX        "Color",IDC_STATIC,7,61,154,33
+    COMBOBOX        IDC_COLOR_LIST,15,73,56,43,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Choose...",IDC_CHOOSE_COLOR,102,72,50,14
+    LTEXT           "",IDC_COLOR_SAMPLE,77,72,18,14,SS_SUNKEN
+END
+
+IDD_EDIT_SNAPS_DLG DIALOG DISCARDABLE  0, 0, 188, 154
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Snapshots"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Snapshots:",IDC_STATIC,7,3,36,8
+    LISTBOX         IDC_SNAP_LIST,7,13,110,107,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Shortcut &Key:",IDC_STATIC,7,123,44,8
+    CONTROL         "HotKey1",IDC_SNAP_HOTKEY,"msctls_hotkey32",WS_BORDER | 
+                    WS_TABSTOP,7,133,90,14
+    LTEXT           "S&ort by:",IDC_STATIC,125,3,25,8
+    COMBOBOX        IDC_SNAP_SORT,125,13,56,47,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "&Restore",IDC_SNAP_RESTORE,125,30,56,14
+    PUSHBUTTON      "Re&name",IDC_SNAP_RENAME,125,48,56,14
+    PUSHBUTTON      "&Delete",IDC_SNAP_DELETE,125,66,56,14
+    GROUPBOX        "Restore type",IDC_STATIC,125,84,56,36,WS_GROUP
+    CONTROL         "&Exact",IDC_SNAP_EXACT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,134,95,34,10
+    CONTROL         "S&mooth",IDC_SNAP_SMOOTH,"Button",BS_AUTORADIOBUTTON,
+                    134,106,40,10
+    DEFPUSHBUTTON   "Close",IDOK,125,133,56,14
+END
+
+IDD_SNAPSHOT_BAR DIALOG DISCARDABLE  0, 0, 82, 19
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_SNAPSHOT_COMBO,6,3,72,90,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TAKE_SNAP_DLG DIALOG DISCARDABLE  0, 0, 150, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Take Snapshot"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,7,8,22,8
+    EDITTEXT        IDC_SNAP_NAME_EDIT,33,6,110,14,ES_AUTOHSCROLL
+    LTEXT           "Shortcut &Key:",IDC_STATIC,7,27,44,8
+    CONTROL         "HotKey1",IDC_SNAP_HOTKEY,"msctls_hotkey32",WS_BORDER | 
+                    WS_TABSTOP,55,25,88,14
+    DEFPUSHBUTTON   "OK",IDOK,20,47,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,47,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,82,0
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "CKCI\0"
+            VALUE "FileDescription", "Mixere\0"
+            VALUE "FileVersion", "1, 0, 82, 0\0"
+            VALUE "InternalName", "Mixere\0"
+            VALUE "LegalCopyright", "Chris Korda\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Mixere.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Mixere Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        VERTGUIDE, 40
+        VERTGUIDE, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_CHANNEL, DIALOG
+    BEGIN
+        HORZGUIDE, 14
+    END
+
+    IDD_PROPERTIES_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_AUTO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 156
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 57
+    END
+
+    IDD_MISSING_FILES_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+
+    IDD_REPLACE_FILES_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+        HORZGUIDE, 204
+    END
+
+    IDD_FILE_SEARCH_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_MULTI_AUTO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 156
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_CROSSFADER_BAR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 241
+    END
+
+    IDD_OPTS_SLIDERS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 163
+        VERTGUIDE, 19
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_OPTS_GENERAL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_OPTS_APPEAR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 161
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_EDIT_SNAPS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        VERTGUIDE, 117
+        VERTGUIDE, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_TAKE_SNAP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        VERTGUIDE, 33
+        VERTGUIDE, 55
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 61
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_SORTD               BITMAP  DISCARDABLE     "res\\sortd.bmp"
+IDB_SORTU               BITMAP  DISCARDABLE     "res\\sortu.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 20
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_LOAD_AUDIO
+    BUTTON      ID_TAKE_SNAPSHOT
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_DRAG_SINGLE         CURSOR  DISCARDABLE     "res\\dragsingle.cur"
+IDC_DRAG_MULTI          CURSOR  DISCARDABLE     "res\\dragmulti.cur"
+IDC_HAND                CURSOR  DISCARDABLE     "res\\cursor2.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Mixere"
+    IDR_MIXERETYPE          "\nMixere\nMixere\nMixere Files (*.mix)\n.mix\nMixere.Document\nMixere Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Mixere"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyleft\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "List Help topics\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_ARRANGE       "Arrange all minimized document windows\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange the windows as overlapping tiles\nCascade"
+    ID_WINDOW_TILE_HORZ     "Arrange the windows as horizontal, nonoverlapping tiles\nTile Horizontally"
+    ID_WINDOW_TILE_VERT     "Arrange the windows as vertical, nonoverlapping tiles\nTile Vertically"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompt to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_AUTO_WAVEFORM       "Auto Waveform"
+    IDS_AUTO_WAVE_RAMP_DOWN "Ramp Down"
+    IDS_AUTO_WAVE_RAMP_UP   "Ramp Up"
+    IDS_AUTO_WAVE_RANDOM    "Random"
+    IDS_AUTO_WAVE_SQUARE    "Square"
+    IDS_AUTO_WAVE_TRIANGLE  "Triangle"
+    IDS_BAD_FILE_FORMAT     "Unexpected file format."
+    IDS_CANT_CREATE_VIEW    "Can't create view."
+    IDS_CANT_FIND_STRING    "Can't find the string '%1'."
+    IDS_CANT_LOAD_AUDIO     "Can't load audio file(s)."
+    IDS_CANT_SET_AUDIO_DEV  "Can't set audio device."
+    IDS_CH_LOOP             "Loop"
+    IDS_CH_MUTE             "Mute"
+    IDS_CH_MUTE_SOLO        "M/S"
+    IDS_CH_NAME             "Name"
+    IDS_CH_NUMBER           "#"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CH_PAN              "Pan"
+    IDS_CH_PAUSE            "Pause"
+    IDS_CH_PITCH            "Pitch"
+    IDS_CH_PLAY             "Play"
+    IDS_CH_POSITION         "Position"
+    IDS_CH_SOLO             "Solo"
+    IDS_CH_STOP             "Stop"
+    IDS_CH_TRANSPORT        "Transport"
+    IDS_CH_TRIGGER          "Trigger"
+    IDS_CH_VOLUME           "Volume"
+    IDS_CROSSFADER          "Crossfader"
+    IDS_CROSSFADER_CAPTION  "XF"
+    IDS_EDIT_TEMPO          "Edit Tempo"
+    IDS_FADER               "Fader"
+    IDS_FILE_DIALOG_ERROR   "Error in file dialog."
+    IDS_FLU_COLUMN_WIDTH    "Column Width"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FLU_CUT             "Cut"
+    IDS_FLU_DELETE          "Delete"
+    IDS_FLU_DRAG            "Drag"
+    IDS_FLU_INSERT          "Insert"
+    IDS_FLU_LOWER_ITEM_COUNT "Set Item Count"
+    IDS_FLU_PASTE           "Paste"
+    IDS_FLU_RAISE_ITEM_COUNT "Set Item Count"
+    IDS_FLU_SELECT          "Selection"
+    IDS_FLU_SORT            "Sort"
+    IDS_FL_CANT_INSERT_ITEM "Can't insert item."
+    IDS_FL_EDIT_REDO_FMT    "&Redo %s\tCtrl+Y"
+    IDS_FL_EDIT_UNDO_FMT    "&Undo %s\tCtrl+Z"
+    IDS_HELP_FILE_MISSING   "Can't find help file '%1'."
+    IDS_HLINK_CANT_LAUNCH   "Can't launch browser."
+    IDS_LOAD_AUDIO          "Load Audio"
+    IDS_MASTER              "Master"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MASTER_VOLUME       "Master Volume"
+    IDS_MS_FADE_BAR         "M/S Fade"
+    IDS_MS_FADE_CAPTION     "M/S"
+    IDS_MS_FADE_EDIT        "Edit M/S Fade"
+    IDS_MS_FADE_SLIDER      "M/S Fade"
+    IDS_MU_EDIT_AUTO        "Edit Automation"
+    IDS_MU_END_SOLO         "End Solo"
+    IDS_MU_GO               "Go"
+    IDS_MU_INSERT_AUDIO     "Insert Audio"
+    IDS_MU_KEEP_SOLO        "Keep Solo"
+    IDS_MU_LOAD_AUDIO       "Load Audio"
+    IDS_MU_LOOP             "Loop"
+    IDS_MU_MUTE             "Mute"
+    IDS_MU_SET_DEFAULTS     "Set Defaults"
+    IDS_MU_SHOW_MS_FADE     "Show M/S Fade"
+    IDS_MU_SHOW_SNAPSHOT    "Show Snapshots"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_ABOUT_LICENSE   "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111 USA."
+    IDS_APP_ABOUT_TEXT      "Mixere Version %d.%d.%d.%d\nCopyleft 2004 Chris Korda\nPowered by Audiere %d.%d.%d.%d"
+    IDS_AUTO                "Auto"
+    IDS_AUTO_DIALOG         "Auto Dialog"
+    IDS_AUTO_QUICK_START    "Auto Start"
+    IDS_AUTO_SELECTION      "%s Selection"
+    IDS_AUTO_TIME_EDIT      "Edit Auto Time"
+    IDS_AUTO_TRANSPORT      "Auto Transport"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MU_SHOW_TEMPO       "Show Tempo"
+    IDS_MU_SHOW_VOLUME      "Show Volume"
+    IDS_MU_SOLO             "Solo"
+    IDS_MU_TRANSPORT        "Transport"
+    IDS_NO_INPUT            "- no input -"
+    IDS_OPTIONS             "Options"
+    IDS_SELECTED_CHANS      "Selected Channels"
+    IDS_SELECTION           "Selection"
+    IDS_SNAPSHOT_BAR        "Snapshots"
+    IDS_SNAPSHOT_CAPTION    "Snaps"
+    IDS_SNAP_DEFAULT_TITLE  "Snapshot %d"
+    IDS_SNAP_RT_EXACT       "Exact"
+    IDS_SNAP_RT_SMOOTH      "Smooth"
+    IDS_SNAP_SORT_CREATED   "Created"
+    IDS_SNAP_SORT_TITLE     "Name"
+    IDS_SSK_ASSIGNED        "Key '%1' is assigned to '%2'.\nReassign it to '%3'?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_SSK_RSVD_CMD        "Key '%1' is reserved for '%2'."
+    IDS_SSK_RSVD_MENU       "Key '%1' is reserved for menus."
+    IDS_SSK_RSVD_SYSTEM     "Key '%1' is reserved for the system."
+    IDS_SSU_DELETE          "Delete Snapshot"
+    IDS_SSU_HOTKEY          "Snapshot Hot Key"
+    IDS_SSU_OPTIONS         "Snapshot Options"
+    IDS_SSU_RENAME          "Rename Snapshot"
+    IDS_SSU_RESTORE         "Restore Snapshot"
+    IDS_SSU_TAKE            "Take Snapshot"
+    IDS_STATIC_EDIT_TEXT    "Edit Text"
+    IDS_TEMPO_BAR           "Tempo"
+    IDS_UNDO_CANT_CANCEL_EDIT "Can't cancel edit."
+    IDS_UNDO_CANT_FIND_INSTANCE "Can't find undoable instance."
+    IDS_UNDO_IGNORING_NOTIFY "Ignoring undo notification."
+    IDS_UNDO_TREE_TOO_DEEP  "Undo tree is too deep."
+    IDS_VOLUME_BAR          "Volume"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CONTEXT_INSERT       "Insert empty rows\nInsert"
+    ID_CROSSFADER           "Show or hide crossfader dialog\nCrossfader"
+    ID_EDIT_DELETE          "Delete the selection\nDelete"
+    ID_EDIT_DESELECT        "Clear the selection\nDeselect"
+    ID_EDIT_INSERT          "Insert empty rows\nInsert"
+    ID_EDIT_NAME            "Edit name\nRename"
+    ID_EDIT_SNAPSHOTS       "Edit mixer snapshot list\nEdit Snapshots"
+    ID_END_SOLO             "Exit solo mode\nEnd Solo"
+    ID_FILE_PROPERTIES      "Edit document properties\nProperties"
+    ID_GO                   "Play paused items\nGo"
+    ID_HOME_PAGE            "Go to the Mixere home page"
+    ID_INDICATOR_MUTE       "MUTE"
+    ID_INDICATOR_SOLO       "SOLO"
+    ID_KEEP_SOLO            "Convert solo to mutes\nKeep Solo"
+    ID_LOAD_AUDIO           "Load one or more audio files\nLoad Audio"
+    ID_MIXER_TEMPO          "Show or hide tempo bar\nTempo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MIXER_VOLUME         "Show or hide volume bar\nVolume"
+    ID_MS_FADE              "Show or hide mute/solo fade bar\nM/S Fade"
+    ID_PAUSE                "Pause\nPause"
+    ID_PLAY                 "Play\nPlay"
+    ID_SET_DEFAULTS         "Set default attributes for new tracks\nSet Defaults"
+    ID_SNAPSHOTS            "Show or hide the snapshot bar\nSnapshots"
+    ID_STOP                 "Stop\nStop"
+    ID_TAKE_SNAPSHOT        "Take a snapshot of the document\nTake Snapshot"
+    ID_TOGGLE_AUTO_DLG      "Show or hide automation dialog\nAuto Dialog"
+    ID_TOGGLE_LOOP          "Loop on/off\nLoop"
+    ID_TOGGLE_MUTE          "Mute on/off\nMute"
+    ID_TOGGLE_PLAY          "Switch between play and pause\nToggle"
+    ID_TOGGLE_SOLO          "Solo on/off\nSolo"
+    ID_TOOLS_MASTERVOL      "Show or hide master volume dialog\nMaster Volume"
+    ID_TOOLS_OPTIONS        "Display options dialog\nOptions"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_AUTO_PAN             "Edit pan\nPan"
+    ID_AUTO_PITCH           "Edit pitch\nPitch"
+    ID_AUTO_POS             "Edit trigger\nTrigger"
+    ID_AUTO_VOLUME          "Edit volume\nVolume"
+    ID_CONTEXT_COPY         "Copy the selection and put it on the Clipboard\nCopy"
+    ID_CONTEXT_CUT          "Cut the selection and put it on the Clipboard\nCut"
+    ID_CONTEXT_DELETE       "Delete the selection\nDelete"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Shows or hides the toolbar\nToolbar"
+    ID_VIEW_STATUS_BAR      "Shows or hides the status bar\nStatus bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_AUTO_END_SPIN       "Fine up/down"
+    IDC_AUTO_LOOP           "Loop automation"
+    IDC_AUTO_MINUTES        "Minutes/seconds"
+    IDC_AUTO_PAUSE          "Pause automation"
+    IDC_AUTO_PLAY           "Play automation"
+    IDC_AUTO_POS_EDIT       "Current position"
+    IDC_AUTO_POS_SPIN       "Fine up/down"
+    IDC_AUTO_SLIDER         "Automation slider"
+    IDC_AUTO_STAGGER        "Stagger automation"
+    IDC_AUTO_START_EDIT     "Selection start"
+    IDC_AUTO_START_SPIN     "Fine up/down"
+    IDC_AUTO_STOP           "Stop automation"
+    IDC_AUTO_TIME_EDIT      "Automation time"
+    IDC_AUTO_TIME_POS       "Automation time"
+    IDC_AUTO_TIME_SPIN      "Fine up/down"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_AUTO_WAVEFORM       "Automation waveform"
+    IDC_BPM_EDIT            "Beats per minute"
+    IDC_BPM_SPIN            "Fine up/down"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_FADER_TYPE          "Crossfade type"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_MS_FADE_EDIT        "Mute/solo time"
+    IDC_MS_FADE_MINUTES     "Minutes/seconds"
+    IDC_MS_FADE_SLIDER      "Mute/solo time"
+    IDC_MS_FADE_SPIN        "Fine up/down"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_SOURCE_A            "Source A"
+    IDC_SOURCE_B            "Source B"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_AUTO_END_EDIT       "Selection end"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Mixere.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

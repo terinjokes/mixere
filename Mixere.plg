@@ -1,0 +1,251 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Mixere - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/Mixere.res" /d "NDEBUG" /d "_AFXDLL" "C:\Chris\MyProjects\Mixere\Mixere\Mixere.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP43.tmp" with contents
+[
+/nologo /MD /W3 /GR /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Mixere.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Chris\MyProjects\Mixere\Mixere\AccelTable.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Audio.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\AutoDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\AutoInfo.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\AutoSliderCtrl.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\AutoSliderDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\AutoSliderDlgBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\AutoTriggerCtrl.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ChanAudio.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ChanInfo.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Channel.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ChildFrm.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ChildToolTip.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ClickSliderCtrl.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Clipboard.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ColorStatusBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ColumnResizer.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\CrossfaderBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\CtrlResize.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\DialogBarEx.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\DialogEx.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\EditSnapsDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\FileSearchDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\FolderDialog.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\FormListHeader.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\FormListInfo.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\FormListItemDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\FormListView.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\HotKeyCtrlEx.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\HotKeyList.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Hyperlink.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\IconButton.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MainFrm.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MissingFilesDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Mixere.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MixereDoc.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MixereView.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MixerInfo.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MSFadeBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MultiAutoDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\MultiMix.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\NumEdit.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\OptionsDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\OptsAppearDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\OptsGeneralDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\OptsSlidersDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Persist.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\PopupEdit.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\PropertiesDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\ReplaceFilesDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\SelectSliderCtrl.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\SmartBuf.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Snapshot.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\SnapshotBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\StaticEdit.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\SubFileFind.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\TakeSnapDlg.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\TempoBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\TimeEdit.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Undoable.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\UndoManager.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\UndoState.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\VersionInfo.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\VolumeBar.cpp"
+"C:\Chris\MyProjects\Mixere\Mixere\Win32Console.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP43.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP44.tmp" with contents
+[
+/nologo /MD /W3 /GR /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Mixere.pch" /Yc /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Chris\MyProjects\Mixere\Mixere\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP44.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP45.tmp" with contents
+[
+audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Mixere.pdb" /machine:I386 /out:"Release/Mixere.exe" 
+.\Release\AccelTable.obj
+.\Release\Audio.obj
+.\Release\AutoDlg.obj
+.\Release\AutoInfo.obj
+.\Release\AutoSliderCtrl.obj
+.\Release\AutoSliderDlg.obj
+.\Release\AutoSliderDlgBar.obj
+.\Release\AutoTriggerCtrl.obj
+.\Release\ChanAudio.obj
+.\Release\ChanInfo.obj
+.\Release\Channel.obj
+.\Release\ChildFrm.obj
+.\Release\ChildToolTip.obj
+.\Release\ClickSliderCtrl.obj
+.\Release\Clipboard.obj
+.\Release\ColorStatusBar.obj
+.\Release\ColumnResizer.obj
+.\Release\CrossfaderBar.obj
+.\Release\CtrlResize.obj
+.\Release\DialogBarEx.obj
+.\Release\DialogEx.obj
+.\Release\EditSnapsDlg.obj
+.\Release\FileSearchDlg.obj
+.\Release\FolderDialog.obj
+.\Release\FormListHeader.obj
+.\Release\FormListInfo.obj
+.\Release\FormListItemDlg.obj
+.\Release\FormListView.obj
+.\Release\HotKeyCtrlEx.obj
+.\Release\HotKeyList.obj
+.\Release\Hyperlink.obj
+.\Release\IconButton.obj
+.\Release\MainFrm.obj
+.\Release\MissingFilesDlg.obj
+.\Release\Mixere.obj
+.\Release\MixereDoc.obj
+.\Release\MixereView.obj
+.\Release\MixerInfo.obj
+.\Release\MSFadeBar.obj
+.\Release\MultiAutoDlg.obj
+.\Release\MultiMix.obj
+.\Release\NumEdit.obj
+.\Release\OptionsDlg.obj
+.\Release\OptsAppearDlg.obj
+.\Release\OptsGeneralDlg.obj
+.\Release\OptsSlidersDlg.obj
+.\Release\Persist.obj
+.\Release\PopupEdit.obj
+.\Release\PropertiesDlg.obj
+.\Release\ReplaceFilesDlg.obj
+.\Release\SelectSliderCtrl.obj
+.\Release\SmartBuf.obj
+.\Release\Snapshot.obj
+.\Release\SnapshotBar.obj
+.\Release\StaticEdit.obj
+.\Release\StdAfx.obj
+.\Release\SubFileFind.obj
+.\Release\TakeSnapDlg.obj
+.\Release\TempoBar.obj
+.\Release\TimeEdit.obj
+.\Release\Undoable.obj
+.\Release\UndoManager.obj
+.\Release\UndoState.obj
+.\Release\VersionInfo.obj
+.\Release\VolumeBar.obj
+.\Release\Win32Console.obj
+.\Release\Mixere.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP45.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+AccelTable.cpp
+Audio.cpp
+AutoDlg.cpp
+AutoInfo.cpp
+AutoSliderCtrl.cpp
+AutoSliderDlg.cpp
+AutoSliderDlgBar.cpp
+AutoTriggerCtrl.cpp
+ChanAudio.cpp
+ChanInfo.cpp
+Channel.cpp
+ChildFrm.cpp
+ChildToolTip.cpp
+ClickSliderCtrl.cpp
+Clipboard.cpp
+ColorStatusBar.cpp
+ColumnResizer.cpp
+CrossfaderBar.cpp
+CtrlResize.cpp
+DialogBarEx.cpp
+Generating Code...
+Compiling...
+DialogEx.cpp
+EditSnapsDlg.cpp
+FileSearchDlg.cpp
+FolderDialog.cpp
+FormListHeader.cpp
+FormListInfo.cpp
+FormListItemDlg.cpp
+FormListView.cpp
+HotKeyCtrlEx.cpp
+HotKeyList.cpp
+Hyperlink.cpp
+IconButton.cpp
+MainFrm.cpp
+MissingFilesDlg.cpp
+Mixere.cpp
+MixereDoc.cpp
+MixereView.cpp
+MixerInfo.cpp
+MSFadeBar.cpp
+MultiAutoDlg.cpp
+Generating Code...
+Compiling...
+MultiMix.cpp
+NumEdit.cpp
+OptionsDlg.cpp
+OptsAppearDlg.cpp
+OptsGeneralDlg.cpp
+OptsSlidersDlg.cpp
+Persist.cpp
+PopupEdit.cpp
+PropertiesDlg.cpp
+ReplaceFilesDlg.cpp
+SelectSliderCtrl.cpp
+SmartBuf.cpp
+Snapshot.cpp
+SnapshotBar.cpp
+StaticEdit.cpp
+SubFileFind.cpp
+TakeSnapDlg.cpp
+TempoBar.cpp
+TimeEdit.cpp
+Undoable.cpp
+Generating Code...
+Compiling...
+UndoManager.cpp
+UndoState.cpp
+VersionInfo.cpp
+VolumeBar.cpp
+Win32Console.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP49.bat" with contents
+[
+@echo off
+if exist audiere.dll copy audiere.dll Release
+if exist mixere.chm copy mixere.chm Release
+]
+Creating command line "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP49.bat"
+
+
+
+
+<h3>Results</h3>
+Mixere.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

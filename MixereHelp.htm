@@ -1,0 +1,1376 @@
+<html><head><title>Mixere Help</title></head><body>
+<h1>Contents</h1>
+
+<dl>
+<dt>Getting Started
+<dd><a href="#Introduction">Introduction</a>
+<dd><a href="#License">License</a>
+<dd><a href="#Requirements">Requirements</a>
+<dd><a href="#Installation">Installation</a>
+<dd><a href="#Uninstalling">Uninstalling</a>
+<dt>Tutorial
+<dd><a href="#Loading_and_Playing_Audio">Loading and Playing Audio</a>
+<dd><a href="#Audio_Play_Options">Audio Play Options</a>
+<dd><a href="#Creating_an_Audio_Selection">Creating an Audio Selection</a>
+<dd><a href="#Quick_Start_Automation">Quick Start Automation</a>
+<dd><a href="#Programming_Automation">Programming Automation</a>
+<dd><a href="#Auto-Triggering_Audio">Auto-Triggering Audio</a>
+<dd><a href="#Controlling_Volume">Controlling Volume</a>
+<dd><a href="#Working_with_Multiple_Tracks">Working with Multiple Tracks</a>
+<dt>Tracks
+<dd><a href="#Loading_Audio">Loading Audio</a>
+<dd><a href="#Naming_Tracks">Naming Tracks</a>
+<dd><a href="#Playing_Audio">Playing Audio</a>
+<dd><a href="#Audio_Selections">Audio Selections</a>
+<dd><a href="#Mute-Solo">Mute/Solo</a>
+<dd><a href="#Selecting_Tracks">Selecting Tracks</a>
+<dd><a href="#Using_the_Clipboard">Using the Clipboard</a>
+<dd><a href="#Moving_Tracks">Moving Tracks</a>
+<dd><a href="#Sorting_Tracks">Sorting Tracks</a>
+<dd><a href="#Multi-Track_Editing">Multi-Track Editing</a>
+<dt>Documents
+<dd><a href="#Volume">Volume</a>
+<dd><a href="#Crossfader">Crossfader</a>
+<dd><a href="#Master_Volume">Master Volume</a>
+<dd><a href="#Mute-Solo_Fade">Mute/Solo Fade</a>
+<dd><a href="#Resizing_Columns">Resizing Columns</a>
+<dd><a href="#Setting_Defaults">Setting Defaults</a>
+<dt>Automation
+<dd><a href="#Automation_Sliders">Automation Sliders</a>
+<dd><a href="#Automation_Dialog">Automation Dialog</a>
+<dd><a href="#Automation_Waveforms">Automation Waveforms</a>
+<dd><a href="#Auto-Trigger">Auto-Trigger</a>
+<dd><a href="#Tempo">Tempo</a>
+<dd><a href="#Synchronization">Synchronization</a>
+<dt>Snapshots
+<dd><a href="#Snapshot_Overview">Snapshot Overview</a>
+<dd><a href="#Taking_a_Snapshot">Taking a Snapshot</a>
+<dd><a href="#Restoring_a_Snapshot">Restoring a Snapshot</a>
+<dd><a href="#Editing_Snapshots">Editing Snapshots</a>
+<dt>Loose Ends
+<dd><a href="#Options">Options</a>
+<dd><a href="#Control_Bars">Control Bars</a>
+<dd><a href="#Missing_Files">Missing Files</a>
+<dd><a href="#Replace_Files">Replace Files</a>
+<dd><a href="#Recording">Recording</a>
+<dd><a href="#Troubleshooting">Troubleshooting</a>
+<dd><a href="#Tips">Tips</a>
+<dl>
+<dt>Improving Performance
+<dd><a href="#Disk_Usage">Disk Usage</a>
+<dd><a href="#Memory_Usage">Memory Usage</a>
+<dd><a href="#CPU_Usage">CPU Usage</a>
+</dl>
+<dt>Reference
+<dd><a href="#Track_Attributes">Track Attributes</a>
+<dd><a href="#Document_Attributes">Document Attributes</a>
+<dd><a href="#Multi-Track_Commands">Multi-Track Commands</a>
+<dd><a href="#Automation_Slider_Commands">Automation Slider Commands</a>
+<dd><a href="#Mixere_Shortcut_Keys">Mixere Shortcut Keys</a>
+</dl>
+
+<h1>Getting Started</h1>
+<a name="Introduction"><h2>Introduction</h2></a>
+
+<p>Mixere is a free, open-source application for mixing audio files.  It runs on Windows NT/2000/XP, and supports WAV, MP3, Ogg Vorbis, Flac, and Mod audio files.
+
+<p>Mixere is optimized for live performance, and especially for creating live sound collage.  Conceptually, it's like a rack full of CD players connected to an automated mixer.  Mixere's features include dynamic looping of audio, auto-triggering of audio, fully automated sliders, "soft" (gradual) mute/solo operations, crossfading between documents, snapshots, and unlimited undo.
+
+<p>A Mixere document consists of a number of tracks, each containing a single audio file.  Any number of tracks can play simultaneously, subject only to the limits of Windows and sound card performance.  Audio is streamed directly from disk, so there's no limit on audio file size, and no waiting for audio to be loaded into memory.
+
+<p>Mixere's interface is similar to a spreadsheet.  The rows are tracks, and the columns are properties which can be adjusted for each track: name, transport (play/pause/stop/loop), mute/solo, volume, pan, pitch (+/- one octave), and audio position.
+
+<p>Mixere uses an open-source audio library called <a target="_top" href="http://audiere.sourceforge.net">Audiere</a>.
+
+<a name="License"><h2>License</h2></a>
+
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111 USA.
+
+<a name="Requirements"><h2>Requirements</h2></a>
+
+<ul>
+<li>PC with a sound card, 566MHz or better
+<li>at least 128M of memory
+<li>at least 1M of free disk space
+<li>NT4 SP6 / 2000 SP4 / XP SP1
+<li>DirectX 8.1 or better
+</ul>
+
+<a name="Installation"><h2>Installation</h2></a>
+
+<p>Mixere is a standalone application, which means it doesn't have an installer.  To install Mixere, simply copy the following files into a folder somewhere on your PC's hard drive:
+
+<p>audiere.dll
+<br>Mixere.chm
+<br>Mixere.exe
+
+<p>That's all there is to it.  To run Mixere, double-click on Mixere.exe.
+
+<p>To create a shortcut to Mixere, do the following: right-click on Mixere.exe, select "Create Shortcut", and drag the resulting shortcut onto the desktop, or wherever you want it to go.
+
+<p>If the application displays the message "The dynamic link library audiere.dll could not be found in the specified path ...", it's probably because you forgot to copy audiere.dll into the same folder as Mixere.exe.
+
+<a name="Uninstalling"><h2>Uninstalling</h2></a>
+
+<p>To uninstall Mixere, you need to do two things:
+
+<ol>
+<li>Delete Mixere's program files from whatever folder you copied them to.
+<li>Delete Mixere's registry entries.
+</ol>
+
+<p>To delete the registry entries, run the uninstaller, MixereUninstall.exe, which is included in the binary distribution.  If you prefer to do it yourself using regedit, the key you want to delete is "HKEY_CURRENT_USER\Software\Anal Software".
+
+<h1>Tutorial</h1>
+
+<a name="Loading_and_Playing_Audio"><h2>Loading and Playing Audio</h2></a>
+
+<p>This tutorial assumes you have some audio files to play with.  If you don't, you can usually find some WAV files in C:\WINNT\Media.  Note that some features are unavailable for MP3 audio files.  WAV files are recommended for this tutorial.
+
+<p>When Mixere starts, it opens a new mix document for you, but the mix doesn't contain any audio yet, so the first thing you want to learn how to do is load audio files.  Fortunately, that's very easy.  Just select <em>Load Audio</em> from the File menu, or press Ctrl+L.  In the open file dialog, navigate to wherever your audio files are, select one or more files, and press enter.
+
+<p>Each track has six buttons (Play, Pause, Stop, Loop, Mute, and Solo) and four sliders (Volume, Pan, Pitch, and Position).  The buttons are identified by their icons, and the sliders are identified by the column headings at the top of the document frame.
+
+<p>The track's volume slider is initially all the way left, which means the volume is at zero.  Click on the volume slider's "thumb" (the part that moves) and move it to the right.  Now press the play button.  The position slider's thumb should start moving, and you should hear some audio.  If not, see <a href="#Troubleshooting">Troubleshooting</a>.
+
+<a name="Audio_Play_Options"><h2>Audio Play Options</h2></a>
+
+<p>Normally, a track plays until it reaches the end of the audio file, and then stops by itself.  Sometimes you may want the audio file to loop continuously instead.  Press the loop button (it has a circular blue arrow on it), and if the audio isn't still playing, press play again.  The audio file repeats continuously now.
+
+<p>Try the pan and pitch sliders.  The pan control works as you would expect, unless you happen to have your speakers reversed.  For the pitch control, far left shifts the pitch an octave down, far right shifts it an octave up, and the middle is "natural" (no shift).  To quickly return a pan or pitch slider to the exact middle, Shift+left-click anywhere within the slider.
+
+<p>Left-click within the position slider.  Notice that the audio plays from wherever you clicked.  This feature is useful for "cueing" (skipping around in the audio).
+
+<a name="Creating_an_Audio_Selection"><h2>Creating an Audio Selection</h2></a>
+
+<p>Right-click within the position slider, and while holding down the right mouse button, move the cursor.  A blue bar appears within the slider.  This bar is called a selection.  Notice that the audio now loops within this selection.  You can use this feature to quickly create a sample within a larger audio file.  To extend or trim the selection, right-click in the position slider <em>without</em> dragging, in other words, right-click and immediately release the right mouse button.  To remove the selection, right-click just outside of the position slider.
+
+<a name="Quick_Start_Automation"><h2>Quick Start Automation</h2></a>
+
+<p>Automation in this context means telling a slider thumb to move from one point to another within a given time interval.
+
+<p>There are two ways to automate slider motion: a simple "Quick Start" method, and a more complicated method, with more options.  The second method is discussed in the next topic, <a href="#Programming_Automation">Programming Automation</a>.
+
+<p>Here's an example of the "Quick Start" method.  While holding down the Alt key, left-click anywhere within the pitch slider, other than on its thumb.  The pitch slider begins moving by itself, towards the location you selected.  Notice that the indicator on the slider thumb changes from red to green, to show that an automation is in progress.
+
+<p>With this method, various automation parameters, including how long the automation will take, default to the slider's current settings.  The next topic explains how to view and edit those settings.
+
+<a name="Programming_Automation"><h2>Programming Automation</h2></a>
+
+<p>Automation programming is a bit easier if you happen to have a mouse with a middle button.  The following discussion assumes you do, but if you don't, just substitute "Ctrl+left-click" for "middle-click".
+
+<p>Middle-click (or Ctrl+left-click) in the pan slider.  The "Auto Pan" dialog should appear.  Notice that the dialog contains Play, Pause, Stop, and Loop buttons, just like the track.  Press the play button.  The dialog closes, and the pan slider moves smoothly towards the opposite end.  Congratulations!  You just programmed an automation.
+
+<p>Middle-click in the pan control to open its automation dialog again, and press the dialog's loop button.  This tells the automation to repeat instead stopping when it reaches the end.  Now press play.  Notice that the pan control moves back and forth.  You just created an auto-panner.
+
+<p>Draw a selection within the pan slider, using the same technique you used before with the position slider (right-click and drag).  Notice that the pan slider's thumb now moves back and forth within the selection, instead of moving the full width of the slider.
+
+<p>Open the auto pan dialog again, and try moving the automation time slider (the slider at the top of the dialog).  Notice that the automation speeds up or slows down accordingly.  The time slider normally operates in seconds, but for longer automations, you can switch to minutes, by pressing the button marked 'm'.
+
+<p>The default automation waveform is a triangle wave (back and forth), but other options include ramp up/down, square, and random.  Try changing the waveform type, using the drop-down list in the lower left corner of the automation dialog.
+
+<a name="Auto-Triggering_Audio"><h2>Auto-Triggering Audio</h2></a>
+
+<p>Normally, when a track is looped, there's no time between repetitions of the audio.  Sometimes this is exactly what you want, but in other cases you might want to make your mix less "busy".  The Auto-Trigger feature allows you to do this.
+
+<p>Middle-click (or Ctrl+left-click) over the position slider, to display the Auto-Trigger dialog.  In the dialog, press the play button.  The dialog closes, and the track now plays every five seconds (or whatever automation time you selected), regardless of its length.  If the track is shorter than the automation time, the remaining time is silent.  If the track is longer than the automation time, the track gets cut off.
+
+<p>Auto-Trigger works in combination with creating a selection.  In other words, you can use the selection feature to create a "sample" within an audio file, and then use Auto-Trigger to play that sample repeatedly at some fixed time interval.
+
+<p>While a track is auto-triggering, left-clicking on its position slider doesn't set the audio position as usual; instead, it immediately triggers the audio, and resets the triggering loop.  This allows you to synchronize the track, relative to other tracks.
+
+<a name="Controlling_Volume"><h2>Controlling Volume</h2></a>
+
+<p>You've already tried the track's Volume slider, but there are other volume controls you should know about.  In Mixere, the volume of a track is affected by at least four controls, and possibly five:
+
+<ol>
+<li>The track's Mute/Solo buttons.
+<li>The track's Volume slider.
+<li>The document's Volume slider.
+<li>The Crossfader (if it's in use).
+<li>The Master Volume slider.
+</ol>
+
+<p>Pressing Mute silences the track.  Pressing Solo silences all other tracks, except for tracks that are already soloed.  Note that solo overrides or "trumps" mute, in other words, solo works even if the track is currently muted.
+
+<p>Each document has its own Volume slider, which affects the volume of all the tracks in the document.  To show or hide the current document's Volume slider, select <em>Volume</em> from the View menu, or press V.
+
+<p>The Crossfader fades between two documents.  To show or hide the Crossfader, select <em>Crossfader</em> from the View menu, or press X.  The Crossfader contains two list boxes, Source A and Source B, which are used to select the documents you want to crossfade between.  There's also a button for selecting the crossfade type: linear, or "dipless" (DJ style).
+
+<p>Master Volume affects the volume of the entire Mixere application.  To show or hide the Master Volume slider, select <em>Master Volume</em> from the View menu, or press Shift+V.
+
+<p>Volume, Master Volume, and Crossfader all contain automation sliders.  In other words, you can program them, using the same methods discussed above.
+
+<a name="Working_with_Multiple_Tracks"><h2>Working with Multiple Tracks</h2></a>
+
+<p>The leftmost column of each track contains the track number.  This column is also used for <em>selecting</em> tracks.  Left-click some track numbers (for best results, do this with tracks you've loaded audio into).  Notice that the tracks change color.  This means the tracks are selected.  Press Ctrl+C, and then Ctrl+V.  You've just copied and pasted (cloned) the tracks.
+
+<p>When the tracks you want to select form a contiguous group, instead of left-clicking them one at a time, it's easier to use one of these methods:
+
+<ol>
+<li>Left-click the first track in the group, and then Shift+left-click the last track in the group.
+<li>Left-click the first track in the group, but don't release the left mouse button yet; while holding down the button, drag the cursor over the rest of the tracks you want to select, and then release the button.
+</ol>
+
+<p>To clear the current selection, press Esc, or choose <em>Deselect</em> from the Edit menu.
+
+<p>Notice that one of the track numbers is always a different color (red).  This indicates the current track.  When you modify a track (e.g. by adjusting one of its sliders), it becomes the current track.  You can also make a track current without modifying anything, by left-clicking on its name.
+
+<p>In general, Edit and Track menu commands operate on either the selected tracks, or if no tracks are selected, on the current track.
+
+<h1>Tracks</h1>
+<a name="Loading_Audio"><h2>Loading Audio</h2></a>
+
+<p>A Mixere document consists of a number of tracks, each of which potentially contains an audio file.  A track must be <em>loaded</em> with an audio file before it can be used.  To load audio files, you can either:
+
+<ul>
+<li>Use the Load Audio dialog, or
+<li>Drag audio files onto the document from Windows Explorer.
+</ul>
+
+<p>To display the Load Audio dialog box, do one of the following:
+
+<ul>
+<li>Choose <em>Load Audio</em> from the File menu, or press Ctrl+L.
+<li>Choose <em>Load Audio</em> from the context menu; to display the context menu, right-click anywhere within the track EXCEPT over a slider.
+<li>Press the Load Audio button on the toolbar.
+</ul>
+
+<p>Within the dialog box, select the audio file(s) you want to load, and press Open.  Multiple files can be selected using Ctrl+left-click.  To select a contiguous range of files, left-click the first file in the range, and then Shift+left-click the last file in the range.  You can use the file filter to restrict the types of files shown.
+
+<p>When the context menu or Windows Explorer are used, audio is loaded at the cursor position.  Otherwise, audio is loaded before the current track (the one with the red track number).
+
+<p>Audio can only be loaded into empty tracks.  If necessary, empty tracks are inserted automatically.
+
+<p>Newly loaded tracks receive default attributes.  These defaults can be changed; see <a href="#Setting_Defaults">Setting Defaults</a>.
+
+<a name="Naming_Tracks"><h2>Naming Tracks</h2></a>
+
+<p>When an audio file is loaded into a track, the track initially has the same name as the audio file.  However, you can change the track name to whatever you like.  To rename a track, double-click on its name.  The name becomes an edit box, allowing you to either edit the existing name, or type a new one.  To save the new name, press Enter, or left-click somewhere outside of the edit box.  To cancel the edit, press Esc.
+
+<p>To revert to the track's original name (the audio filename), delete the entire name and press Enter.
+
+<a name="Playing_Audio"><h2>Playing Audio</h2></a>
+
+<p>Audio is played using the transport controls, which appear in the third column of a Mixere document, under the heading "Transport".  The controls consist of four buttons:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<td>Play</td><td>Plays the audio from its current position.</td>
+</tr>
+<tr>
+<td>Pause</td><td>Stops the audio without rewinding it.</td>
+</tr>
+<tr>
+<td>Stop</td><td>Stops the audio and rewinds it.</td>
+</tr>
+<tr>
+<td>Loop</td><td>Turns loop mode on/off. Normally, a track plays until it reaches the end of the audio file, and then stops by itself.  However, in loop mode, the audio plays continuously.</td>
+</tr>
+</table>
+
+<p>Various <a href="#Mixere_Shortcut_Keys">shortcuts</a> are available:
+
+<ul>
+<li>To toggle back and forth between play and pause, press Space
+<li>To play, press P
+<li>To pause, press U
+<li>To stop, press S
+<li>To turn loop mode on/off, press L
+</ul>
+
+<a name="Audio_Selections"><h2>Audio Selections</h2></a>
+
+<p>A selection is a subset of an audio file, consisting of a start point, and an end point.  When a track has a selection, it behaves as follows:
+
+<ul>
+<li>Pressing "Stop" rewinds the audio to the selection start, instead of the beginning of the audio file.
+<li>When the audio reaches the selection end, it rewinds to the selection start, and either stops, or if loop mode is on, continues from the selection start.
+</ul>
+
+<p>By loading an audio file into multiple tracks, and then creating a different selection in each track, you can effectively divide an audio file into "samples" without ever having to actually edit the file.
+
+<p>A selection is indicated by a blue bar within the slider's channel.  The channel is the sunken, rectangular area over which the slider thumb moves.  Selections are created, edited, and removed using the right mouse button, as follows:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Operation</th><th>Description</th>
+</tr>
+<tr>
+<td>Create selection via dragging</td><td>Within the slider's channel, right-click where you want the selection to begin, and while holding down the right mouse button, move the cursor horizontally to where you want the selection to end; then release the right mouse button.</td>
+</tr>
+<tr>
+<td>Create or edit selection via right-click</td><td>Right-click within the slider, and release the right button immediately, <em>without</em> moving the cursor.  If no selection exists, a selection is created from the slider thumb to the cursor position; otherwise, whichever end of the existing selection the cursor is closest to is extended or trimmed.</td>
+</tr>
+<tr>
+<td>Remove selection</td><td>Right-click just outside the slider channel, i.e. anywhere in the zone between the slider's channel and its focus rectangle.</td>
+</tr>
+<tr>
+<td>Move selection</td><td>Ctrl+right-click on the selection, and while holding down the right mouse button, move the cursor horizontally.  The cursor changes to a double-headed horizontal arrow, and the selection follows the cursor.  When the selection is in the desired location, release the right mouse button.</td>
+</tr>
+</table>
+
+<p>Selections can be created, edited, or removed at any time, even while the audio is playing.  This is particularly useful when loop mode is on, because it allows "live looping", i.e. dynamically creating repeated samples within an audio file.  Moving a short selection back and forth while the audio is playing creates a "scratching" or "scrubbing" effect.
+
+<p>Selections can also be edited using shortcut keys; see <a href="#Automation_Slider_Commands">Automation Slider Commands</a> for details.
+
+<a name="Mute/Solo"><h2>Mute/Solo</h2></a>
+
+<p>The mute and solo buttons work together to enable or disable a track's audio.  This explanation assumes the track is playing and has a non-zero volume slider.  Put simply, mute silences the track, while solo makes the track audible, and silences all other tracks that aren't also soloed.  Solo "trumps" (overrides) mute, i.e. soloing a track makes it audible regardless of whether it's muted.  The following table illustrates Mute/Solo behavior in detail:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Mute</th><th>Solo</th><th>Other tracks soloed</th><th>Track is:</th>
+</tr>
+<tr>
+<td>No</td><td>No</td><td>No<td>Audible</td>
+</tr>
+<tr>
+<td>Yes</td><td>No</td><td>No</td><td>Silenced</th>
+</tr>
+<tr>
+<td>No</td><td>Yes</td><td>No</td><td>Audible</th>
+</tr>
+<tr>
+<td>Yes</td><td>Yes</td><td>No</td><td>Audible</th>
+</tr>
+<tr>
+<td>No</td><td>No</td><td>Yes<td>Silenced</td>
+</tr>
+<tr>
+<td>Yes</td><td>No</td><td>Yes</td><td>Silenced</th>
+</tr>
+<tr>
+<td>No</td><td>Yes</td><td>Yes</td><td>Audible</th>
+</tr>
+<tr>
+<td>Yes</td><td>Yes</td><td>Yes</td><td>Audible</th>
+</tr>
+</table>
+
+<p>While at least one track is soloed, the mute buttons don't affect the audio, and the mixer is said to be in "solo mode".  In solo mode, the solo buttons control the mix, but when you exit solo mode, the mute buttons regain control.  Solo mode acts like a detour: when you exit solo mode, the pre-solo mix is restored, assuming you didn't change any mute buttons during the solo.  If you did change some mute buttons during the solo, the solo becomes a "one-way trip" instead of a "round trip".
+
+<p>There are three ways to exit solo mode:
+
+<ul>
+<li>Unsolo the soloed tracks one by one.
+<li>Select <em>End Solo</em> (\) from the Track menu.
+<li>Select <em>Keep Solo</em> (K) from the Track menu.
+</ul>
+
+<p>The End Solo command is the equivalent of unsoloing all the soloed tracks at once.  This is a dramatic effect and can result in a sudden volume change.
+
+<p>The Keep Solo command ends the solo without disturbing the audio.  The current solo is emulated using the Mute buttons, so that exiting solo mode only affects the user interface.  This is useful for making one-way transitions; it allows you to turn a solo into a new starting point.  In travel terms, it's like throwing away your return ticket.
+
+<p>The status bar contains two indicators which reflect the Mute/Solo state of the current document.  The mute indicator is lit while at least one track is muted, and the solo indicator is lit while at least one track is soloed.
+
+<p>It's possible to mute or solo multiple tracks at once, by <a href="#Selecting_Tracks">selecting</a> them first, and then choosing Mute or Solo from the Edit menu, or the context menu.  Note that Mixere also supports "soft" (gradual) mute/solo operations; see <a href="#Mute/Solo_Fade">Mute/Solo Fade</a>.
+
+<a name="Selecting_Tracks"><h2>Selecting Tracks</h2></a>
+
+<p>Some of Mixere's commands can operate on multiple tracks at once.  To execute a multi-track command, you must specify which tracks the command should operate on; you do this by <em>selecting</em> the tracks.  Multi-track commands can be divided into two categories: those that can only operate on selected tracks (e.g. Cut), and those that operate either on selected tracks, or if no tracks are selected, on the current track.  For details, see <a href="#Multi-Track_Commands">Multi-Track Commands</a>.
+
+<p>The current track is indicated by a different-colored track number.  When you modify a track (e.g. by adjusting one of its sliders), it becomes the current track.  You can also make a track current without modifying anything, by left-clicking on its name.
+
+<p>To select a track, left-click on its track number, in the leftmost column.  The track changes color, to indicate that it's selected.  To deselect the track, left-click on its track number again.
+
+<p>If you want to select a contiguous group of tracks, instead of selecting them one at a time, it's easier to use one of these methods:
+
+<ol>
+<li>Left-click the first track in the group, and then Shift+left-click the last track in the group.
+<li>Left-click the first track in the group, but don't release the left mouse button yet; while holding down the button, drag the cursor over the rest of the tracks you want to select, and then release the button.
+</ol>
+
+<p>To clear the current selection, press Esc, or choose <em>Deselect</em> from the Edit menu.
+
+<p>It's possible to select multiple contiguous groups of tracks, using either of the above methods.  For example, if you drag-select a group of tracks, and then drag-select another group of tracks, the result is that both groups of tracks are selected; unlike most Windows programs, Mixere concatenates the selections, instead of replacing one with the other.
+
+<a name="Using_the_Clipboard"><h2>Using the Clipboard</h2></a>
+
+<p>Mixere supports the Windows clipboard in the usual way.  Tracks can be copied or cut to the clipboard, and then pasted to a different document, or to a different position in the same document.  To copy or cut multiple tracks at once, the tracks must be <a href="#Selecting_Tracks">selected</a> first.  A single track can be copied without selecting it.
+
+<p>Tracks can be "cloned" by copying them and then pasting them repeatedly.  When a track is copied, all of its attributes are copied, including its audio position, mute/solo state, and automations.  Echo, chorus, and similar effects can be created by copying and pasting a playing track.
+
+<p>Cut and paste can be used to move tracks around within a document, but because cutting a playing track interrupts its audio, you may prefer to use dragging instead.  For more information, see <a href="#Moving_Tracks">Moving Tracks</a>.
+
+<a name="Moving_Tracks"><h2>Moving Tracks</h2></a>
+
+<p>Tracks can be dragged to any position within the document.  Unlike using cut and paste, dragging a playing track doesn't interrupt its audio.
+
+<p>To drag a single track, left-click on the track's name, and while holding down the left mouse button, position the cursor wherever you want the track to go.
+
+<p>To drag multiple tracks, <a href="#Selecting_Tracks">select</a> the tracks, left-click one of their names (it doesn't matter which one), and while holding down the left mouse button, position the cursor wherever you want the tracks to go.
+
+<p>When you release the left mouse button, the dragged track(s) are inserted before the track that's under the cursor.  If you change your mind during the drag, press Esc to cancel the move.
+
+<a name="Sorting_Tracks"><h2>Sorting Tracks</h2></a>
+
+<p>The column headers at the top of the document can be used to sort the tracks.  To sort a track by a given column, left-click the corresponding header button.  To reverse the sort, left-click the same button again.  For example, to put the tracks in ascending order by name, left-click the Name button.  To put the tracks in descending order by Name, left-click the Name button again.
+
+<p>The leftmost column's header button (captioned '#') has a special meaning for sorting: it causes the tracks to appear in the order in which they were created.
+
+<p>The column headers are also used for <a href="#Resizing_Columns">resizing columns</a>.
+
+<a name="Multi-Track_Editing"><h2>Multi-Track Editing</h2></a>
+
+<p>Some of Mixere's commands can operate on multiple tracks at once.  For example, to start several tracks playing at once, first <a href="#Selecting_Tracks">select</a> the tracks, and then choose <em>Play</em> from the Track menu or context menu, or press 'P'.  The Toggle, Pause, Stop, Mute, Solo and Go commands work the same way.
+
+<p>It's also possible to edit a track slider (volume, pan, pitch, or position) in multiple tracks at once.  For example, to set the volume of several tracks at once, first select the tracks, and then choose <em>Volume</em> from the Track menu.  An edit dialog is displayed.  The dialog's first control is a slider; it controls the volume for the selected tracks.  If you move the slider, the volume sliders in the selected tracks jump to the same position.  If you edit the <a href="#Audio_Selections">slider selection</a>, the same edit is applied to the volume sliders in the selected tracks.
+
+<p>To pan several tracks at once, follow the preceding example, substituting "pan" for "volume"; likewise for pitch and position.  Note that the edit dialog is modal; once it's open, you can't do anything else in Mixere until you close the dialog.
+
+<p>The edit dialog includes edit boxes for current position, selection start, and selection end.  These are useful for specifying precise values.  The value ranges are different for each type of slider:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Slider</th><th>Value Range</th>
+</tr>
+<tr>
+<td>Volume</td><td>0 = silence, 1 = maximum</td>
+</tr>
+<tr>
+<td>Pan</td><td>-1 = left, 0 = middle, 1 = right</td>
+</tr>
+<tr>
+<td>Pitch</td><td>-12 = down an octave, 0 = flat, 12 = up an octave; in semitones</td>
+</tr>
+<tr>
+<td>Position</td><td>0 to audio file length, in seconds
+</tr>
+</table>
+
+<p>The edit dialog contains additional controls which are used to create, modify, or synchronize <a href="#Automation_Sliders">automations</a> in multiple tracks at once; for a summary of these controls, see the <a href="#Automation_Dialog">Automation Dialog</a>.
+
+<p>For example, to start a panning loop in several tracks at once, select the tracks, choose <em>Pan</em> from the Track menu, and in the edit dialog, press the Loop and Play buttons.  If the pan sliders have identical selections and automation times, they stay in sync, but they may be offset from one another, depending on their initial positions.  To make them line up exactly, left-click the edit dialog's automation slider.  For more options, see <a href="#Synchronization">Synchronization</a>.
+
+<p>The edit dialog also includes a "Stagger" button.  This button arranges the sliders for selected tracks, by spreading them out, so that they're evenly spaced from left to right.  For example, when editing pan, it spreads the tracks in the stereo image.  By combining this feature with automation, it's possible to make the sliders move in a diagonal pattern, like a flock of birds.  The sliders must have identical selections and automation times for this to work.
+
+<p>An edit dialog control may be initialized to a default or indeterminate value; this indicates that the selected tracks have different values for that control.
+
+<p>See also the summary of <a href="#Multi-Track_Commands">Multi-Track Commands</a>.
+
+<h1>Documents</h1>
+<a name="Volume"><h2>Volume</h2></a>
+
+<p>Each document has its own volume slider, which controls the output level of all the tracks in that document.  The slider is contained in a document <a href="#Control_Bars">control bar</a>.  To show or hide the control bar, choose <em>Volume</em> from the View menu, or press V.  Note that the volume slider supports <a href="#Automation_Sliders">automation</a>, which means you can program a document to fade in or out by itself, while you do other tasks.
+
+<p>A document's volume may also be affected by the <a href="#Crossfader">Crossfader</a>, which fades back and forth between two documents, by the <a href="#Master_Volume">Master Volume</a>, which controls the volume of the entire application, and by external factors, such as the Windows volume control.
+
+<a name="Crossfader"><h2>Crossfader</h2></a>
+
+<p>The crossfader allows you to fade back and forth between two documents.  To show or hide the crossfader <a href="#Control_Bars">control bar</a>, select <em>Crossfader</em> from the View menu, or press X.  The crossfader's controls include two list boxes (Source A and Source B) and a slider.  The list boxes select which two documents will be crossfaded, and the slider does the crossfading.  Note that the slider supports <a href="#Automation_Sliders">automation</a>, which means you can program a crossfade to execute by itself, while you do other tasks.  This is useful for making very slow crossfades.
+
+<p>When the slider is in the leftmost position, Source A is at full volume, and Source B is off.  When the slider is in the rightmost position, this situation is reversed.  What happens in between depends on the crossfade type, which is selected using the pushbutton located to the right of Source B.  The crossfade types are explained below:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Type</th><th>Button</th><th>Effect</th>
+</tr>
+<tr>
+<td>Linear</td><td>Out</td><td>When the crossfader is in the middle, each source is at half volume.  Most people experience this type of crossfader as having a quiet spot, or "dip", in the middle.</td>
+</tr>
+<tr>
+<td>Dipless</td><td>In</td><td>When the crossfader is in the middle, each source is at full volume.  As the crossfader is moved away from the middle, one source is attenuated, while the other remains at full volume.  This is the type of crossfader typically used in DJ mixers.</td>
+</tr>
+</table>
+
+<p>To disconnect a document from the crossfader, select a different document in the appropriate source listbox, or select "none".  Be careful when doing this however.  If the document was being silenced by the crossfader, it will suddenly become audible again, possibly causing a drastic volume change.  To avoid this situation, set the document's volume to zero (using the <a href="#Volume">Volume</a> control bar) before disconnecting it from the crossfader.  Another solution is to close the document, which safely disconnects it from the crossfader.
+
+<a name="Master_Volume"><h2>Master Volume</h2></a>
+
+<p>The master volume slider controls the output level of the entire application.  To show or hide the master volume <a href="#Control_Bars">control bar</a>, select <em>Master Volume</em> from the View menu, or press Shift+V.  Note that the slider supports <a href="#Automation_Sliders">automation</a>, which means you can program Mixere to fade in or out by itself, while you do other tasks.  This is useful when Mixere is combined with other audio applications.  For example, while Mixere fades itself out, you could manually fade in another application.
+
+<a name="Mute/Solo_Fade"><h2>Mute/Solo Fade</h2></a>
+
+<p>Mute and solo normally have an instantaneous effect on the audio output, but in Mixere, they can also be made gradual.  This is a very powerful feature, because it allows complex crossfades to be created with minimal user interaction.
+
+<p>The Mute/Solo Fade <a href="#Control_Bars">control bar</a> is used to specify how long subsequent mute/solo operations should take.  The duration can range from 1/100 of a second to 100 hours.  Each document has its own Mute/Solo Fade control bar.  To make the control bar visible, choose <em>Mute/Solo Fade</em> from the View menu, or press 'F'.
+
+<p>The control bar is similar to an <a href="#Automation_Dialog">automation dialog</a>: it includes a time slider with a minutes button, and a time edit box.  The slider's time unit is either seconds, or if the minutes button is pressed, minutes.  The time can be entered directly in the edit box, and the edit box also has up/down buttons, which change the time either by hundredths of second, or if the minutes button is pressed, by seconds.
+
+<p>To enable mute/solo fading, set a non-zero time.  All subsequent mute/solo operations will take this amount of time.  Note that changing the time does NOT affect mute/solo fades that are already in progress.  This means it's possible to initiate a mute/solo operation of one duration, and while that operation is in progress, initiate another mute/solo operation of a different duration.
+
+<p>To disable mute/solo fading, set the time to zero: this causes mute and solo to behave as they do on most mixers, i.e. they have an instantaneous effect.
+
+<p>Note that if you mistakenly initiate a mute/solo fade, you can use undo (Ctrl+Z) to reverse the operation, but the reversal won't be instantaneous: it will also be a fade.  To immediately abort a mute/solo fade, first set the mute/solo fade time to zero, and then repeat the mute/solo operation.
+
+<a name="Resizing_Columns"><h2>Resizing Columns</h2></a>
+
+<p>The column headers at the top of the document can be used to change the width of the columns.  To resize a column, drag the right edge of the corresponding header button.  To restore a column's default width, double-click the right edge of its header button.
+
+<p>For example, to resize the Name column, position the cursor over the right edge of the Name header button.  The cursor changes to a divider with horizontal arrows.  Now left-click, and while holding down the left mouse button, move the cursor horizontally.
+
+<p>The result depends on the "Show window contents while dragging" system setting (Control Panel/Display/Effects).  If this property is checked, the column stretches or shrinks, and columns to the right of it move.  If this property is unchecked, the column width doesn't change until you release the left mouse button; while you drag, a vertical line moves over the document, indicating the column's right edge.
+
+<p>Note that if "Show window contents while dragging" is checked, resizing a column requires drawing a large number of controls repeatedly; this can cause temporary screen anomalies, and may result in excessive CPU usage.
+
+<p>It's possible to make a column disappear entirely, by dragging it all the way to the left.  To restore it, go to the right edge of the preceding column's header button, and position the cursor slightly to the right of that point.  The cursor changes to a <em>double</em> divider with horizontal arrows.  Now left-click and drag to the right, and the missing column reappears.
+
+<p>The column headers are also used for <a href="#Sorting_Tracks">sorting tracks</a>.
+
+<a name="Setting_Defaults"><h2>Setting Defaults</h2></a>
+
+<p>When an audio file is loaded into a track, the new track's attributes (e.g. volume, pan, automations, etc.) are assigned default values.  These default attributes can be changed, using the procedure outlined below.  Setting defaults doesn't affect existing tracks; it only affects subsequently loaded audio.
+
+<ol>
+<li>Pick a track that already has the desired attributes, or adjust a track until it has the desired attributes; this track is the <em>source</em> of the new default attributes.
+<li>While that track is the current track, choose <em>Set Defaults</em> from the File menu.  The next time you load an audio file, it will have the new default attributes.
+</ol>
+
+<p>You can also choose <em>Set Defaults</em> from the context menu.  To display the context menu, right-click anywhere within the track except over a slider.  Since right-clicking on a track automatically makes it the current track, you may find this method more intuitive.
+
+<p>To restore the initial default attributes, follow the above procedure, using an <em>empty track</em> as the attribute source.
+
+<p>The defaults behave like a "hidden" track that's always present in your document.  When you set defaults, you're copying the desired attributes from a track that has them, into this hidden track.  When you load audio, the new track's attributes are copied from this hidden track.  Note that because defaults are saved with the document, different documents can have different defaults.
+
+<p>The defaults are assigned to all track attributes except audio filename and track title, not just the initial slider positions.  It's possible to set defaults such that newly loaded tracks start out muted, soloed, playing, paused, automating, etc.
+
+<h1>Automation</h1>
+
+<a name="Automation_Sliders"><h2>Automation Sliders</h2></a>
+
+<p>In Mixere, most sliders can be automated.  Automation in this context means telling a slider thumb to move from one point to another within a given time interval.  Automation sliders are identified by a round, colored indicator on the slider thumb.
+
+<p>An automation slider has controls that aren't always visible; they are located in a dialog, called the <a href="#Automation_Dialog">Automation Dialog</a>, which can be shown or hidden.  To show or hide a slider's automation dialog, use one of the following methods:
+
+<ul>
+<li>Middle-click on the slider, or on the automation dialog.  Note that this only works if the "Middle-click shows auto dialog" option is checked; see <a href="#Options">Options</a>.
+<li>Ctrl+left-click on the slider; this is handy if you don't have a middle mouse button.
+<li>If the slider has focus, press the 'A' key to show its automation dialog; if the automation dialog is the active window, press 'A' to hide it.
+</ul>
+
+<p>The automation dialog includes transport controls, consisting of a Play, Pause, Stop, and Loop button, which affect the automation in much the same way that a track's transport controls affect its audio.  The indicator on the slider's thumb represents its current transport state: green for Play, yellow for Pause, and red for Stop.
+
+<p>An automation slider can have a selection, consisting of a start point and an end point.  A selection limits the range of the automation, so that the slider thumb stays between these two points.  If no selection exists, the thumb traverses the full width of the slider.  Selections are created using the right mouse button; see <a href="#Audio_Selections">Audio Selections</a> for details.
+
+<p>The automation dialog also includes controls for setting the automation time.  Automation time is the interval within which the slider's thumb will move from one end of the selection to the other, or if no selection exists, from one end of the slider to the other.  Automation times can range from 1/100 of a second to 100 hours.  The time can be set using a slider, or entered directly in an edit box.
+
+<p>To start an automation:
+
+<ol>
+<li>Specify how far the slider should move, by creating a selection, or editing the existing selection.  This step can be skipped if the selection (or lack thereof) is acceptable.
+<li>Open the automation dialog, using middle-click, Ctrl+left-click, or 'A'.
+<li>Set or edit the automation time.  This step can be skipped if the time is acceptable.
+<li>If the automation should repeat, make sure the Loop button is pressed.
+<li>Press Play to start the automation.  The automation dialog closes by itself.
+</ol>
+
+<p>If the automation time is already set, it's possible to avoid all of these steps by using the "Quick Start" feature.  To use "Quick Start", Alt+left-click on the point you want the slider to move to.  A selection is automatically created between the current thumb position and the specified point, and the thumb immediately begins moving towards the specified point.  For more slider shortcuts, see <a href="#Automation_Slider_Commands">Automation Slider Commands</a>.
+
+<a name="Automation_Dialog"><h2>Automation Dialog</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th colspan=2>Automation Dialog Controls</th>
+</tr>
+<tr>
+<td>Play Button</td><td>Starts the slider thumb moving from its current position.  Which direction it moves depends on whether the slider was paused or stopped.</td>
+</tr>
+<tr>
+<td>Pause Button</td><td>Pauses the slider.  While a slider is paused, pressing Play causes the thumb to continue moving in the same direction it was moving before.</td>
+</tr>
+<tr>
+<td>Stop Button</td><td>Stops the slider.  While a slider is stopped, pressing Play causes the thumb to begin moving towards whichever selection endpoint is furthest away, or if there's no selection, towards whichever end of the slider is furthest away.</td>
+</tr>
+<tr>
+<td>Loop Button</td><td>Turns loop mode on/off.  Normally, an automation stops by itself when the slider reaches one of the selection endpoints, or one end of the slider.  However, in loop mode, the automation repeats continuously.</td>
+</tr>
+<tr>
+<td>Time Slider</td><td>Sets the automation time.  The slider's range is either 0 to 60 seconds, or 0 to 60 minutes, as determined by Minutes button (marked "m").  To enter times shorter than a second, or longer than an hour, use the edit box.</td>
+</tr>
+<tr>
+<td>Minutes Button</td><td>Sets the time slider's unit.  If pressed, the unit is minutes, otherwise the unit is seconds.</td>
+</tr>
+<tr>
+<td>Time Edit Box</td><td>Edits the automation time.  Times must be entered in hh:mm:ss.hs format (hours, minutes, seconds, hundredths of a second).  Spaces can be used as separators instead of colons and periods.  Incomplete times can be entered, e.g. 1:05 is interpreted as 1:05:00.00.  Editing the time doesn't affect the automation until you change the focus, e.g. by pressing Tab.  The edit box includes up/down buttons for making fine adjustments to the time.  The up/down unit is either hundredths of a second, or if the Minutes button is pressed, seconds.  If an up/down button is pressed for longer than a few seconds, the rate at which the value changes is gradually increased.</td>
+</tr>
+<tr>
+<td>Waveform Drop List</td><td>Sets the automation waveform.  The options include Triangle (the default), Ramp Up, Ramp Down, Square, and Random; see <a href="#Automation_Waveforms">Automation Waveforms</a> for details.
+</td>
+</tr>
+</table>
+
+<p>While an automation dialog is the active window, most of the normal <a href="#Mixere_Shortcut_Keys">Mixere Shortcut Keys</a> don't work.  The dialog defines its own shortcut keys, as shown below.  Note that some of the keys (Space, P, U, S, L) perform the same function for automation that they ordinarily perform for audio.
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr><th colspan=3>Automation Dialog Shortcut Keys</th></tr>
+<tr><td>Space</td><td>Toggle</td><td>Switch the automation between play and pause</td></tr>
+<tr><td>P</td><td>Play</td><td>Play the automation</td></tr>
+<tr><td>U</td><td>Pause</td><td>Pause the automation</td></tr>
+<tr><td>S</td><td>Stop</td><td>Stop the automation</td></tr>
+<tr><td>L</td><td>Loop</td><td>Turn automation loop mode on/off</td></tr>
+<tr><td>Shift+Space</td><td>Go</td><td>Play paused items</td></tr>
+<tr><td>M</td><td>Minutes</td><td>Switch the time slider's unit between seconds and minutes</td></tr>
+<tr><td>A</td><td>Auto Dialog</td><td>Show or hide the automation dialog</td></tr>
+<tr><td>Ctrl+Z</td><td>Undo</td><td>Undo the last action</td></tr>
+<tr><td>Ctrl+Y</td><td>Redo</td><td>Redo the previously undone action</td></tr>
+</table>
+
+<a name="Automation_Waveforms"><h2>Automation Waveforms</h2></a>
+
+<p>The motion of an <a href="#Automation_Sliders">automation slider</a> is controlled by a mathematical function known as a waveform.  The waveform normally has a triangular shape, but other options are available.  To observe the effect of different waveforms, create a looped slider automation, and try changing the waveform setting in the slider's <a href="#Automation_Dialog">automation dialog</a>.  In the following descriptions, "period" refers to the time interval displayed in the automation dialog.  "Start point" and "end point" refer to either the slider's selection, or if it doesn't have one, the slider's full width.
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Wave</th><th>Effect</th>
+<tr>
+<td>Triangle</td><td>During one period, the slider thumb moves from the start point to the end point; during the next period, it reverses, and moves back to the start point.  This is the default setting.  When used with the Pan slider, it creates a typical "back and forth" style auto-panner.</td>
+</tr>
+<tr>
+<td>Ramp Up</td><td>During each period, the slider thumb moves from the start point to the end point, and then jumps back to the start point.</td>
+</tr>
+<tr>
+<td>Ramp Down</td><td>During each period, the slider thumb moves from the end point to the start point, and then jumps back to the end point.</td>
+</tr>
+<tr>
+<td>Square</td><td>During one period, the slider thumb stays at the start point; during the next period, it stays at the end point.</td>
+</tr>
+<tr>
+<td>Random</td><td>At the beginning of each period, the slider thumb jumps to a random position between the start and end points.</td>
+</tr>
+</table>
+
+<a name="Auto-Trigger"><h2>Auto-Trigger</h2></a>
+
+<p>All of a track's sliders support automation, but the position slider is special.  In ordinary <a href="#Automation_Sliders">automation sliders</a>, the automation moves the slider thumb, as though the thumb were motorized.  In the position slider, however, the automation doesn't directly control the slider thumb; the slider thumb always follows the audio position.  Instead, the automation <em>triggers</em> the audio: at the beginning of each automation period, the audio is stopped, rewound, and re-played.  The result is that the audio is automatically repeated at regular intervals.  This situation is referred to as "auto-triggering".
+
+<p>"Audio" in this context means either the <a href="#Audio_Selections">audio selection</a>, or if there's no selection, the entire audio file.  "Automation period" refers to the time displayed in the slider's <a href="#Automation_Dialog">automation dialog</a>.
+
+<p>Auto-trigger is different from audio looping, which occurs when a track's Loop button is pressed.  With audio looping, the repetition frequency depends on the audio length, i.e. shorter samples loop more frequently.  With auto-trigger, the repetitions occur at whatever frequency you specify, regardless of the audio's length.  If the audio is too long, it gets cut off.  If the audio is too short, the remaining time is filled, either with silence (if audio looping is off), or with loops (if audio looping is on).
+
+<p>Because auto-trigger allows you to create space between repetitions of a sample, it's useful for making a mix less "busy".  It can also be used to make patterns of synchronized samples, similar to those made by sequencers, provided you're not too fussy about timing accuracy.  See also <a href="#Synchronization">Synchronization</a>.
+
+<p>Starting an auto-trigger is just like starting an ordinary automation, except that the automation dialog's Loop button is disabled (an auto-trigger is an automation loop by definition).
+
+<ol>
+<li>Specify an audio selection, if desired; this step can be skipped if the selection (or lack thereof) is acceptable.
+<li>Open the automation dialog, using middle-click, Ctrl+left-click, or 'A'.
+<li>Set or edit the automation time.  This step can be skipped if the time is acceptable.
+<li>Press Play to start auto-triggering.  The automation dialog closes by itself.
+</ol>
+
+<p>Starting an auto-trigger has an optional side effect: it turns off audio looping for the corresponding track.  If this isn't what you want, you can either turn audio looping back on manually, or disable this side effect, by unchecking the "Auto-trigger turns off audio looping" option; see <a href="#Options">Options</a>.
+
+<p>While a track is auto-triggering, left-clicking on its position slider doesn't set the audio position as usual; instead, it immediately triggers the audio, and resets the triggering loop.  This allows you to synchronize the track, relative to other tracks.
+
+<p>The differences between a position slider and an ordinary automation slider can be summarized as follows:
+
+<ul>
+<li>Automation periodically triggers the audio, instead of directly controlling the slider thumb.
+<li>Automation is always looped, and the loop button is disabled in the slider's automation dialog.
+<li>Starting an automation turns off audio looping for the corresponding track, unless you've disabled this option.
+<li>While the slider is playing, left-clicking it triggers the audio, instead of setting the audio position.
+</ul>
+
+<a name="Tempo"><h2>Tempo</h2></a>
+
+<p>In Mixere, tempo is a scaling factor that's applied to automation times.  Tempo only applies to <a href="#Automation_Sliders">automation sliders</a> in tracks; other automation sliders, e.g. document volume, aren't affected.  The scaling factor defaults to 1 (no scaling), and ranges from 0.5 (half time) to 2 (double time).  Tempo shrinks or stretches the time axis, i.e. it changes the duration of a second, so that that a one-second automation actually takes as little as half a second, or as much as two seconds.
+
+<p>Each document has its own tempo, which can be changed using the Tempo <a href="#Control_Bars">control bar</a>.  To show or hide the control bar, choose <em>Tempo</em> from the View menu, or press T.  The control bar includes a tempo slider, and an edit box for entering specific tempos.  Note that the tempo slider itself supports automation, which means a document can be programmed to gradually speed up or slow down its automations.  This is useful when samples are being played in a synchronized pattern, using <a href="#Auto-Trigger">Auto-Trigger</a>; the effect is similar to creating a tempo map in a sequencer.
+
+<p>Tempo is displayed in beats per minute (BPM), according to tradition, but since Mixere doesn't support notes or time signatures, the definition of a beat is arbitrary.  In Mixere, a beat is a half-second auto-trigger loop, which triggers twice per second, or 120 times per minute.  To demonstrate this, load an audio file containing a single percussive sample, and auto-trigger the sample with an automation time of 0:0:0.50, while Mixere's tempo is set to 120; the resulting loop should stay in sync with a metronome set to 120 BPM.
+
+<a name="Synchronization"><h2>Synchronization</h2></a>
+
+<p>In Mixere, synchronization means causing events to happen simultaneously, e.g. playing multiple audio files at once, or starting multiple <a href="#Automation_Sliders">automations</a> at once.  It can also mean programming automations to stay lined up with each other, or move in a pattern.  Note that starting automations simultaneously doesn't guarantee they'll stay in sync with each other; they also must have identical selections and automation times.  Mixere supports the following synchronization methods:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<td>Multi-track edit dialog</td><td>This dialog allows you to start automations in multiple tracks at once, but only for one slider type at a time (e.g. Pan).  Looped automations can be lined up with each other, or staggered.  The edit dialog is displayed when you choose Volume, Pan, Pitch, or Position from the Track menu.  For details, see <a href="#Multi-Track_Editing">Multi-Track Editing</a></td>
+</tr>
+<tr>
+<td>Volume automation unpauses audio</td><td>When this option is checked, starting a volume automation has a side effect: if the track's audio is paused, it begins playing.  This option has been superceded by the "Go" command (see below).  See also <a href="#Options">Options</a>.</td>
+</tr>
+<tr>
+<td>Go command</td><td>This command unpauses all paused audio or automations in the selected tracks, or if no tracks are selected, in the current track.  Unlike the multi-track edit dialog, this method can start automations in different slider types at once.</td>
+</tr>
+</table>
+
+<p>Of all these methods, the Go command is the most general.  It can be used to start audio and/or automations of any slider, in a single track, or in multiple tracks.  For example, within a single track, you could start a volume automation and a pan automation at the same time, by doing as follows:
+
+<ol>
+<li>Make sure no tracks are selected (choose <em>Deselect</em> from the Edit menu, or press Esc).
+<li>Pause the track's volume slider: show its automation dialog (middle-click, or Shift+left-click), and press the automation dialog's Pause button.
+<li>Pause the track's pan slider, in the same way.
+<li>Choose <em>Go</em> from the Track menu, or press Shift+Space.
+</ol>
+
+<p>For another example, you could start several tracks playing at once, while simultaneously starting automations of their pan and pitch sliders, by doing as follows:
+
+<ol>
+<li>Select several tracks.
+<li>Pause the tracks, by choosing <em>Pause</em> from the Track menu, or pressing 'U'.
+<li>Pause their pan sliders: choose <em>Pan</em> from the Track menu, press the edit dialog's Pause button, and close the dialog.
+<li>Pause their pitch sliders, in the same way.
+<li>Choose <em>Go</em> from the Track menu, or press Shift+Space.
+</ol>
+
+<h1>Snapshots</h1>
+
+<a name="Snapshot_Overview"><h2>Snapshot Overview</h2></a>
+
+<p>Mixere allows you to take snapshots of a document.  A snapshot is a recording of the state of every track in a document, at a particular moment.  A snapshot can be <em>restored</em>, which means the tracks revert to the state they were in when the snapshot was taken.  A document can contain any number of snapshots, and the snapshots are saved as part of the document.  Snapshots can be assigned shortcut keys, which allow them to be restored quickly, facilitating rapid transitions.
+
+<p>See also <a href="#Taking_a_Snapshot">Taking a snapshot</a>, and <a href="#Restoring_a_Snapshot">Restoring a Snapshot</a>.
+
+<a name="Taking_a_Snapshot"><h2>Taking a Snapshot</h2></a>
+
+<p>To take a snapshot, choose <em>Take Snapshot</em> from the File menu, or press Ctrl+T.  The track attributes are captured, and the Take Snapshot dialog is displayed.  This dialog allows you name the snapshot, and assign it a shortcut key.  If you don't enter a name, the snapshot will have a default name.   You can edit the name and shortcut key later, using the <a href="#Editing_Snapshots">Edit Snapshots</a> dialog.  Press OK to save the snapshot, or Cancel to exit without saving the snapshot.
+
+<p>To assign a shortcut key to the snapshot, use the hot key control, located to the right of the "Shortcut Key" caption.  Left-click in the hot key control: the control will now record any key, or key combination, that you press.  Note that some keys are reserved for Mixere, or for Windows; for a list of reserved keys, see <a href="#Mixere_Shortcut_Keys">Mixere Shortcut Keys</a>.  If the key is reserved, Mixere displays an error message when you press OK, and sets the focus back to the hot key control, instead of closing the dialog.  If the key is already assigned to a snapshot, Mixere prompts you for confirmation before reassigning the key.
+
+<p>Note that taking a snapshot captures all of a track's attributes, with one exception: the track's name.  This means that if you rename some tracks, and then restore a snapshot, the tracks retain their new names.
+
+<a name="Restoring_a_Snapshot"><h2>Restoring a Snapshot</h2></a>
+
+<p>To restore a snapshot, select its name from the drop list in the Snapshots <a href="#Control_Bars">control bar</a>.  To show or hide the control bar, choose <em>Snapshots</em> from the View menu, or press N.  If the snapshot has a shortcut key, you can restore it by simply pressing that key.  Snapshots can also be restored from the <a href="#Editing_Snapshots">Edit Snapshots</a> dialog.
+
+<p>Tracks may have been added or deleted since the snapshot was taken.  Added tracks (i.e. tracks that exist in the document, but not in the snapshot) are muted.  Deleted tracks (i.e. tracks that exist in the snapshot, but not in the document) are ignored.
+
+<p><a href="#Mute/Solo_Fade">Mute/Solo Fade</a> affects restoring snapshots.  If the mute/solo fade time is non-zero, any mute/solo buttons that are modified by the restore will have a gradual effect.  If the snapshot and the current state are identical except for mute/solo differences, the restore effectively becomes a crossfade to the snapshot; the mute/solo fade time determines the length of the crossfade.  For best results, combine mute/solo fade with Smooth restore mode, described below.
+
+<p>Snapshots can be restored in one of two modes: Exact, or Smooth.  The restore mode is changed using the Edit Snapshots dialog; see <a href="#Editing_Snapshots">Editing Snapshots</a>.
+
+<p>In Exact mode, every track attribute (other than the track name) is restored.  This has a downside: it can cause discontinuities (skips) in the audio, due to the restoring of audio and automation positions.  If a given track was playing when the snapshot was taken, and is still playing when the snapshot is restored, that track will probably skip, because its current and restored audio positions will probably differ.  Automations may also skip, for the same reason.
+
+<p>In Smooth mode, audio and automation skips are avoided, by not restoring audio or automation positions in the situation described above.  Smooth mode is a trade-off: it makes the transition smoother, but the restored state is less predictable.
+
+<a name="Editing_Snapshots"><h2>Editing Snapshots</h2></a>
+
+<p>Snapshots can be renamed, deleted, and assigned shortcut keys, using the Edit Snapshots dialog.  To display the dialog, choose <em>Edit Snapshots</em> from the Edit menu, or press Ctrl+E.
+
+<p>The dialog features a list box containing the names of the snapshots.  The list can be sorted by name (the default), or by when the snapshots were created.  To change the sort, select an item in the "Sort by" drop list.  Changing the sort also reorders the snapshot list in the Snapshots control bar.
+
+<p>To rename a snapshot, select it (left-click its name) and then press the Rename button, or just double-click its name.  The name becomes an edit box, allowing you to either edit the existing name, or type a new one.  To save the new name, press Enter, or left-click somewhere outside of the edit box.  To cancel the edit, press Esc.
+
+<p>To delete a snapshot, select it, and press the Delete button.  To restore a snapshot, select it and press the Restore button.
+
+<p>To assign a shortcut key, select the snapshot, left-click in the hot key control (under the caption "Shortcut Key"), and then press the key or key combination you wish to assign.  Finish by left-clicking in a different control, or pressing Tab.  If the key isn't available, an error message is displayed; for details, see <a href="#Taking_a_Snapshot">Taking a Snapshot</a>.
+
+<p>The dialog also allows you to set the restore mode, which affects the smoothness of snapshot transitions.  For details, see <a href="#Restoring_a_Snapshot">Restoring a Snapshot</a>.
+
+<h1>Loose Ends</h1>
+<a name="Options"><h2>Options</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th colspan=2>General</th>
+</tr>
+<tr>
+<td>Undo - Levels</td><td>The number of operations that can be undone; if set to zero, undo is disabled.  This value can only be edited if Unlimited (see below) is unchecked.</td>
+</tr>
+<tr>
+<td>Undo - Unlimited</td><td>If checked, the undo history grows without limit; otherwise, Levels (see above) limits the number of operations that can be undone.  If unlimited, the undo history can consume a significant amount of memory over time, especially for clipboard and snapshot operations.</td>
+</tr>
+<tr>
+<td>Display Tooltips</td><td>If checked, tooltips are displayed throughout Mixere, except in modal dialogs.</td>
+</tr>
+<tr>
+<td>Audio Device</td><td>Selects which audio driver Mixere will use; normally set to "default".  The other options are "directsound" (DirectX), "winmm" (Windows Multi-Media), and "null" (no audio).  Note that while audio files are open, this option is disabled: to re-enable it, close all documents.</td>
+</tr>
+<tr>
+<th colspan=2>Sliders</th>
+</tr>
+<tr>
+<td>Display Smoothness</td><td>Allows you reduce Mixere's CPU usage by making automation jerky.  At maximum, <a href="#Automation_Sliders">automation sliders</a> move smoothly; at minimum, they move in jerks, but CPU usage is reduced.  Note that this option only affects the visual feedback, not the audio; audio is always automated as smoothly as possible.  This option should normally be set to maximum, unless automation is causing excessive CPU usage.  This could happen if a large number of automations are occurring simultaneously.</td>
+</tr>
+<tr>
+<td>Middle-click shows auto dialog</td><td>If checked, pressing the middle mouse button (wheel) while the cursor is over an automation slider causes the slider's <a href="#Automation_Dialog">automation dialog</a> to be shown, or hidden if it's already visible.  If unchecked, the automation dialog can still be accessed using Ctrl+left-click.</td>
+</tr>
+<tr>
+<td>Automate volume unpauses audio</td><td>If checked, starting a volume automation has a side effect: if the track's audio is paused, it begins playing.  If unchecked, this side effect is disabled.  Note that the "Go" command provides a more general <a href="#Synchronization">synchronization</a> method.</td>
+</tr>
+<td>Auto-trigger turns off audio looping</td><td>If checked, starting an <a href="#Auto-Trigger">auto-trigger</a> has a side effect: it turns off audio looping for the corresponding track.  If unchecked, this side effect is disabled.</td>
+</tr>
+<tr>
+<th colspan=2>Appearance</th>
+</tr>
+<tr>
+<td>Font</td><td>Allows you to change the font used for track titles.  Press the "Choose" button to display the standard font dialog.  Select the desired font, and press OK.  To restore the default font, press the "Default" button.</td>
+</tr>
+<tr>
+<td>Color</td><td>Allows you to change some of Mixere's colors.  Currently only two colors can be changed: "Selection" (indicates which tracks are selected), and "Current" (indicates which track is the current track).  Use the list box to select the color you want to change.  Press the "Choose" button to display the standard color dialog.  Select the desired color, and press OK.</td>
+</tr>
+</table>
+
+<a name="Control_Bars"><h2>Control Bars</h2></a>
+
+<p>Mixere contains a number of control bars, including Volume, Snapshot, Tempo, Mute/Solo Fade, Master Volume, and Crossfader.  All of these control bars share a common set of properties:
+
+<ul>
+<li>They can be "floating" or "docked".
+<li>While floating, they can resized horizontally.
+<li>They can be shown or hidden using the same shortcut key.
+</ul>
+
+<p>When a control bar is docked, it's part of the main frame, or the document frame, depending on what kind of bar it is.  Master Volume and Crossfader dock to the main frame; the others dock to the document frame, and are referred to as "document bars".  When a control bar is floated, it becomes a separate window that sits on top of the document.
+
+<p>Control bars are docked by default.  To float a control bar, left-click on the bar's background (anywhere that isn't a control, e.g. the bar's caption), and while holding down the left mouse button, drag the bar away from the frame.  To dock the control bar, drag it back onto the frame.  Control bars can also be docked or floated by double-clicking on their background.  Note that Mixere only allows control bars to be docked to the top or bottom of the frame, not to the sides.  Also note that document bars can only be docked to their own document.
+
+<p>If you're having problems docking, it's probably because you're trying to dock to the wrong frame, or because you're trying to dock to one of the sides of the frame, instead of the top or bottom.
+
+<p>Control bars can be horizontally resized, but only while they're floating.  To resize a bar, first float it, and then position the cursor over the bar's left or right edge.  The cursor changes into a double-headed horizontal arrow, indicating that the bar is resizeable.  Left-click and drag to resize the bar.  The bar will retain its new width when docked.  Bar position, docked vs. floating, and width are all persistent, i.e. they're saved, either with the document, or in the registry.  Note that bars can't be made narrower than their minimum width.
+
+<p>A control bar can be shown or hidden using the same shortcut key.  For example, pressing V shows the Volume bar; pressing V again hides it.  When a control bar is visible, a check appears next to its name in the View menu.
+
+<a name="Missing_Files"><h2>Missing Files</h2></a>
+
+<p>A Mixere document does not contain audio files; it contains <em>links</em> to audio files.  This strategy has many advantages (e.g. Mixere documents are very compact), but it also has the disadvantage of allowing broken links.  Broken links occur when a document's audio files are moved or renamed.
+
+<p>Broken links must be repaired before the document can be opened.  If you try to open a document with broken links, Mixere will display the Missing Files dialog, which gives you the following options:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<td>Search & Proceed</td><td>Searches ALL folders of ALL hard disks for the missing files.  This could take a long time, so only use this option when you have no idea where the missing files are.  If you know where they are, even approximately, it's much faster to use the "Open Dialog" option instead.  When the search is complete, the document is opened.  Any tracks whose files couldn't be found will be blank; see the warning below.</td>
+</tr>
+<tr>
+<td>Proceed</td><td>Opens the document immediately, regardless of broken links.  Any tracks that link to missing files will be blank; see the warning below..
+</td>
+</tr>
+<tr>
+<td>Open Dialog</td><td>Displays the <a href="#Replace_Files">Replace Files</a> dialog, which lists the names of the missing files, and allows you to browse for them individually, or search for them in specific folders.  If you want more control over the repair process, or if you know where the missing files are, even approximately, use this option instead of "Search & Proceed".
+</td>
+</tr>
+<tr>
+<td>Cancel</td><td>Cancels opening the document.</td>
+</tr>
+</table>
+
+<p>WARNING: In all of the above cases except "Cancel", it's possible to open the document with files still missing.  Tracks that are missing files will be blank.  If you save the document in this situation, the damaged tracks will be <b>permanently deleted</b>.  To avoid doing this accidentally, save the document under a new name (using <em>File/Save As</em>) before proceeding.
+
+<a name="Replace_Files"><h2>Replace Files</h2></a>
+
+<p>If "Open Dialog" is selected in the <a href="#Missing_Files">Missing Files</a> dialog, the Replace Files dialog is displayed.  It includes a two-column list, containing one line for each missing file.  The file's name is shown in the Filename column, and its status ("Missing" or "Replaced") is shown in the Status column.  The Replace Files dialog gives you the following options:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<td>Browse</td><td>Allows broken links to be repaired individually.  This is useful if a file has been renamed rather than moved.  To repair a link, select it in the list (left-click its name), and press Browse.  A file dialog is displayed.  Locate the file, select it, and press Open.  The file's status is updated from Missing to Replaced.</td>
+</tr>
+<tr>
+<td>Search Folder</td><td>Allows you to search for missing files in a specific folder.  The search is recursive, i.e. subfolders of the specified folder are also searched.  Use this option when you know where the missing files are, even approximately.  Press the button, and a folder dialog is displayed.  Locate the folder where you want to start the search, select it, and press OK to begin searching.  Found files will have their statuses updated from Missing to Replaced.  The search can be repeated in different folders, until all the missing files have been found.</td>
+</tr>
+<tr>
+<td>Search All</td><td>Searches for missing files in ALL folders of ALL hard disks.  This can take a long time, so you should only do this if you have no idea where the missing files are.</td>
+</tr>
+<tr>
+<td>OK</td><td>Ends the dialog and opens the document.  Any tracks that still have missing files will be blank; see the warning below.</td>
+</tr>
+<tr>
+<td>Cancel</td><td>Ends the dialog and cancels opening the document.</td>
+</tr>
+</table>
+
+<p>WARNING: If files are still missing when you press "OK", the document opens, but tracks that are missing files will be blank.  If you save the document in this situation, the damaged tracks will be <b>permanently deleted</b>.  To avoid doing this accidentally, save the document under a new name (using <em>File/Save As</em>) before proceeding.
+
+<a name="Recording"><h2>Recording</h2></a>
+
+<p>Mixere does not directly support recording.  To record Mixere's audio output, you must do one of the following things:
+
+<ul>
+<li>Record your sound card's analog output, or its digital output if possible, using some type of external hardware, e.g. Minidisc recorder, DAT recorder, hard-disk recorder, another PC, etc.
+<li>Record Mixere's digital output before it gets to your sound card, using audio capture software.
+</ul>
+
+<p>Audio capture software is the simplest and least expensive option.  There's a ton of it available on the internet, but the main problem is finding something that actually works without accidentally installing spyware or trojans.  In general, if it's free, but not open-source, be very careful.  We've only tried two commercial products so far, and the results are shown below:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col width=100 valign=top>
+<col width=100 valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Company</th><th>Product</th><th>Price</th><th>Results</th>
+</tr>
+<tr>
+<td>High Criteria</td><td>Total Recorder</td><td>$11.95</td><td>Didn't work, and trashed our sound card drivers, requiring a total reinstall of Windows 2000.  NOT recommended.
+</tr>
+<tr>
+<td>River Past</td><td>Audio Capture</td><td>$29.95</td><td>Works great!  Easy to install and use.  Highly recommended.  <a target="_top" href="http://www.riverpast.com/">http://www.riverpast.com/</a>
+</td>
+</tr>
+</table>
+
+<p>Successful audio capture depends heavily on the quality of your sound card.  The default sound cards shipped with most PCs are usually inferior and likely to cause problems.  We're currently using M-Audio's Delta Audiophile 2496.  It's about $100, comes with low-latency ASIO drivers, and is highly recommended.
+
+<p>Any decent audio capture software will allow you to choose your recording sample rate.  The most common choices are 44.1KHz (CD Quality) and 48KHz.  If you intend to create music CDs from your recordings, you should definitely record at 44.1KHz.  Otherwise you'll have to sample-rate convert your recordings later, which will introduce ugly distortion.  If you don't care about burning music CDs, use 48KHz, or try both options and see which one sounds better.
+
+<a name="Troubleshooting"><h2>Troubleshooting</h2></a>
+
+<p>You'll need a WAV file (NOT an MP3) to run the following test.  If you don't have one handy, you can usually find one in C:\WINNT\Media.
+
+<ol>
+<li>Run Mixere, so that you start with an empty document.
+<li>Load the WAV file into a track: choose <em>Load Audio</em> from the File menu, locate the WAV file, left-click it, and press Open.
+<li>Turn up the track's volume (move the volume slider to the right).
+<li>Press the track's play button.
+</ol>
+
+<p>The track's position slider should start moving, and you should hear something.  If the WAV file is large, the position slider might move slowly, but if it never moves, something is wrong.  Maybe you have no sound card?  If the position slider moves, but you don't hear anything, here are some possible causes:
+
+<ol>
+<li>Maybe you don't have the track's volume up high enough.
+<li>Maybe Mixere's master volume is down; to show the master volume slider, choose <em>Master Volume</em> from the View Menu.
+<li>Maybe the Windows volume control is down, or muted.  It's usually found in the system tray, in the lower right corner of the screen.
+<li>If your computer has external speakers, maybe they're not powered on, or they're unplugged, or their volume is down.
+</ol>
+
+<p>Try playing the same WAV file with Windows Media Player or WinAmp (double-click on it from Windows Explorer).  If that doesn't work either, the problem lies outside of Mixere.
+
+<a name="Tips"><h2>Tips</h2></a>
+
+<p>Almost every feature is available from the menus, via Alt or accelerator keys.  Many features are also available from the context menu.  The context menu appears when you right-click anywhere within a track EXCEPT over a slider.
+
+<p>Right-clicking over a slider draws a selection.  If there wasn't a selection before, a new selection is drawn from the slider thumb to the cursor position.  Otherwise the nearest end of the previous selection is extended or trimmed.  It's also possible to draw a new selection by holding down the right button and dragging the cursor.  To delete a selection, right-click on the slider's background; that's the area just outside the slider channel.
+
+<p>For all sliders except position, a selection limits the range of the automation.  If there's no selection, automation uses the slider's full width.  For position sliders, a selection effectively creates a sample within the audio file.
+
+<p>An automation slider can be distinguished from an ordinary slider by its transport indicator, which is a small colored circle on the slider thumb.  To show or hide a slider's automation dialog, press the middle mouse button, AKA the mouse wheel.  Ctrl+left-click also works.  There's also a hidden accelerator key: while a slider has focus, pressing A shows its automation dialog, and pressing A again hides it.
+
+<p>Within a slider, Shift+left-click restores the slider to its default position.  This is mostly useful with pan and pitch sliders.  The arrow, Page Up/Down, Home, and End keys affect the slider position, as does the mouse wheel.
+
+<p>While a dialog has focus, some accelerator keys won't work.  Dialogs can define their own accelerator keys, which may differ from the main menu's.
+
+<p>Many of the control bars contain automation sliders; this means you can automate crossfades, tempo changes, mixer or master volume changes, etc.
+
+<p>A control bar can be shown and hidden using the same accelerator key.  For example, pressing V shows the volume bar, and pressing V again hides it.  The multi-track edit dialogs behave this way too, e.g. F6 both shows and hides Pan.
+
+<p>In general, Edit and Track menu commands operate on either the selected tracks, or if no tracks are selected, on the current track.  The current track is indicated by a red track number.  A track becomes current when its controls are used, or when its context menu is activated.  To make a track current without changing anything else, left-click on the track's name.
+
+<p>Tracks are named after their audio file by default, but they can be renamed.  To rename a track, double-click on its name, or if it's the current track, press F2.
+
+<p>Many operations can be performed on multiple tracks at once, e.g. mute/solo, toggle play, toggle loop, etc. using either the menus or the shortcut keys.
+
+<p>To select a track, left-click over its number.  Shift-left click has the usual effect, and drag selection is also supported.  Selection is a toggle, so tracks can be deselected using left-clicking or drag-selecting.  To deselect all tracks, press Esc, or click on the main window background (if any is visible).  Unlike most Windows programs, Mixere implements multiple selection without the Ctrl key.
+
+<p>Newly-loaded audio files acquire default track attributes.  The default track attributes can be changed using the Set Defaults command.  The idea is that you set one track to have the attributes you want, and then record its attributes, using Set Defaults.  You can restore the standard defaults by using Set Defaults on an empty track.
+
+<h2>Improving Performance</h2>
+
+<a name="Disk_Usage"><h3>Disk Usage</h3></a>
+
+<p>Mixere streams audio directly from the audio files, instead of loading them into memory first.  This has two important advantages:
+
+<ul>
+<li>There's no limit on audio file size.
+<li>Audio can be loaded very quickly.
+</ul>
+
+<p>A disadvantage of this method is that poor disk throughput will degrade Mixere's performance.  This can be an issue with older computers, especially laptops.  The best solution is to store audio files on a fast external hard drive, such as a Firewire drive.
+
+<a name="Memory_Usage"><h3>Memory Usage</h3></a>
+
+<p>Mixere typically uses somewhere between 5M and 15M of memory, which isn't much by today's standards.  However, if memory usage becomes a problem, here are some things to try:
+
+<ul>
+<li>Limit undo levels to 100 or less, using <em>View/Options/General</em>; for details, see <a href="#Options">Options</a>.
+<li>Delete empty tracks from your documents.
+<li>Open less documents at once.
+</ul>
+
+<a name="CPU_Usage"><h3>CPU Usage</h3></a>
+
+<p>Mixere typically uses less than 5% of the CPU.  However, if you have many documents open, or if your documents contain many tracks, or many automations, CPU usage can increase substantially.  If CPU usage becomes a problem, here are some things to try:
+
+<ul>
+<li>Reduce the slider display smoothness, using <em>View/Options/Sliders</em>; for details, see <a href="#Options">Options</a>.
+<li>Delete empty tracks from your documents.
+<li>Open less documents at once.
+<li>Uncheck the "Show window contents while dragging" system property (Settings/Control Panel/Display/Effects); for details, see <a href="#Resizing_Columns">Resizing Columns</a>.
+</ul>
+
+<h1>Reference</h1>
+
+<a name="Track_Attributes"><h2>Track Attributes</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Attribute</th><th>Control</th><th>Description</th>
+</tr>
+<tr>
+<td>Audio File</td><td>N/A</td><td>External link to audio file; not directly changeable by user</td>
+</tr>
+<tr>
+<td>Name</td><td>Edit Box<td>Title of track; initially same as audio filename, but can be changed, using Track/Rename (F2) or by double-clicking name</td>
+</tr>
+<tr>
+<td>Play</td><td>Pushbutton</td><td>When pressed, audio plays from its current position</td>
+</tr>
+<tr>
+<td>Pause</td><td>Pushbutton</td><td>When pressed, audio stops without rewinding</td>
+</tr>
+<tr>
+<td>Stop</td><td>Pushbutton</td><td>When pressed, audio stops and rewinds</td>
+</tr>
+<tr>
+<td>Loop</td><td>Pushbutton</td><td>When pressed, audio loops; otherwise, audio stops by itself when it reaches end-of-file</td>
+</tr>
+<tr>
+<td>Mute</td><td>Pushbutton</td><td>When pressed, track is silenced; normally immediate, but can be made gradual using M/S Fade control bar</td>
+</tr>
+<tr>
+<td>Solo</td><td>Pushbutton</td><td>When pressed, all other tracks are silenced, except for those that are already soloed; normally immediate, but can be made gradual using M/S Fade control bar</td>
+</tr>
+<tr>
+<td>Volume</td><td>Automation Slider</td><td>Adjusts track's volume; can be programmed to move by itself</td>
+</tr>
+<tr>
+<td>Pan</td><td>Automation Slider</td><td>Adjusts track's left/right position; can be programmed to move by itself</td>
+</tr>
+<tr>
+<td>Pitch</td><td>Automation Slider</td><td>Adjusts track's pitch, +/- one octave; can be programmed to move by itself</td>
+</tr>
+<tr>
+<td>Position</td><td>Auto-Trigger Slider</td><td>Adjusts current position in audio file, and allows a subset of audio file to be selected for play; can be programmed to trigger audio at regular intervals</td>
+</tr>
+</table>
+
+<a name="Document_Attributes"><h2>Document Attributes</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Attribute</th><th>Control</th><th>Description</th>
+</tr>
+<tr>
+<td>Channel Count</td><td>Edit Box</td><td>Total number of tracks in the document; set using Properties dialog, <em>File/Properties</em></td>
+</tr>
+<tr>
+<td>Defaults</td><td>N/A</td><td>Default settings that subsequently created tracks will initially have; set from current track, using <em>File/Set Defaults</em></td>
+</tr>
+<tr>
+<td>Volume</td><td>Automation Slider</td><td>Adjusts volume of entire document; show/hide using <em>View/Volume</em> (V)</td>
+</tr>
+<tr>
+<td>Snapshots</td><td>Combo Box</td><td>Saved document states, captured with <em>File/Take Snapshot</em> (Ctrl+T); show/hide list using <em>View/Snapshots</em> (N), or edit list using <em>Edit/Edit Snapshots</em> (Ctrl+E)</td>
+</tr>
+<tr>
+<td>Mute/Solo Fade</td><td>Slider/Edit Box<td>How long subsequent mute/solo operations will take; show/hide using <em>View/M/S Fade</em> (F)</td>
+</tr>
+<tr>
+<td>Tempo</td><td>Automation Slider</td><td>Adjusts speed of all automations and auto-triggers within the document; show/hide using <em>View/Tempo</em> (T)</td>
+</tr>
+</table>
+
+<a name="Multi-Track_Commands"><h2>Multi-Track Commands</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th colspan=3>Commands that affect selected tracks, or the current track if there's no selection</th>
+</tr>
+<tr>
+<td>Copy</td><td>Copy to Clipboard</td><td><em>Edit/Copy</em> (Ctrl+C), Context Menu</td>
+</tr>
+<tr>
+<td>Toggle</td><td>Switch audio between play and pause</td><td><em>Track/Toggle</em> (Space)</td>
+</tr>
+<tr>
+<td>Play</td><td>Play audio</td><td><em>Track/Play</em> (P), Context Menu</td>
+</tr>
+<tr>
+<td>Pause</td><td>Pause audio</td><td><em>Track/Pause</em> (U), Context Menu</td>
+</tr>
+<tr>
+<td>Stop</td><td>Stop audio</td><td><em>Track/Stop</em> (S), Context Menu</td>
+</tr>
+<tr>
+<td>Loop</td><td>Turn looping on/off </td><td><em>Track/Loop</em> (L), Context Menu</td>
+</tr>
+<tr>
+<td>Go</td><td>Unpause audio and automations</td><td><em>Track/Go</em> (Shift+Space)</td>
+</tr>
+<tr>
+<td>Mute</td><td>Mute audio</td><td><em>Track/Mute</em> (M), Context Menu</td>
+</tr>
+<tr>
+<td>Solo</td><td>Solo audio</td><td><em>Track/Solo</em> (/), Context Menu</td>
+</tr>
+<tr>
+<td>Volume</td><td>Adjust volume or volume automation</td><td><em>Track/Volume</em> (F5)</td>
+</tr>
+<tr>
+<td>Pan</td><td>Adjust pan or pan automation</td><td><em>Track/Pan</em> (F6)</td>
+</tr>
+<tr>
+<td>Pitch</td><td>Adjust pitch or pitch automation</td><td><em>Track/Pitch</em> (F7)</td>
+</tr>
+<tr>
+<td>Trigger</td><td>Adjust audio position or auto-trigger</td><td><em>Track/Trigger</em> (F8)</td>
+</tr>
+<tr>
+<th colspan=3>Commands that affect selected tracks, and do nothing if there's no selection
+</tr>
+<tr>
+<td>Cut</td><td>Cut selection and put it on Clipboard</td><td><em>Edit/Cut</em> (Ctrl+X), Context Menu</td>
+</tr>
+<tr>
+<td>Insert</td><td>Insert empty tracks before selection</td><td><em>Edit/Insert</em> (Insert), Context Menu</td>
+</tr>
+<tr>
+<td>Delete</td><td>Delete selection</td><td><em>Edit/Delete</em> (Delete), Context Menu</td>
+</tr>
+<tr>
+<td>Deselect</td><td>Clear selection</td><td><em>Edit/Deselect</em> (Esc), Context Menu</td>
+</tr>
+</table>
+
+<a name="Automation_Slider_Commands"><h2>Automation Slider Commands</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col width=33% valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th colspan=2>Auto-Slider Mouse Commands</td>
+</tr>
+<tr>
+<td>left-click on thumb</td>
+<td>drags thumb</td>
+</tr>
+<tr>
+<td>left-click not on thumb</td>
+<td>thumb jumps to cursor
+</tr>
+<tr>
+<td>Shift+left-click</td>
+<td>restores default thumb position
+</tr>
+<tr>
+<td>Ctrl+left-click</td>
+<td>shows/hides automation dialog
+</tr>
+<tr>
+<td>Alt+left-click</td>
+<td>automates to cursor, using current automation settings
+</tr>
+<tr>
+<td>right-click within channel</td>
+<td>extends/trims selection, or if none exists, creates a selection from thumb to cursor
+</tr>
+<tr>
+<td>right-click within channel and drag</td>
+<td>draws a new selection
+</tr>
+<tr>
+<td>right-click outside of channel</td>
+<td>clears selection
+</tr>
+<tr>
+<td>Ctrl+right-click and drag</td>
+<td>drags selection
+</tr>
+<tr>
+<td>middle-click</td>
+<td>if option "Middle-Click Shows Auto Dialog" is checked, shows/hides automation dialog
+</tr>
+<tr>
+<th colspan=2>Auto-Slider Keyboard Commands</td>
+</tr>
+<tr>
+<td>Right Arrow, Up Arrow</td>
+<td>increases slider value
+</tr>
+<tr>
+<td>Left Arrow, Down Arrow</td>
+<td>decreases slider value
+</tr>
+<tr>
+<td>Home</td>
+<td>sets slider to minimum value
+</tr>
+<tr>
+<td>End</td>
+<td>sets slider to maximum value
+</tr>
+<tr>
+<td>Page Up</td>
+<td>increases slider value by a large amount
+</tr>
+<tr>
+<td>Page Down</td>
+<td>decreases slider value by a large amount
+</tr>
+<tr>
+<td>Shift+Right Arrow, Shift+Up Arrow</td>
+<td>increases slider value by a small amount
+</tr>
+<tr>
+<td>Shift+Left Arrow, Shift+Down Arrow</td>
+<td>decreases slider value by a small amount
+</tr>
+<tr>
+<td>Ctrl+Right Arrow</td>
+<td>increases selection start point
+</tr>
+<tr>
+<td>Ctrl+Left Arrow</td>
+<td>decreases selection start point
+</tr>
+<tr>
+<td>Ctrl+Up Arrow</td>
+<td>increases selection end point
+</tr>
+<tr>
+<td>Ctrl+Down Arrow</td>
+<td>decreases selection end point
+</tr>
+<tr>
+<td>Ctrl+Page Up</td>
+<td>moves entire selection right
+</tr>
+<tr>
+<td>Ctrl+Page Down</td>
+<td>moves entire selection left
+</tr>
+<tr>
+<td>Ctrl+Home</td>
+<td>moves entire selection to far left
+</tr>
+<tr>
+<td>Ctrl+End</td>
+<td>moves entire selection to far right
+</tr>
+<tr>
+<td>Shift+Ctrl+Right Arrow</td>
+<td>increases selection start point by a small amount
+</tr>
+<tr>
+<td>Shift+Ctrl+Left Arrow</td>
+<td>decreases selection start point by a small amount
+</tr>
+<tr>
+<td>Shift+Ctrl+Up Arrow</td>
+<td>increases selection end point by a small amount
+</tr>
+<tr>
+<td>Shift+Ctrl+Down Arrow</td>
+<td>decreases selection end point by a small amount
+</tr>
+<tr>
+<td>Shift+Ctrl+Page Up</td>
+<td>moves entire selection right by a small amount
+</tr>
+<tr>
+<td>Shift+Ctrl+Page Down</td>
+<td>moves entire selection left by a small amount
+</tr>
+<tr>
+<td>A</td>
+<td>shows/hides automation dialog
+</tr>
+</table>
+
+<a name="Mixere_Shortcut_Keys"><h2>Mixere Shortcut Keys</h2></a>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<tr><td>/</td><td>Solo</td><td>Solo on/off</td></tr>
+<tr><td>\</td><td>End Solo</td><td>Exit solo mode</td></tr>
+<tr><td>A</td><td>Auto Dialog</td><td>Show or hide automation dialog</td></tr>
+<tr><td>Ctrl+A</td><td>Select All</td><td>Select the entire document</td></tr>
+<tr><td>Ctrl+C</td><td>Copy</td><td>Copy the selection and put it on the Clipboard</td></tr>
+<tr><td>Ctrl+E</td><td>Edit Snapshots</td><td>Edit mixer snapshot list</td></tr>
+<tr><td>F</td><td>M/S Fade</td><td>Show or hide mute/solo fade bar</td></tr>
+<tr><td>Ctrl+F</td><td>Find</td><td>Find the specified text</td></tr>
+<tr><td>K</td><td>Keep Solo</td><td>Convert solo to mutes</td></tr>
+<tr><td>L</td><td>Loop</td><td>Loop on/off</td></tr>
+<tr><td>Ctrl+L</td><td>Load Audio</td><td>Load one or more audio files</td></tr>
+<tr><td>M</td><td>Mute</td><td>Mute on/off</td></tr>
+<tr><td>N</td><td>Snapshots</td><td>Show or hide the snapshot bar</td></tr>
+<tr><td>Ctrl+N</td><td>New</td><td>Create a new document</td></tr>
+<tr><td>Ctrl+O</td><td>Open</td><td>Open an existing document</td></tr>
+<tr><td>P</td><td>Play</td><td>Play</td></tr>
+<tr><td>S</td><td>Stop</td><td>Stop</td></tr>
+<tr><td>Ctrl+S</td><td>Save</td><td>Save the active document</td></tr>
+<tr><td>T</td><td>Tempo</td><td>Show or hide tempo bar</td></tr>
+<tr><td>Ctrl+T</td><td>Take Snapshot</td><td>Take a snapshot of the document</td></tr>
+<tr><td>U</td><td>Pause</td><td>Pause</td></tr>
+<tr><td>V</td><td>Volume</td><td>Show or hide volume bar</td></tr>
+<tr><td>Ctrl+V</td><td>Paste</td><td>Insert Clipboard contents</td></tr>
+<tr><td>Shift+V</td><td>Master Volume</td><td>Show or hide master volume dialog</td></tr>
+<tr><td>Alt+Backspace</td><td>Undo</td><td>Undo the last action</td></tr>
+<tr><td>Delete</td><td>Delete</td><td>Delete the selection</td></tr>
+<tr><td>Shift+Delete</td><td>Cut</td><td>Cut the selection and put it on the Clipboard</td></tr>
+<tr><td>Esc</td><td>Deselect</td><td>Clear the selection</td></tr>
+<tr><td>F1</td><td>Help</td><td>List Help topics</td></tr>
+<tr><td>F2</td><td>Rename</td><td>Edit name</td></tr>
+<tr><td>F5</td><td>Volume</td><td>Edit volume</td></tr>
+<tr><td>F6</td><td>Pan</td><td>Edit pan</td></tr>
+<tr><td>F7</td><td>Pitch</td><td>Edit pitch</td></tr>
+<tr><td>F8</td><td>Trigger</td><td>Edit trigger</td></tr>
+<tr><td>Insert</td><td>Insert</td><td>Insert empty rows</td></tr>
+<tr><td>Ctrl+Insert</td><td>Copy</td><td>Copy the selection and put it on the Clipboard</td></tr>
+<tr><td>Shift+Insert</td><td>Paste</td><td>Insert Clipboard contents</td></tr>
+<tr><td>Space</td><td>Toggle</td><td>Switch between play and pause</td></tr>
+<tr><td>Shift+Space</td><td>Go</td><td>Play paused items</td></tr>
+<tr><td>X</td><td>Crossfader</td><td>Show or hide crossfader dialog</td></tr>
+<tr><td>Ctrl+X</td><td>Cut</td><td>Cut the selection and put it on the Clipboard</td></tr>
+<tr><td>Ctrl+Y</td><td>Redo</td><td>Redo the previously undone action</td></tr>
+<tr><td>Ctrl+Z</td><td>Undo</td><td>Undo the last action</td></tr>
+</table>
+
+
+</body></html>
