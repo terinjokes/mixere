@@ -27,6 +27,7 @@
 		17		21jan05	add support for HTML help
 		18		27jan05	initialize/uninitialize HTML help to avoid crash on exit
 		19		05feb05	add snapshot hot keys
+		20		26jun05	add retry for help; append help file name to app path
 
         main frame window
  
@@ -46,6 +47,7 @@
 #include "AutoSliderCtrl.h"
 #include "afxpriv.h"	// needed for VerifyDockState
 #include "htmlhelp.h"	// needed for HTML Help API
+#include "shlwapi.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -318,13 +320,28 @@ void CMainFrame::OnMButtonDown(UINT nFlags, CPoint point)
 
 void CMainFrame::WinHelp(DWORD dwData, UINT nCmd) 
 {
-	static LPCSTR	HELP_FILE_NAME = "mixere.chm";
+	static const LPCSTR	HELP_FILE_NAME = "mixere.chm";
 	// if HTML help hasn't been initialized yet, initialize it
 	if (!m_HelpCookie)
 		HtmlHelp(NULL, NULL, HH_INITIALIZE, (DWORD)&m_HelpCookie);
-	if (!HtmlHelp(m_hWnd, HELP_FILE_NAME, HH_DISPLAY_TOC, 0)) {
-		CString	s;
-		AfxFormatString1(s, IDS_HELP_FILE_MISSING, HELP_FILE_NAME);
-		AfxMessageBox(s);
+	HWND retc = HtmlHelp(m_hWnd, HELP_FILE_NAME, HH_DISPLAY_TOC, 0);
+	if (!retc) {	// not found, try appending help file name to app path
+		CString	HelpPath = GetCommandLine();
+		HelpPath.TrimLeft();	// trim leading whitespace just in case
+		if (HelpPath[0] == '"')		// if first char is a quote
+			HelpPath = HelpPath.Mid(1).SpanExcluding("\"");	// span to next quote
+		else
+			HelpPath = HelpPath.SpanExcluding(" \t");	// span to next whitespace
+		char	*p = HelpPath.GetBuffer(0);
+		PathRemoveFileSpec(p);
+		HelpPath.ReleaseBuffer(-1);	// HelpPath now contains app path
+		HelpPath += "\\";
+		HelpPath += HELP_FILE_NAME;
+		retc = HtmlHelp(m_hWnd, HelpPath, HH_DISPLAY_TOC, 0);	// try again
+		if (!retc) {	// not found, give up
+			CString	s;
+			AfxFormatString1(s, IDS_HELP_FILE_MISSING, HELP_FILE_NAME);
+			AfxMessageBox(s);
+		}
 	}
 }

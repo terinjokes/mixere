@@ -13,6 +13,7 @@
 		03		08mar04	in NotifyEdit, ctor isn't called when array shrinks
 		04		12mar04	if coalescing, remove states above current position
 		05		29sep04	cancel edit must update titles
+		06		19mar05	bump m_Edits regardless of number of undo levels
 
         undoable edit interface
  
@@ -90,15 +91,15 @@ void CUndoManager::NotifyEdit(CUndoable *Adr, WORD CtrlID, WORD Code, UINT Flags
 				m_List.SetSize(m_Pos);	// remove states above current position
 			return;
 		}
+		if (!(Flags & CUndoable::UE_INSIGNIFICANT)) {
+			if (!m_Edits++)			// if first modification
+				OnModify(TRUE);		// call derived handler
+		}
 		if (m_Levels <= 0)
 			return;
 		if (m_Pos >= m_Levels) {
 			m_List.RemoveAt(0);
 			m_Pos--;
-		}
-		if (!(Flags & CUndoable::UE_INSIGNIFICANT)) {
-			if (!m_Edits++)			// if first modification
-				OnModify(TRUE);		// call derived handler
 		}
 		m_List.SetSize(m_Pos + 1);	// array shrinks if we've undone
 		CUndoState	*usp = &m_List[m_Pos];

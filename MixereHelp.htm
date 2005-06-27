@@ -1,5 +1,6 @@
 <html><head><title>Mixere Help</title></head><body>
-<h1>Contents</h1>
+<h1>Mixere Help</h1>
+<h2>Contents</h2>
 
 <dl>
 <dt>Getting Started
@@ -72,7 +73,7 @@
 <h1>Getting Started</h1>
 <a name="Introduction"><h2>Introduction</h2></a>
 
-<p>Mixere is a free, open-source application for mixing audio files.  It runs on Windows NT/2000/XP, and supports WAV, MP3, Ogg Vorbis, Flac, and Mod audio files.
+<p>Mixere is a free, open-source application for mixing audio files.  It runs on Windows NT/2000/XP, and supports WAV, AIFF, MP3, Ogg Vorbis, Flac, and Mod audio files.
 
 <p>Mixere is optimized for live performance, and especially for creating live sound collage.  Conceptually, it's like a rack full of CD players connected to an automated mixer.  Mixere's features include dynamic looping of audio, auto-triggering of audio, fully automated sliders, "soft" (gradual) mute/solo operations, crossfading between documents, snapshots, and unlimited undo.
 
@@ -322,7 +323,7 @@
 
 <p>Selections can also be edited using shortcut keys; see <a href="#Automation_Slider_Commands">Automation Slider Commands</a> for details.
 
-<a name="Mute/Solo"><h2>Mute/Solo</h2></a>
+<a name="Mute-Solo"><h2>Mute/Solo</h2></a>
 
 <p>The mute and solo buttons work together to enable or disable a track's audio.  This explanation assumes the track is playing and has a non-zero volume slider.  Put simply, mute silences the track, while solo makes the track audible, and silences all other tracks that aren't also soloed.  Solo "trumps" (overrides) mute, i.e. soloing a track makes it audible regardless of whether it's muted.  The following table illustrates Mute/Solo behavior in detail:
 
@@ -376,7 +377,7 @@
 
 <p>The status bar contains two indicators which reflect the Mute/Solo state of the current document.  The mute indicator is lit while at least one track is muted, and the solo indicator is lit while at least one track is soloed.
 
-<p>It's possible to mute or solo multiple tracks at once, by <a href="#Selecting_Tracks">selecting</a> them first, and then choosing Mute or Solo from the Edit menu, or the context menu.  Note that Mixere also supports "soft" (gradual) mute/solo operations; see <a href="#Mute/Solo_Fade">Mute/Solo Fade</a>.
+<p>It's possible to mute or solo multiple tracks at once, by <a href="#Selecting_Tracks">selecting</a> them first, and then choosing Mute or Solo from the Edit menu, or the context menu.  Note that Mixere also supports "soft" (gradual) mute/solo operations; see <a href="#Mute-Solo_Fade">Mute/Solo Fade</a>.
 
 <a name="Selecting_Tracks"><h2>Selecting Tracks</h2></a>
 
@@ -500,7 +501,7 @@
 
 <p>The master volume slider controls the output level of the entire application.  To show or hide the master volume <a href="#Control_Bars">control bar</a>, select <em>Master Volume</em> from the View menu, or press Shift+V.  Note that the slider supports <a href="#Automation_Sliders">automation</a>, which means you can program Mixere to fade in or out by itself, while you do other tasks.  This is useful when Mixere is combined with other audio applications.  For example, while Mixere fades itself out, you could manually fade in another application.
 
-<a name="Mute/Solo_Fade"><h2>Mute/Solo Fade</h2></a>
+<a name="Mute-Solo_Fade"><h2>Mute/Solo Fade</h2></a>
 
 <p>Mute and solo normally have an instantaneous effect on the audio output, but in Mixere, they can also be made gradual.  This is a very powerful feature, because it allows complex crossfades to be created with minimal user interaction.
 
@@ -764,7 +765,7 @@
 
 <p>Tracks may have been added or deleted since the snapshot was taken.  Added tracks (i.e. tracks that exist in the document, but not in the snapshot) are muted.  Deleted tracks (i.e. tracks that exist in the snapshot, but not in the document) are ignored.
 
-<p><a href="#Mute/Solo_Fade">Mute/Solo Fade</a> affects restoring snapshots.  If the mute/solo fade time is non-zero, any mute/solo buttons that are modified by the restore will have a gradual effect.  If the snapshot and the current state are identical except for mute/solo differences, the restore effectively becomes a crossfade to the snapshot; the mute/solo fade time determines the length of the crossfade.  For best results, combine mute/solo fade with Smooth restore mode, described below.
+<p><a href="#Mute-Solo_Fade">Mute/Solo Fade</a> affects restoring snapshots.  If the mute/solo fade time is non-zero, any mute/solo buttons that are modified by the restore will have a gradual effect.  If the snapshot and the current state are identical except for mute/solo differences, the restore effectively becomes a crossfade to the snapshot; the mute/solo fade time determines the length of the crossfade.  For best results, combine mute/solo fade with Smooth restore mode, described below.
 
 <p>Snapshots can be restored in one of two modes: Exact, or Smooth.  The restore mode is changed using the Edit Snapshots dialog; see <a href="#Editing_Snapshots">Editing Snapshots</a>.
 
