@@ -14,6 +14,7 @@
 		04		24dec04	add GPL text to about box
 		05		26dec04	add hyperlink to about box
 		06		30dec04	override IsIdleMessage to reduce OnIdle overhead
+		07		04jul07	check for minimum audiere version
 
         mixer application
 
@@ -40,6 +41,9 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 LPCSTR	CMixere::HOME_PAGE_URL = "http://mixere.sourceforge.net";
+
+// minimum audiere DLL version; note that initialization is little endian
+static const ULARGE_INTEGER	MIN_AUDIERE_VER = {MAKELONG(0, 4), MAKELONG(9, 1)};
 
 /////////////////////////////////////////////////////////////////////////////
 // CMixere
@@ -72,6 +76,18 @@ CMixere theApp;
 
 BOOL CMixere::InitInstance()
 {
+	VS_FIXEDFILEINFO	DLLInfo;
+	if (CVersionInfo::GetModuleInfo(DLLInfo, "audiere")) {
+		if (DLLInfo.dwFileVersionMS < MIN_AUDIERE_VER.HighPart
+		|| DLLInfo.dwFileVersionLS < MIN_AUDIERE_VER.LowPart) {
+			CString	msg;
+			msg.Format("Wrong version of audiere.dll, must be at least %d.%d.%d.%d",
+				HIWORD(MIN_AUDIERE_VER.HighPart), LOWORD(MIN_AUDIERE_VER.HighPart),
+				HIWORD(MIN_AUDIERE_VER.LowPart), LOWORD(MIN_AUDIERE_VER.LowPart));
+			AfxMessageBox(msg);
+		}
+	}
+
 	AfxEnableControlContainer();
 
 #if SHOW_CONSOLE

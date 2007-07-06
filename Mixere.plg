@@ -7,9 +7,9 @@
 </h3>
 <h3>Command Lines</h3>
 Creating command line "rc.exe /l 0x409 /fo"Release/Mixere.res" /d "NDEBUG" /d "_AFXDLL" "C:\Chris\MyProjects\Mixere\Mixere\Mixere.rc"" 
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16B.tmp" with contents
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP54.tmp" with contents
 [
-/nologo /MD /W3 /GR /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Mixere.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+/nologo /MD /W3 /GR /GX /O2 /I "..\audiere-1.9.4-win32\include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Mixere.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
 "C:\Chris\MyProjects\Mixere\Mixere\AccelTable.cpp"
 "C:\Chris\MyProjects\Mixere\Mixere\Audio.cpp"
 "C:\Chris\MyProjects\Mixere\Mixere\AutoDlg.cpp"
@@ -76,16 +76,16 @@ Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16B.tmp" with con
 "C:\Chris\MyProjects\Mixere\Mixere\VolumeBar.cpp"
 "C:\Chris\MyProjects\Mixere\Mixere\Win32Console.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16B.tmp" 
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16C.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP54.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55.tmp" with contents
 [
-/nologo /MD /W3 /GR /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Mixere.pch" /Yc /Fo"Release/" /Fd"Release/" /FD /c 
+/nologo /MD /W3 /GR /GX /O2 /I "..\audiere-1.9.4-win32\include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/Mixere.pch" /Yc /Fo"Release/" /Fd"Release/" /FD /c 
 "C:\Chris\MyProjects\Mixere\Mixere\StdAfx.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16C.tmp" 
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16D.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP56.tmp" with contents
 [
-audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Mixere.pdb" /machine:I386 /out:"Release/Mixere.exe" 
+..\audiere-1.9.4-win32\lib\audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Mixere.pdb" /machine:I386 /out:"Release/Mixere.exe" 
 .\Release\AccelTable.obj
 .\Release\Audio.obj
 .\Release\AutoDlg.obj
@@ -154,7 +154,7 @@ audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /inc
 .\Release\Win32Console.obj
 .\Release\Mixere.res
 ]
-Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP16D.tmp"
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP56.tmp"
 <h3>Output Window</h3>
 Compiling resources...
 Compiling...
@@ -166,72 +166,58 @@ AutoDlg.cpp
 AutoInfo.cpp
 AutoSliderCtrl.cpp
 AutoSliderDlg.cpp
-Generating Code...
-Compiling...
 AutoSliderDlgBar.cpp
 AutoTriggerCtrl.cpp
 ChanAudio.cpp
 ChanInfo.cpp
 Channel.cpp
 ChildFrm.cpp
-Generating Code...
-Compiling...
 ChildToolTip.cpp
 ClickSliderCtrl.cpp
 Clipboard.cpp
 ColorStatusBar.cpp
 ColumnResizer.cpp
 CrossfaderBar.cpp
-Generating Code...
-Compiling...
 CtrlResize.cpp
 DialogBarEx.cpp
+Generating Code...
+Compiling...
 DialogEx.cpp
 EditSnapsDlg.cpp
 FileSearchDlg.cpp
 FolderDialog.cpp
-Generating Code...
-Compiling...
 FormListHeader.cpp
 FormListInfo.cpp
 FormListItemDlg.cpp
 FormListView.cpp
 HotKeyCtrlEx.cpp
 HotKeyList.cpp
-Generating Code...
-Compiling...
 Hyperlink.cpp
 IconButton.cpp
 MainFrm.cpp
 MissingFilesDlg.cpp
 Mixere.cpp
 MixereDoc.cpp
-Generating Code...
-Compiling...
 MixereView.cpp
 MixerInfo.cpp
 MSFadeBar.cpp
 MultiAutoDlg.cpp
-MultiMix.cpp
-NumEdit.cpp
 Generating Code...
 Compiling...
+MultiMix.cpp
+NumEdit.cpp
 OptionsDlg.cpp
 OptsAppearDlg.cpp
 OptsGeneralDlg.cpp
 OptsSlidersDlg.cpp
 Persist.cpp
 PopupEdit.cpp
-Generating Code...
-Compiling...
 PropertiesDlg.cpp
 ReplaceFilesDlg.cpp
 SelectSliderCtrl.cpp
 SmartBuf.cpp
 Snapshot.cpp
 SnapshotBar.cpp
-Generating Code...
-Compiling...
 StaticEdit.cpp
 SubFileFind.cpp
 TakeSnapDlg.cpp
@@ -247,13 +233,13 @@ VolumeBar.cpp
 Win32Console.cpp
 Generating Code...
 Linking...
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP171.bat" with contents
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5A.bat" with contents
 [
 @echo off
 if exist audiere.dll copy audiere.dll Release
 if exist mixere.chm copy mixere.chm Release
 ]
-Creating command line "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP171.bat"
+Creating command line "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5A.bat"
 
 
 

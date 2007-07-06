@@ -1,6 +1,8 @@
 /**
+ * @file
+ *
  * Audiere Sound System
- * Version 1.9.3
+ * Version 1.9.4
  * (c) 2001-2003 Chad Austin
  *
  * This API uses principles explained at
@@ -12,6 +14,12 @@
  * Note: When compiling this header in gcc, you may want to use the
  * -Wno-non-virtual-dtor flag to get rid of those annoying "class has
  * virtual functions but no virtual destructor" warnings.
+ *
+ * This file is structured as follows:
+ * - includes, macro definitions, other general setup
+ * - interface definitions
+ * - DLL-safe entry points (not for general use)
+ * - inline functions that use those entry points
  */
 
 #ifndef AUDIERE_H
@@ -31,7 +39,7 @@
 #endif
 
 
-// DLLs in Windows should use the standard calling convention
+// DLLs in Windows should use the standard (Pascal) calling convention
 #ifndef ADR_CALL
   #if defined(WIN32) || defined(_WIN32)
     #define ADR_CALL __stdcall
@@ -56,6 +64,7 @@
 
 
 #define ADR_FUNCTION(ret) extern "C" ADR_DECL ret ADR_CALL
+#define ADR_METHOD(ret) virtual ret ADR_CALL
 
 
 namespace audiere {
@@ -75,13 +84,13 @@ namespace audiere {
     /**
      * Add a reference to the internal reference count.
      */
-    virtual void ADR_CALL ref() = 0;
+    ADR_METHOD(void) ref() = 0;
 
     /**
      * Remove a reference from the internal reference count.  When this
      * reaches 0, the object is destroyed.
      */
-    virtual void ADR_CALL unref() = 0;
+    ADR_METHOD(void) unref() = 0;
   };
 
 
@@ -142,6 +151,38 @@ namespace audiere {
   private:
     T* m_ptr;
   };
+
+
+  template<typename T, typename U>
+  bool operator==(const RefPtr<T>& a, const RefPtr<U>& b) {
+      return (a.get() == b.get());
+  }
+
+  template<typename T>
+  bool operator==(const RefPtr<T>& a, const T* b) {
+      return (a.get() == b);
+  }
+
+  template<typename T>
+  bool operator==(const T* a, const RefPtr<T>& b) {
+      return (a == b.get());
+  }
+  
+
+  template<typename T, typename U>
+  bool operator!=(const RefPtr<T>& a, const RefPtr<U>& b) {
+      return (a.get() != b.get());
+  }
+
+  template<typename T>
+  bool operator!=(const RefPtr<T>& a, const T* b) {
+      return (a.get() != b);
+  }
+
+  template<typename T>
+  bool operator!=(const T* a, const RefPtr<T>& b) {
+      return (a != b.get());
+  }
 
 
   /**
@@ -207,7 +248,7 @@ namespace audiere {
      *
      * @return  number of bytes successfully read
      */
-    virtual int ADR_CALL read(void* buffer, int size) = 0;
+    ADR_METHOD(int) read(void* buffer, int size) = 0;
 
     /**
      * Jump to a new position in the file, using the specified seek
@@ -220,14 +261,14 @@ namespace audiere {
      *
      * @return  true on success, false otherwise
      */
-    virtual bool ADR_CALL seek(int position, SeekMode mode) = 0;
+    ADR_METHOD(bool) seek(int position, SeekMode mode) = 0;
 
     /**
      * Get current position within the file.
      *
      * @return  current position
      */
-    virtual int ADR_CALL tell() = 0;
+    ADR_METHOD(int) tell() = 0;
   };
   typedef RefPtr<File> FilePtr;
 
@@ -248,6 +289,7 @@ namespace audiere {
     FF_MP3,
     FF_MOD,
     FF_AIFF,
+    FF_SPEEX,
   };
 
 
@@ -270,7 +312,7 @@ namespace audiere {
      * Retrieve the number of channels, sample rate, and sample format of
      * the sample source.
      */
-    virtual void ADR_CALL getFormat(
+    ADR_METHOD(void) getFormat(
       int& channel_count,
       int& sample_rate,
       SampleFormat& sample_format) = 0;
@@ -284,25 +326,25 @@ namespace audiere {
      *
      * @return  number of frames actually read
      */
-    virtual int ADR_CALL read(int frame_count, void* buffer) = 0;
+    ADR_METHOD(int) read(int frame_count, void* buffer) = 0;
 
     /**
      * Reset the sample source.  This has the same effect as setPosition(0)
      * on a seekable source.  On an unseekable source, it resets all internal
      * state to the way it was when the source was first created.
      */
-    virtual void ADR_CALL reset() = 0;
+    ADR_METHOD(void) reset() = 0;
 
     /**
      * @return  true if the stream is seekable, false otherwise
      */
-    virtual bool ADR_CALL isSeekable() = 0;
+    ADR_METHOD(bool) isSeekable() = 0;
 
     /**
      * @return  number of frames in the stream, or 0 if the stream is not
      *          seekable
      */
-    virtual int ADR_CALL getLength() = 0;
+    ADR_METHOD(int) getLength() = 0;
     
     /**
      * Sets the current position within the sample source.  If the stream
@@ -310,19 +352,19 @@ namespace audiere {
      *
      * @param position  current position in frames
      */
-    virtual void ADR_CALL setPosition(int position) = 0;
+    ADR_METHOD(void) setPosition(int position) = 0;
 
     /**
      * Returns the current position within the sample source.
      *
      * @return  current position in frames
      */
-    virtual int ADR_CALL getPosition() = 0;
+    ADR_METHOD(int) getPosition() = 0;
 
     /**
      * @return  true if the sample source is set to repeat
      */
-    virtual bool ADR_CALL getRepeat() = 0;
+    ADR_METHOD(bool) getRepeat() = 0;
 
     /**
      * Sets whether the sample source should repeat or not.  Note that not
@@ -331,7 +373,28 @@ namespace audiere {
      *
      * @param repeat  true if the source should repeat, false otherwise
      */
-    virtual void ADR_CALL setRepeat(bool repeat) = 0;
+    ADR_METHOD(void) setRepeat(bool repeat) = 0;
+
+    /// Returns number of metadata tags present in this sample source.
+    ADR_METHOD(int) getTagCount() = 0;
+
+    /**
+     * Returns the key of the i'th tag in the source.  If the tag is
+     * "author=me", the key is "author".
+     */
+    virtual const char* ADR_CALL getTagKey(int i) = 0;
+
+    /**
+     * Returns the value of the i'th tag in the source.  If the tag is
+     * "author=me", the value is "me".
+     */
+    virtual const char* ADR_CALL getTagValue(int i) = 0;
+
+    /**
+     * Returns the type of the i'th tag in the source.  The type is where
+     * the tag comes from, i.e. "ID3v1", "ID3v2", or "vorbis".
+     */
+    virtual const char* ADR_CALL getTagType(int i) = 0;
   };
   typedef RefPtr<SampleSource> SampleSourcePtr;
 
@@ -373,7 +436,7 @@ namespace audiere {
      * @param target     frame to jump to after loop point is hit
      * @param loopCount  number of times to execute this jump.
      */
-    virtual void ADR_CALL addLoopPoint(
+    ADR_METHOD(void) addLoopPoint(
       int location, int target, int loopCount) = 0;
 
     /**
@@ -381,12 +444,12 @@ namespace audiere {
      *
      * @param index  index of the loop point to remove
      */
-    virtual void ADR_CALL removeLoopPoint(int index) = 0;
+    ADR_METHOD(void) removeLoopPoint(int index) = 0;
 
     /**
      * Returns the number of loop points in this stream.
      */
-    virtual int ADR_CALL getLoopPointCount() = 0;
+    ADR_METHOD(int) getLoopPointCount() = 0;
 
     /**
      * Retrieves information about a specific loop point.
@@ -398,7 +461,7 @@ namespace audiere {
      *
      * @return  true if the index is valid and information is returned
      */
-    virtual bool ADR_CALL getLoopPoint(
+    ADR_METHOD(bool) getLoopPoint(
       int index, int& location, int& target, int& loopCount) = 0;
   };
   typedef RefPtr<LoopPointSource> LoopPointSourcePtr;
@@ -421,18 +484,18 @@ namespace audiere {
      * Start playback of the output stream.  If the stream is already
      * playing, this does nothing.
      */
-    virtual void ADR_CALL play() = 0;
+    ADR_METHOD(void) play() = 0;
 
     /**
      * Stop playback of the output stream.  If the stream is already
      * stopped, this does nothing.
      */
-    virtual void ADR_CALL stop() = 0;
+    ADR_METHOD(void) stop() = 0;
 
     /**
      * @return  true if the output stream is playing, false otherwise
      */
-    virtual bool ADR_CALL isPlaying() = 0;
+    ADR_METHOD(bool) isPlaying() = 0;
 
     /**
      * Reset the sample source or buffer to the beginning. On seekable
@@ -441,68 +504,68 @@ namespace audiere {
      * On some output streams, this operation can be moderately slow, as up to
      * several seconds of PCM buffer must be refilled.
      */
-    virtual void ADR_CALL reset() = 0;
+    ADR_METHOD(void) reset() = 0;
 
     /**
      * Set whether the output stream should repeat.
      *
      * @param repeat  true if the stream should repeat, false otherwise
      */
-    virtual void ADR_CALL setRepeat(bool repeat) = 0;
+    ADR_METHOD(void) setRepeat(bool repeat) = 0;
 
     /**
      * @return  true if the stream is repeating
      */
-    virtual bool ADR_CALL getRepeat() = 0;
+    ADR_METHOD(bool) getRepeat() = 0;
 
     /**
      * Sets the stream's volume.
      *
      * @param  volume  0.0 = silence, 1.0 = maximum volume (default)
      */
-    virtual void ADR_CALL setVolume(float volume) = 0;
+    ADR_METHOD(void) setVolume(float volume) = 0;
 
     /**
      * Gets the current volume.
      *
      * @return  current volume of the output stream
      */
-    virtual float ADR_CALL getVolume() = 0;
+    ADR_METHOD(float) getVolume() = 0;
 
     /**
      * Set current pan.
      *
      * @param pan  -1.0 = left, 0.0 = center (default), 1.0 = right
      */
-    virtual void ADR_CALL setPan(float pan) = 0;
+    ADR_METHOD(void) setPan(float pan) = 0;
 
     /**
      * Get current pan.
      */
-    virtual float ADR_CALL getPan() = 0;
+    ADR_METHOD(float) getPan() = 0;
 
     /**
      * Set current pitch shift.
      *
      * @param shift  can range from 0.5 to 2.0.  default is 1.0.
      */
-    virtual void ADR_CALL setPitchShift(float shift) = 0;
+    ADR_METHOD(void) setPitchShift(float shift) = 0;
 
     /**
      * Get current pitch shift.  Defaults to 1.0.
      */
-    virtual float ADR_CALL getPitchShift() = 0;
+    ADR_METHOD(float) getPitchShift() = 0;
 
     /**
      * @return  true if the stream is seekable, false otherwise
      */
-    virtual bool ADR_CALL isSeekable() = 0;
+    ADR_METHOD(bool) isSeekable() = 0;
 
     /**
      * @return  number of frames in the stream, or 0 if the stream is not
      *          seekable
      */
-    virtual int ADR_CALL getLength() = 0;
+    ADR_METHOD(int) getLength() = 0;
     
     /**
      * Sets the current position within the sample source.  If the stream
@@ -510,16 +573,116 @@ namespace audiere {
      *
      * @param position  current position in frames
      */
-    virtual void ADR_CALL setPosition(int position) = 0;
+    ADR_METHOD(void) setPosition(int position) = 0;
 
     /**
      * Returns the current position within the sample source.
      *
      * @return  current position in frames
      */
-    virtual int ADR_CALL getPosition() = 0;
+    ADR_METHOD(int) getPosition() = 0;
   };
   typedef RefPtr<OutputStream> OutputStreamPtr;
+
+
+  /// An integral code representing a specific type of event.
+  enum EventType {
+    ET_STOP, ///< See StopEvent and StopCallback
+  };
+
+
+  /// Base interface for event-specific data passed to callbacks.
+  class Event : public RefCounted {
+  protected:
+    ~Event() { }
+
+  public:
+    /// Returns the EventType code for this event.
+    ADR_METHOD(EventType) getType() = 0;
+  };
+  typedef RefPtr<Event> EventPtr;
+
+
+  /**
+   * An event object that gets passed to implementations of StopCallback
+   * when a stream has stopped playing.
+   */
+  class StopEvent : public Event {
+  protected:
+    ~StopEvent() { }
+
+  public:
+    EventType ADR_CALL getType() { return ET_STOP; }
+
+    /// A code representing the reason the stream stopped playback.
+    enum Reason {
+      STOP_CALLED,  ///< stop() was called from an external source.
+      STREAM_ENDED, ///< The stream reached its end.
+    };
+
+    /**
+     * @return Pointer to the OutputStream that stopped playback.
+     */
+    ADR_METHOD(OutputStream*) getOutputStream() = 0;
+
+    /**
+     * @return Reason for the stop event.
+     */
+    ADR_METHOD(Reason) getReason() = 0;
+  };
+  typedef RefPtr<StopEvent> StopEventPtr;
+
+
+  /**
+   * Base interface for all callbacks.  See specific callback implementations
+   * for descriptions.
+   */  
+  class Callback : public RefCounted {
+  protected:
+    ~Callback() { }
+
+  public:
+    /**
+     * Returns the event type that this callback knows how to handle.
+     */
+    ADR_METHOD(EventType) getType() = 0;
+
+    /**
+     * Actually executes the callback with event-specific data.  This is
+     * only called if event->getType() == this->getType().
+     */
+    ADR_METHOD(void) call(Event* event) = 0;
+  };
+  typedef RefPtr<Callback> CallbackPtr;
+
+  
+  /**
+   * To listen for stream stopped events on a device, implement this interface
+   * and call registerStopCallback() on the device, passing your
+   * implementation.  streamStopped() will be called whenever a stream on that
+   * device stops playback.
+   *
+   * WARNING: StopCallback is called from another thread.  Make sure your
+   * callback is thread-safe.
+   */
+  class StopCallback : public Callback {
+  protected:
+    ~StopCallback() { }
+
+  public:
+    EventType ADR_CALL getType() { return ET_STOP; }
+    void ADR_CALL call(Event* event) {
+      streamStopped(static_cast<StopEvent*>(event));
+    }
+
+    /**
+     * Called when a stream has stopped.
+     *
+     * @param event  Information pertaining to the event.
+     */
+    ADR_METHOD(void) streamStopped(StopEvent* event) = 0;
+  };
+  typedef RefPtr<StopCallback> StopCallbackPtr;
 
 
   /**
@@ -540,7 +703,7 @@ namespace audiere {
      * update on an internal thread.  If that is the case, this method
      * does nothing.
      */
-    virtual void ADR_CALL update() = 0;
+    ADR_METHOD(void) update() = 0;
 
     /**
      * Open an output stream with a given sample source.  If the sample
@@ -555,7 +718,7 @@ namespace audiere {
      *
      * @return  new output stream if successful, 0 if failure
      */
-    virtual OutputStream* ADR_CALL openStream(SampleSource* source) = 0;
+    ADR_METHOD(OutputStream*) openStream(SampleSource* source) = 0;
 
     /**
      * Open a single buffer with the specified PCM data.  This is sometimes
@@ -579,7 +742,7 @@ namespace audiere {
      *
      * @return  new output stream if successful, 0 if failure
      */
-    virtual OutputStream* ADR_CALL openBuffer(
+    ADR_METHOD(OutputStream*) openBuffer(
       void* samples,
       int frame_count,
       int channel_count,
@@ -591,7 +754,22 @@ namespace audiere {
      *
      * @return name of audio device
      */
-    virtual const char* ADR_CALL getName() = 0;
+    ADR_METHOD(const char*) getName() = 0;
+
+    /**
+     * Registers 'callback' to receive events.  Callbacks can be
+     * registered multiple times.
+     */
+    ADR_METHOD(void) registerCallback(Callback* callback) = 0;
+    
+    /**
+     * Unregisters 'callback' once.  If it is registered multiple times,
+     * each unregisterStopCallback call unregisters one of the instances.
+     */
+    ADR_METHOD(void) unregisterCallback(Callback* callback) = 0;
+
+    /// Clears all of the callbacks from the device.
+    ADR_METHOD(void) clearCallbacks() = 0;
   };
   typedef RefPtr<AudioDevice> AudioDevicePtr;
 
@@ -615,7 +793,7 @@ namespace audiere {
      * Return the format of the sample data in the sample buffer.
      * @see SampleSource::getFormat
      */
-    virtual void ADR_CALL getFormat(
+    ADR_METHOD(void) getFormat(
       int& channel_count,
       int& sample_rate,
       SampleFormat& sample_format) = 0;
@@ -623,7 +801,7 @@ namespace audiere {
     /**
      * Get the length of the sample buffer in frames.
      */
-    virtual int ADR_CALL getLength() = 0;
+    ADR_METHOD(int) getLength() = 0;
 
     /**
      * Get a readonly pointer to the samples contained within the buffer.  The
@@ -636,7 +814,7 @@ namespace audiere {
      * Open a seekable sample source using the samples contained in the
      * buffer.
      */
-    virtual SampleSource* ADR_CALL openStream() = 0;
+    ADR_METHOD(SampleSource*) openStream() = 0;
   };
   typedef RefPtr<SampleBuffer> SampleBufferPtr;
 
@@ -669,53 +847,196 @@ namespace audiere {
      * starts it again if it is.  If the SoundEffect is of type
      * MULTIPLE, play() simply starts playing the sound again.
      */
-    virtual void ADR_CALL play() = 0;
+    ADR_METHOD(void) play() = 0;
 
     /**
      * If the sound is of type SINGLE, stop the sound.  If it is of
      * type MULTIPLE, stop all playing instances of the sound.
      */
-    virtual void ADR_CALL stop() = 0;
+    ADR_METHOD(void) stop() = 0;
 
     /**
      * Sets the sound's volume.
      *
      * @param  volume  0.0 = silence, 1.0 = maximum volume (default)
      */
-    virtual void ADR_CALL setVolume(float volume) = 0;
+    ADR_METHOD(void) setVolume(float volume) = 0;
 
     /**
      * Gets the current volume.
      *
      * @return  current volume of the output stream
      */
-    virtual float ADR_CALL getVolume() = 0;
+    ADR_METHOD(float) getVolume() = 0;
 
     /**
      * Set current pan.
      *
      * @param pan  -1.0 = left, 0.0 = center (default), 1.0 = right
      */
-    virtual void ADR_CALL setPan(float pan) = 0;
+    ADR_METHOD(void) setPan(float pan) = 0;
 
     /**
      * Get current pan.
      */
-    virtual float ADR_CALL getPan() = 0;
+    ADR_METHOD(float) getPan() = 0;
 
     /**
      * Set current pitch shift.
      *
      * @param shift  can range from 0.5 to 2.0.  default is 1.0.
      */
-    virtual void ADR_CALL setPitchShift(float shift) = 0;
+    ADR_METHOD(void) setPitchShift(float shift) = 0;
 
     /**
      * Get current pitch shift.  Defaults to 1.0.
      */
-    virtual float ADR_CALL getPitchShift() = 0;
+    ADR_METHOD(float) getPitchShift() = 0;
   };
   typedef RefPtr<SoundEffect> SoundEffectPtr;
+
+
+  /**
+   * Represents a device capable of playing CD audio. Internally, this
+   * uses the MCI subsystem in windows and libcdaudio on other platforms.
+   * MCI subsystem: http://msdn.microsoft.com/library/default.asp?url=/library/en-us/multimed/htm/_win32_multimedia_command_strings.asp
+   * libcdaudio: http://cdcd.undergrid.net/libcdaudio/
+   */
+  class CDDevice : public RefCounted {
+  protected:
+    virtual ~CDDevice() { }
+
+  public:
+    /**
+     * Returns the name of this CD Device, often just the device name
+     * it was created with.
+     */
+    virtual const char* ADR_CALL getName() = 0;
+
+    /**
+     * Returns the number of audio tracks on the disc.
+     */
+    ADR_METHOD(int) getTrackCount() = 0;
+
+    /**
+     * Starts playback of the given track. If another track was
+     * already playing, the previous track is stopped.  IMPORTANT: Tracks are
+     * indexed from 0 to getTrackCount() - 1.
+     */
+    ADR_METHOD(void) play(int track) = 0;
+
+    /**
+     * Stops the playback, if the playback was already stopped, this
+     * does nothing.
+     */
+    ADR_METHOD(void) stop() = 0;
+    
+    /**
+     * pauses playback of the track that is currently playing (if any)
+     * This does nothing if no track is playing
+     */
+    ADR_METHOD(void) pause() = 0;
+
+    /**
+     * Resumes playback of the track that is currently paused (if any).
+     * This does nothing if no track is paused.
+     */
+    ADR_METHOD(void) resume() = 0;
+
+    /**
+     * Returns true if the CD is currently playing a sound, this could
+     * be through us, or through some other program.
+     */
+    ADR_METHOD(bool) isPlaying() = 0;
+
+    /**
+     * Returns true if the drive contains a cd. This might be slow
+     * on some systems, use with care.
+     */
+    ADR_METHOD(bool) containsCD() = 0;
+
+    /// Returns true if the door is open.
+    ADR_METHOD(bool) isDoorOpen() = 0;
+
+    /// Opens this device's door.
+    ADR_METHOD(void) openDoor() = 0;
+
+    /// Closes this device's door.
+    ADR_METHOD(void) closeDoor() = 0;
+  };
+  typedef RefPtr<CDDevice> CDDevicePtr;
+
+
+  /**
+   * An opened MIDI song that can be played, stopped, and seeked within.
+   * Uses MCI under Windows and is not supported in other platforms.
+   */
+  class MIDIStream : public RefCounted {
+  protected:
+    virtual ~MIDIStream() { }
+
+  public:
+    /**
+     * Begins playback of the song and does nothing if the song is already
+     * playing.
+     */
+    ADR_METHOD(void) play() = 0;
+
+    /// Stops playback of the song and seeks to the beginning.
+    ADR_METHOD(void) stop() = 0;
+
+    /**
+     * Stops playback of the song and does not change its current position.
+     * A subsequent play() will resume the song where it left off.
+     */
+    ADR_METHOD(void) pause() = 0;
+
+    /// Returns true if the song is currently playing, false otherwise.
+    ADR_METHOD(bool) isPlaying() = 0;
+
+    /// Returns the length of the song in milliseconds.
+    ADR_METHOD(int) getLength() = 0;
+
+    /// Returns the current position of the song in milliseconds.
+    ADR_METHOD(int) getPosition() = 0;
+
+    /// Sets the current position of the song.
+    ADR_METHOD(void) setPosition(int position) = 0;
+
+    /// Returns true if this song is set to repeat.
+    ADR_METHOD(bool) getRepeat() = 0;
+
+    /// Sets whether the song should repeat on completion.  Defaults to false.
+    ADR_METHOD(void) setRepeat(bool repeat) = 0;
+  };
+  typedef RefPtr<MIDIStream> MIDIStreamPtr;
+
+
+  /**
+   * A MIDIDevice must be instantiated in order to open MIDIStreams.
+   */
+  class MIDIDevice : public RefCounted {
+  protected:
+    virtual ~MIDIDevice() { }
+
+  public:
+    /**
+     * Returns the name of the device.
+     */
+    ADR_METHOD(const char*) getName() = 0;
+
+    /**
+     * openStream() creates and returns a new MIDIStream object from the
+     * file with the specified name, which then can be queried and played.
+     * This method returns NULL if the stream cannot be opened.
+     *
+     * Note: MCI subsystem limitations do not allow loading MIDIStream
+     * objects from an audiere File implementation.  This may be addressed
+     * in future versions of this API.
+     */
+    ADR_METHOD(MIDIStream*) openStream(const char* filename) = 0;
+  };
+  typedef RefPtr<MIDIDevice> MIDIDevicePtr;
 
 
   /// PRIVATE API - for internal use only
@@ -791,10 +1112,20 @@ namespace audiere {
     ADR_FUNCTION(File*) AdrCreateMemoryFile(
       const void* buffer,
       int size);
+
+    ADR_FUNCTION(const char*) AdrEnumerateCDDevices();
+
+    ADR_FUNCTION(CDDevice*) AdrOpenCDDevice(
+      const char* name);  // Parameters?
+
+    ADR_FUNCTION(MIDIDevice*) AdrOpenMIDIDevice(
+      const char* name);  // Parameters?
   }
 
 
-  /* PUBLIC API */
+
+
+  /*-------- PUBLIC API FUNCTIONS --------*/
 
 
   /**
@@ -1191,7 +1522,43 @@ namespace audiere {
   inline File* CreateMemoryFile(const void* buffer, int size) {
     return hidden::AdrCreateMemoryFile(buffer, size);
   }
-    
+
+  /**
+   * Generates a list of available CD device names.
+   *
+   * @param devices A vector of strings to be filled.
+   */
+  inline void EnumerateCDDevices(std::vector<std::string>& devices) {
+    const char* d = hidden::AdrEnumerateCDDevices();
+    while (d && *d) {
+      devices.push_back(d);
+      d += strlen(d) + 1;
+    }
+  }
+
+  /**
+   * Opens the specified CD playback device.
+   * 
+   * @param device  The filesystem device to be played.
+   *                e.g. Linux: "/dev/cdrom", Windows: "D:"
+   *
+   * @return  0 if opening device failed, valid CDDrive object otherwise.
+   */
+  inline CDDevice* OpenCDDevice(const char* device) {
+    return hidden::AdrOpenCDDevice(device);
+  }
+
+  /**
+   * Opens the specified MIDI synthesizer device.
+   *
+   * @param device  The name of the device.  Unused for now.
+   *
+   * @return  0 if opening device failed, valid MIDIDevice object otherwise.
+   */
+  inline MIDIDevice* OpenMIDIDevice(const char* device) {
+    return hidden::AdrOpenMIDIDevice(device);
+  }
+
 }
 
 

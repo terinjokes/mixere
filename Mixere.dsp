@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /MD /W3 /GR /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /c
+# ADD CPP /nologo /MD /W3 /GR /GX /O2 /I "..\audiere-1.9.4-win32\include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /c
 # SUBTRACT CPP /Fr
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -54,7 +54,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
-# ADD LINK32 audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /machine:I386
+# ADD LINK32 ..\audiere-1.9.4-win32\lib\audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /machine:I386
 # SUBTRACT LINK32 /profile /debug
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
@@ -75,7 +75,7 @@ PostBuild_Cmds=if exist audiere.dll copy audiere.dll Release	if exist mixere.chm
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ /c
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR /Yu"stdafx.h" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "..\audiere-1.9.4-win32\include" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR /Yu"stdafx.h" /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
@@ -85,7 +85,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /profile /debug /machine:I386
+# ADD LINK32 ..\audiere-1.9.4-win32\lib\audiere.lib shlwapi.lib version.lib htmlhelp.lib /nologo /subsystem:windows /profile /debug /machine:I386
 # Begin Special Build Tool
 SOURCE="$(InputPath)"
 PostBuild_Cmds=if exist audiere.dll copy audiere.dll Debug	if exist mixere.chm copy mixere.chm Debug
@@ -760,36 +760,6 @@ SOURCE=.\ReadMe.txt
 # End Source File
 # End Target
 # End Project
-# Section Mixere : {318F824D-2CBB-4424-84E7-5889CB14CA15}
-# 	2:9:Audio.cpp:Audio.cpp
-# 	2:7:Audio.h:Audio.h
-# 	2:13:CLASS: CAudio:CAudio
-# 	2:19:Application Include:Mixere.h
-# End Section
-# Section Mixere : {95D18748-B99E-47B2-A2ED-D4C68CFE14FA}
-# 	2:17:CLASS: CPopupEdit:CPopupEdit
-# 	2:11:PopupEdit.h:PopupEdit.h
-# 	2:19:Application Include:mixere.h
-# 	2:13:PopupEdit.cpp:PopupEdit.cpp
-# End Section
-# Section Mixere : {80437918-B3BF-4AB9-92FD-8C5C33EB5538}
-# 	2:12:ChildFrm.cpp:ChildFrm.cpp
-# 	2:18:CLASS: CChildFrame:CChildFrame
-# 	2:19:Application Include:Mixere.h
-# 	2:10:ChildFrm.h:ChildFrm.h
-# End Section
-# Section Mixere : {7E9C64DE-517D-474B-B7E4-79438EB6453B}
-# 	2:20:CLASS: CSelectSlider:CSelectSlider
-# 	2:14:SelectSlider.h:SelectSlider.h
-# 	2:19:Application Include:Mixere.h
-# 	2:16:SelectSlider.cpp:SelectSlider.cpp
-# End Section
-# Section Mixere : {D25A274C-9145-4E39-B953-53DF27F749C4}
-# 	2:18:CLASS: CIconButton:CIconButton
-# 	2:12:IconButton.h:IconButton.h
-# 	2:19:Application Include:Mixere.h
-# 	2:14:IconButton.cpp:IconButton.cpp
-# End Section
 # Section Mixere : {C6996E66-E3A3-4944-B15B-B1394A8782D7}
 # 	1:11:IDD_CHANNEL:102
 # 	2:16:Resource Include:resource.h
@@ -800,17 +770,23 @@ SOURCE=.\ReadMe.txt
 # 	2:19:Application Include:Mixere.h
 # 	2:15:CLASS: CChannel:CChannel
 # End Section
-# Section Mixere : {F00DC58C-49C1-4E53-854A-4BDB99679D6F}
-# 	2:13:ClickSlider.h:ClickSlider.h
-# 	2:15:ClickSlider.cpp:ClickSlider.cpp
-# 	2:19:CLASS: CClickSlider:CClickSlider
+# Section Mixere : {D25A274C-9145-4E39-B953-53DF27F749C4}
+# 	2:18:CLASS: CIconButton:CIconButton
+# 	2:12:IconButton.h:IconButton.h
 # 	2:19:Application Include:Mixere.h
+# 	2:14:IconButton.cpp:IconButton.cpp
 # End Section
 # Section Mixere : {EA2A32AF-495B-472B-BFDF-97E00714BFF6}
 # 	2:10:ENUM: enum:enum
 # 	2:16:CLASS: CChanCtrl:CChanCtrl
 # 	2:10:ChanCtrl.h:ChanCtrl.h
 # 	2:12:ChanCtrl.cpp:ChanCtrl.cpp
+# 	2:19:Application Include:Mixere.h
+# End Section
+# Section Mixere : {F00DC58C-49C1-4E53-854A-4BDB99679D6F}
+# 	2:13:ClickSlider.h:ClickSlider.h
+# 	2:15:ClickSlider.cpp:ClickSlider.cpp
+# 	2:19:CLASS: CClickSlider:CClickSlider
 # 	2:19:Application Include:Mixere.h
 # End Section
 # Section Mixere : {D0CA9821-FD85-4EF5-AC35-98003ED8EA3A}
@@ -834,4 +810,28 @@ SOURCE=.\ReadMe.txt
 # 	2:19:Application Include:Mixere.h
 # 	2:18:ColorStatusBar.cpp:ColorStatusBar.cpp
 # 	2:22:CLASS: CColorStatusBar:CColorStatusBar
+# End Section
+# Section Mixere : {80437918-B3BF-4AB9-92FD-8C5C33EB5538}
+# 	2:12:ChildFrm.cpp:ChildFrm.cpp
+# 	2:18:CLASS: CChildFrame:CChildFrame
+# 	2:19:Application Include:Mixere.h
+# 	2:10:ChildFrm.h:ChildFrm.h
+# End Section
+# Section Mixere : {95D18748-B99E-47B2-A2ED-D4C68CFE14FA}
+# 	2:17:CLASS: CPopupEdit:CPopupEdit
+# 	2:11:PopupEdit.h:PopupEdit.h
+# 	2:19:Application Include:mixere.h
+# 	2:13:PopupEdit.cpp:PopupEdit.cpp
+# End Section
+# Section Mixere : {318F824D-2CBB-4424-84E7-5889CB14CA15}
+# 	2:9:Audio.cpp:Audio.cpp
+# 	2:7:Audio.h:Audio.h
+# 	2:13:CLASS: CAudio:CAudio
+# 	2:19:Application Include:Mixere.h
+# End Section
+# Section Mixere : {7E9C64DE-517D-474B-B7E4-79438EB6453B}
+# 	2:20:CLASS: CSelectSlider:CSelectSlider
+# 	2:14:SelectSlider.h:SelectSlider.h
+# 	2:19:Application Include:Mixere.h
+# 	2:16:SelectSlider.cpp:SelectSlider.cpp
 # End Section
