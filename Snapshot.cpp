@@ -231,7 +231,8 @@ bool CSnapshot::Restore(int SnapIdx)
 	WasRestored.SetSize(m_Mixer->GetItemCount());
 	CChanInfo	ci;
 	// for each channel snapshot, try to find the corresponding channel
-	for (int i = 0; i < Chans; i++) {
+	int i;
+	for (i = 0; i < Chans; i++) {
 		GetChanSnap(ci) = m_Snap[pos].m_ChanSnap[i];
 		int	ChanIdx = m_Mixer->FindChanByID(ci.m_ID);
 		if (ChanIdx >= 0) {							// if we found the channel
@@ -303,7 +304,8 @@ void CSnapshot::UpdateList()
 {
 	// generate table of snapshot indices for sort indirection
 	m_SortMap.SetSize(GetCount());
-	for (int i = 0; i < GetCount(); i++)
+	int i;
+	for (i = 0; i < GetCount(); i++)
 		m_SortMap[i] = i;
 	// sort the table; sorting by creation time is the same as sorting by ID,
 	// and that's a no-op because snapshots are physically stored in ID order
@@ -357,7 +359,8 @@ void CSnapshot::Serialize(CArchive& ar, int Version, const CChanInfo *Chan, int 
 				int	j = 0;
 				while (j < sp->m_ChanSnap.GetSize()) {
 					DWORD	ChanID = sp->m_ChanSnap[j].m_ID;
-					for (int k = 0; k < Chans; k++) {	// for each channel
+					int k;
+					for (k = 0; k < Chans; k++) {	// for each channel
 						if (Chan[k].m_ID == ChanID)			// if IDs match
 							break;								// snap is OK
 					}

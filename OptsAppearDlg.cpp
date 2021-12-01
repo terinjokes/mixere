@@ -79,7 +79,8 @@ void COptsAppearDlg::GetColorState()
 {
 	m_ColorWasChanged = FALSE;
 	memset(m_Color, 0, COLOR_SIZE);	// init color list to black
-	for (int i = 0; i < MAX_CUSTOM_COLORS; i++)	// init custom colors to white
+	int i;
+	for (i = 0; i < MAX_CUSTOM_COLORS; i++)	// init custom colors to white
 		m_CustomColor[i] = RGB(255, 255, 255);
 	GetChannelColors();	// copy channel's default color scheme into m_Color
 	m_CustomColor[0] = m_Color[SELECTED];	// default selected color is custom

@@ -72,7 +72,8 @@ void CMultiMix::Create()
 	// create control bars and dock them in a row
 	int	DockStyle = CBRS_ALIGN_TOP | CBRS_ALIGN_BOTTOM;	// horizontal only
 	CControlBar	*LeftOf = m_Frm->GetToolBar();
-	for (int i = 0; i < DLGBARS; i++) {
+	int i;
+	for (i = 0; i < DLGBARS; i++) {
 		m_DlgBar[i]->Create(m_Frm, m_DlgBarResID[i], 0, DockStyle, i, LeftOf);
 		LeftOf = m_DlgBar[i];
 	}

@@ -127,8 +127,8 @@ void CColumnResizer::MoveCol(int Col)
 
 void CColumnResizer::MoveWnd(int WndIdx, int x, int Width)
 {
-	static const LMARGIN = -2;
-	static const RMARGIN = 4;
+	static const UINT LMARGIN = -2;
+	static const UINT RMARGIN = 4;
 	ASSERT(WndIdx >= 0 && WndIdx <= m_Parent.WndIdx);
 	if (WndIdx == m_Parent.WndIdx)
 		x -= GetHScroll();

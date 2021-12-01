@@ -281,8 +281,8 @@ BOOL CMainFrame::DestroyWindow()
 	SaveBarState(REG_SETTINGS);
 	// if HTML help was initialized, uninitialize it
 	if (m_HelpCookie) {
-		HtmlHelp(NULL, NULL, HH_CLOSE_ALL, 0);
-		HtmlHelp(NULL, NULL, HH_UNINITIALIZE, m_HelpCookie);
+		::HtmlHelp(NULL, NULL, HH_CLOSE_ALL, 0);
+		::HtmlHelp(NULL, NULL, HH_UNINITIALIZE, m_HelpCookie);
 	}
 	return CMDIFrameWnd::DestroyWindow();
 }
@@ -323,8 +323,8 @@ void CMainFrame::WinHelp(DWORD dwData, UINT nCmd)
 	static const LPCSTR	HELP_FILE_NAME = "mixere.chm";
 	// if HTML help hasn't been initialized yet, initialize it
 	if (!m_HelpCookie)
-		HtmlHelp(NULL, NULL, HH_INITIALIZE, (DWORD)&m_HelpCookie);
-	HWND retc = HtmlHelp(m_hWnd, HELP_FILE_NAME, HH_DISPLAY_TOC, 0);
+		::HtmlHelp(NULL, NULL, HH_INITIALIZE, (DWORD)&m_HelpCookie);
+	HWND retc = ::HtmlHelp(m_hWnd, HELP_FILE_NAME, HH_DISPLAY_TOC, 0);
 	if (!retc) {	// not found, try appending help file name to app path
 		CString	HelpPath = GetCommandLine();
 		HelpPath.TrimLeft();	// trim leading whitespace just in case
@@ -337,7 +337,7 @@ void CMainFrame::WinHelp(DWORD dwData, UINT nCmd)
 		HelpPath.ReleaseBuffer(-1);	// HelpPath now contains app path
 		HelpPath += "\\";
 		HelpPath += HELP_FILE_NAME;
-		retc = HtmlHelp(m_hWnd, HelpPath, HH_DISPLAY_TOC, 0);	// try again
+		retc = ::HtmlHelp(m_hWnd, HelpPath, HH_DISPLAY_TOC, 0);	// try again
 		if (!retc) {	// not found, give up
 			CString	s;
 			AfxFormatString1(s, IDS_HELP_FILE_MISSING, HELP_FILE_NAME);

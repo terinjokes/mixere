@@ -256,7 +256,7 @@ protected:
 		State.SetDataPtr(uap, Items * sizeof(T));
 		UValItems(State) = Items;
 	}
-	template<class T> GetUndoArray(T*& uap, const CUndoState& State)
+	template<class T> void GetUndoArray(T*& uap, const CUndoState& State)
 	{
 		uap = (T *)State.GetData();
 	}

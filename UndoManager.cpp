@@ -129,7 +129,8 @@ void CUndoManager::CancelEdit(CUndoable *Adr, WORD CtrlID, WORD Code)
 	printf("CancelEdit CtrlID=%d Code=%d Path=%s\n", CtrlID, Code, 
 		CUndoState::PathToString(Path));
 #endif
-	for (int i = m_Pos - 1; i >= 0; i--) {
+	int i;
+	for (i = m_Pos - 1; i >= 0; i--) {
 		if (m_List[i].IsMatch(Path, CtrlID, Code))
 			break;
 	}

@@ -184,7 +184,8 @@ int CFormListView::SetItemCount(int Count)
 		}
 	} else {
 		// close items before deleting them to avoid slow painting
-		for (int i = Count; i < Prev; i++)
+		int i;
+		for (i = Count; i < Prev; i++)
 			m_Item[i]->CloseItem();
 		// now items can be deleted quickly
 		for (i = Count; i < Prev; i++)
@@ -307,7 +308,8 @@ void CFormListView::MoveSortedItems()
 	// move windows in a chain pattern so that no window ever gets overwritten
 	CByteArray	Moved;
 	Moved.SetSize(GetItemCount());
-	for (int i = 0; i < GetItemCount(); i++) {
+	int i;
+	for (i = 0; i < GetItemCount(); i++) {
 		// if window hasn't been moved yet, and needs to move
 		if (!Moved[i] && m_Item[i]->GetIndex() != i) {
 			// first window in the chain; move it out of harm's way
@@ -485,7 +487,8 @@ void CFormListView::OnSelect(CFormListItemDlg *Item, int Flags)
 		int	NewEnd = Item->GetIndex();
 		Sort(NewBeg, NewEnd);
 		// unselect any portion of previous block that's outside new block
-		for (int i = PrevBeg; i <= PrevEnd; i++) {
+		int i;
+		for (i = PrevBeg; i <= PrevEnd; i++) {
 			if (i < NewBeg || i > NewEnd)
 				SetSelect(i, FALSE);
 		}
@@ -612,7 +615,8 @@ void CFormListView::DropItems(int Pos)
 		ip[0] = m_Item[m_CurPos];	// copy item pointer to list
 		m_Item[m_CurPos] = NULL;	// mark element for deletion
 	}
-	for (int i = 0; i < sels; i++)	// insert copied pointers
+	int i;
+	for (i = 0; i < sels; i++)	// insert copied pointers
 		m_Item.InsertAt(Pos + i, ip[i]);
 	i = 0;
 	while (i < GetItemCount()) {	// remove deleted elements
@@ -643,7 +647,8 @@ int CFormListView::Insert(int Pos, const void *Info, int Count, bool Move)
 		CurItem = NULL;
 	// insert items and create them
 	m_Item.InsertAt(Pos, NULL, Count);
-	for (int i = 0; i < Count; i++) {
+	int i;
+	for (i = 0; i < Count; i++) {
 		m_Item[Pos + i] = CreateItem(Pos + i);
 		// if create failed, abort entire insert
 		if (m_Item[Pos + i] == NULL) {

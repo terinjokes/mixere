@@ -384,7 +384,8 @@ BOOL CAutoDlg::OnInitDialog()
 	// init controls from parent's info
 	SetInfoPtr(&m_DefaultInfo);
 	// create additional slider tics
-	for (int i = 0; i <= 12; i++)
+	int i;
+	for (i = 0; i <= 12; i++)
 		m_TimeSlider.SetTic(i * 5);
 	// prevent transport controls from sending undo notifications, because 
 	// they're grouped; we'll send notifications from our clicked handlers

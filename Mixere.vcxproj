@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{82D04DB1-77C1-4599-9E3B-4B73729EAB3C}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.31912.81</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/Mixere.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\audiere-1.9.4-win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/Mixere.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\audiere-1.9.4-win32\lib\audiere.lib;shlwapi.lib;version.lib;htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/Mixere.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>.\Release/Mixere.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/Mixere.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>if exist audiere.dll copy audiere.dll Release
+if exist mixere.chm copy mixere.chm Release
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/Mixere.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\audiere-1.9.4-win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/Mixere.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>audiere.lib;shlwapi.lib;version.lib;htmlhelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/Mixere.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/Mixere.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/Mixere.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>if exist audiere.dll copy audiere.dll Debug
+if exist mixere.chm copy mixere.chm Debug
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AccelTable.cpp" />
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="AutoDlg.cpp" />
+    <ClCompile Include="AutoInfo.cpp" />
+    <ClCompile Include="AutoSliderCtrl.cpp" />
+    <ClCompile Include="AutoSliderDlg.cpp" />
+    <ClCompile Include="AutoSliderDlgBar.cpp" />
+    <ClCompile Include="AutoTriggerCtrl.cpp" />
+    <ClCompile Include="ChanAudio.cpp" />
+    <ClCompile Include="ChanInfo.cpp" />
+    <ClCompile Include="Channel.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ChildToolTip.cpp" />
+    <ClCompile Include="ClickSliderCtrl.cpp" />
+    <ClCompile Include="Clipboard.cpp" />
+    <ClCompile Include="ColorStatusBar.cpp" />
+    <ClCompile Include="ColumnResizer.cpp" />
+    <ClCompile Include="CrossfaderBar.cpp" />
+    <ClCompile Include="CtrlResize.cpp" />
+    <ClCompile Include="DialogBarEx.cpp" />
+    <ClCompile Include="DialogEx.cpp" />
+    <ClCompile Include="EditSnapsDlg.cpp" />
+    <ClCompile Include="FileSearchDlg.cpp" />
+    <ClCompile Include="FolderDialog.cpp" />
+    <ClCompile Include="FormListHeader.cpp" />
+    <ClCompile Include="FormListInfo.cpp" />
+    <ClCompile Include="FormListItemDlg.cpp" />
+    <ClCompile Include="FormListView.cpp" />
+    <ClCompile Include="HotKeyCtrlEx.cpp" />
+    <ClCompile Include="HotKeyList.cpp" />
+    <ClCompile Include="Hyperlink.cpp" />
+    <ClCompile Include="IconButton.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MissingFilesDlg.cpp" />
+    <ClCompile Include="Mixere.cpp" />
+    <ClCompile Include="MixereDoc.cpp" />
+    <ClCompile Include="MixereView.cpp" />
+    <ClCompile Include="MixerInfo.cpp" />
+    <ClCompile Include="MSFadeBar.cpp" />
+    <ClCompile Include="MultiAutoDlg.cpp" />
+    <ClCompile Include="MultiMix.cpp" />
+    <ClCompile Include="NumEdit.cpp" />
+    <ClCompile Include="OptionsDlg.cpp" />
+    <ClCompile Include="OptsAppearDlg.cpp" />
+    <ClCompile Include="OptsGeneralDlg.cpp" />
+    <ClCompile Include="OptsSlidersDlg.cpp" />
+    <ClCompile Include="Persist.cpp" />
+    <ClCompile Include="PopupEdit.cpp" />
+    <ClCompile Include="PropertiesDlg.cpp" />
+    <ClCompile Include="ReplaceFilesDlg.cpp" />
+    <ClCompile Include="SelectSliderCtrl.cpp" />
+    <ClCompile Include="SmartBuf.cpp" />
+    <ClCompile Include="Snapshot.cpp" />
+    <ClCompile Include="SnapshotBar.cpp" />
+    <ClCompile Include="StaticEdit.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SubFileFind.cpp" />
+    <ClCompile Include="TakeSnapDlg.cpp" />
+    <ClCompile Include="TempoBar.cpp" />
+    <ClCompile Include="TimeEdit.cpp" />
+    <ClCompile Include="Undoable.cpp" />
+    <ClCompile Include="UndoManager.cpp" />
+    <ClCompile Include="UndoState.cpp" />
+    <ClCompile Include="VersionInfo.cpp" />
+    <ClCompile Include="VolumeBar.cpp" />
+    <ClCompile Include="Win32Console.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccelTable.h" />
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="AutoDlg.h" />
+    <ClInclude Include="AutoInfo.h" />
+    <ClInclude Include="AutoSliderCtrl.h" />
+    <ClInclude Include="AutoSliderDlg.h" />
+    <ClInclude Include="AutoSliderDlgBar.h" />
+    <ClInclude Include="AutoTriggerCtrl.h" />
+    <ClInclude Include="ChanAudio.h" />
+    <ClInclude Include="ChanInfo.h" />
+    <ClInclude Include="Channel.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ChildTooltip.h" />
+    <ClInclude Include="ClickSliderCtrl.h" />
+    <ClInclude Include="Clipboard.h" />
+    <ClInclude Include="ColorStatusBar.h" />
+    <ClInclude Include="ColumnResizer.h" />
+    <ClInclude Include="CrossfaderBar.h" />
+    <ClInclude Include="CtrlResize.h" />
+    <ClInclude Include="DialogBarEx.h" />
+    <ClInclude Include="DialogEx.h" />
+    <ClInclude Include="EditSnapsDlg.h" />
+    <ClInclude Include="FileSearchDlg.h" />
+    <ClInclude Include="FolderDialog.h" />
+    <ClInclude Include="FormListHeader.h" />
+    <ClInclude Include="FormListInfo.h" />
+    <ClInclude Include="FormListItemDlg.h" />
+    <ClInclude Include="FormListView.h" />
+    <ClInclude Include="HotKeyCtrlEx.h" />
+    <ClInclude Include="HotKeyList.h" />
+    <ClInclude Include="Hyperlink.h" />
+    <ClInclude Include="IconButton.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MissingFilesDlg.h" />
+    <ClInclude Include="Mixere.h" />
+    <ClInclude Include="MixereDoc.h" />
+    <ClInclude Include="MixereView.h" />
+    <ClInclude Include="MixerInfo.h" />
+    <ClInclude Include="MSFadeBar.h" />
+    <ClInclude Include="MultiAutoDlg.h" />
+    <ClInclude Include="MultiMix.h" />
+    <ClInclude Include="NumEdit.h" />
+    <ClInclude Include="OptionsDlg.h" />
+    <ClInclude Include="OptsAppearDlg.h" />
+    <ClInclude Include="OptsGeneralDlg.h" />
+    <ClInclude Include="OptsSlidersDlg.h" />
+    <ClInclude Include="Persist.h" />
+    <ClInclude Include="PopupEdit.h" />
+    <ClInclude Include="PropertiesDlg.h" />
+    <ClInclude Include="ReplaceFilesDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectSliderCtrl.h" />
+    <ClInclude Include="SmartBuf.h" />
+    <ClInclude Include="Snapshot.h" />
+    <ClInclude Include="SnapshotBar.h" />
+    <ClInclude Include="StaticEdit.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="SubFileFind.h" />
+    <ClInclude Include="TakeSnapDlg.h" />
+    <ClInclude Include="TempoBar.h" />
+    <ClInclude Include="TimeEdit.h" />
+    <ClInclude Include="Undoable.h" />
+    <ClInclude Include="UndoManager.h" />
+    <ClInclude Include="UndoState.h" />
+    <ClInclude Include="Version.h" />
+    <ClInclude Include="VersionInfo.h" />
+    <ClInclude Include="VolumeBar.h" />
+    <ClInclude Include="Win32Console.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Mixere.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="License.txt" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\cfdipless.ico" />
+    <None Include="res\cflinear.ico" />
+    <None Include="res\cursor2.cur" />
+    <None Include="res\dragmulti.cur" />
+    <None Include="res\dragsingle.cur" />
+    <None Include="res\loopd.ico" />
+    <None Include="res\loopu.ico" />
+    <None Include="res\minutesd.ico" />
+    <None Include="res\minutesu.ico" />
+    <None Include="res\Mixere.ico" />
+    <None Include="res\Mixere.rc2" />
+    <None Include="res\MixereDoc.ico" />
+    <None Include="res\muted.ico" />
+    <None Include="res\muteu.ico" />
+    <None Include="res\paused.ico" />
+    <None Include="res\pauseu.ico" />
+    <None Include="res\playd.ico" />
+    <None Include="res\playu.ico" />
+    <None Include="res\solod.ico" />
+    <None Include="res\solou.ico" />
+    <None Include="res\sortd.bmp" />
+    <None Include="res\sortu.bmp" />
+    <None Include="res\stagger.ico" />
+    <None Include="res\stopd.ico" />
+    <None Include="res\stopu.ico" />
+    <None Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

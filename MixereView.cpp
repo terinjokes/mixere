@@ -210,7 +210,8 @@ void CMixereView::CreateDlgBars()
 	// create dialog bars and dock them in a row
 	int	DockStyle = CBRS_ALIGN_TOP | CBRS_ALIGN_BOTTOM;	// horizontal only
 	CControlBar	*LeftOf = NULL;
-	for (int i = 0; i < DLGBARS; i++) {
+	int i;
+	for (i = 0; i < DLGBARS; i++) {
 		CDialogBarEx	*Bar = m_DlgBar[i];
 		Bar->Create(m_ChildFrm, m_DlgBarInfo[i].ResID, 0, DockStyle, i, LeftOf);
 		LeftOf = Bar;
@@ -237,7 +238,8 @@ void CMixereView::GetInfo(CMixerInfo& Info) const
 {
 	int	cols = COLUMNS;
 	Info.m_ColumnWidth.SetSize(cols);
-	for (int i = 0; i < cols; i++)
+	int i;
+	for (i = 0; i < cols; i++)
 		Info.m_ColumnWidth[i] = GetColumnWidth(i);
 	int	chans = GetItemCount();
 	Info.m_Chan.SetSize(chans);
@@ -257,7 +259,8 @@ bool CMixereView::SetInfo(const CMixerInfo& Info)
 	m_MSFadeBar.SetInfo(Info.m_MSFade);	// before creating channels
 	// set the column widths
 	int	cols = Info.m_ColumnWidth.GetSize();
-	for (int i = 0; i < cols; i++)
+	int i;
+	for (i = 0; i < cols; i++)
 		SetColumnWidth(i, Info.m_ColumnWidth[i]);
 	// set the channel count
 	int	chans = Info.m_Chan.GetSize();
@@ -488,7 +491,7 @@ void CMixereView::LoadAudio()
 		CChannel::GetFileFilter());
 	// prepare OPENFILENAME struct for multiple select
 	CString	Buffer;
-	const	BUFSIZE = 0x7fff;
+	const	int BUFSIZE = 0x7fff;
 	LPTSTR	FileBuf = Buffer.GetBufferSetLength(BUFSIZE);
 	ZeroMemory(FileBuf, BUFSIZE);
 	fd.m_ofn.lpstrFile = FileBuf;
@@ -537,10 +540,12 @@ void CMixereView::OnDropFiles(CChannel *Chan, HDROP hDropInfo)
 	// assume any non-mixer files are audio files
 	CStringArray	LoadErr;
 	CStringArray	FormatErr;
-	for (UINT i = 0; i < Files; i++) {
+	UINT i;
+	for (i = 0; i < Files; i++) {
 		DragQueryFile(hDropInfo, i, Path, MAX_PATH);
 		if (stricmp(PathFindExtension(Path), MixerExt)) {
-			for (int j = 0; j < ChanExt.GetSize(); j++) {
+			int j;
+			for (j = 0; j < ChanExt.GetSize(); j++) {
 				if (!stricmp(PathFindExtension(Path), ChanExt[j]))
 					break;
 			}
@@ -608,7 +613,8 @@ void CMixereView::TimerHook()
 
 BOOL CMixereView::EnableToolTips(BOOL bEnable)
 {
-	for (int i = 0; i < GetItemCount(); i++)
+	int i;
+	for (i = 0; i < GetItemCount(); i++)
 		GetChan(i)->EnableToolTips(bEnable);
 	for (i = 0; i < DLGBARS; i++)
 		m_DlgBar[i]->EnableToolTips(bEnable);
@@ -652,9 +658,10 @@ void CMixereView::AddStringUnique(CStringArray& StrArr, LPCSTR Str)
 
 void CMixereView::MsgBoxStrList(LPCSTR Msg, const CStringArray& StrArr)
 {
-	static	const	MAX_ERR_LINES = 10;
+	static	const	int MAX_ERR_LINES = 10;
 	CString	s = Msg;
-	for (int i = 0; i < StrArr.GetSize() && i < MAX_ERR_LINES; i++) {
+	int i;
+	for (i = 0; i < StrArr.GetSize() && i < MAX_ERR_LINES; i++) {
 		s += "\n";
 		s += StrArr[i];
 	}

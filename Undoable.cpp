@@ -97,7 +97,8 @@ CUndoManager *CUndoable::FindUndoManager(CUndoState::UNDO_PATH *Path)
 	if (Path != NULL) {
 		// we traversed tree from leaf to root, generating path backwards;
 		// reverse path, so most significant key is furthest from root
-		for (int i = 0; i < KeyIdx; i++)
+		int i;
+		for (i = 0; i < KeyIdx; i++)
 			Path->Key[i] = TmpPath.Key[KeyIdx - i - 1];
 		for (; i < CUndoState::MAX_UNDO_KEYS; i++)	// zero unused keys
 			Path->Key[i] = 0;

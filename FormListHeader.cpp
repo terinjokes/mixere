@@ -40,7 +40,7 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CFormListHeader
 
-const CFormListHeader::HEADER_HEIGHT = 18;
+const int CFormListHeader::HEADER_HEIGHT = 18;
 
 CFormListHeader::CFormListHeader(CFormListView *View) :
 	m_View(View)

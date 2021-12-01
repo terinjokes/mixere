@@ -104,10 +104,10 @@ const	UINT	CChannel::m_AutoNameID[AUTOS] = {
 };
 
 const CChannel::COORD_FUNC CChannel::m_CoordFunc[AUTOS] = {
-	{NormVolume,	DenormVolume},
-	{NormPan,		DenormPan},
-	{NormPitch,		DenormPitch},
-	{NormPos,		DenormPos}
+	{&NormVolume,	&DenormVolume},
+	{&NormPan,		&DenormPan},
+	{&NormPitch,	&DenormPitch},
+	{&NormPos,		&DenormPos}
 };
 
 CChanInfo CChannel::m_DefaultInfo;
@@ -1075,7 +1075,8 @@ BOOL CChannel::OnInitDialog()
 	m_Mute.SetIcons(IDI_MUTEU, IDI_MUTED);
 	m_Solo.SetIcons(IDI_SOLOU, IDI_SOLOD);
 	// init automation sliders
-	for (int i = 0; i < AUTOS; i++) {
+	int i;
+	for (i = 0; i < AUTOS; i++) {
 		m_Auto[i]->SetRange(0, SLIDER_RANGE);
 		m_Auto[i]->CreateTicks(SLIDER_TICKS);
 		m_Auto[i]->SetAutoDlgParent(&m_View);

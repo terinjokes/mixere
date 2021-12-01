@@ -17,33 +17,6 @@
 #include "stdafx.h"
 #include "FolderDialog.h"
 
-bool CFolderDialog::GetItemIdListFromPath(LPWSTR lpszPath, LPITEMIDLIST *lpItemIdList)
-{
-	LPSHELLFOLDER pShellFolder = NULL;
-	HRESULT	hr;
-	ULONG	chUsed;
-	// Get desktop IShellFolder interface
-	if (SHGetDesktopFolder(&pShellFolder) != NOERROR)
-		return(FALSE);     // failed
-	// convert the path to an ITEMIDLIST
-	hr = pShellFolder->ParseDisplayName(NULL, NULL, lpszPath, &chUsed, lpItemIdList, NULL);
-	if (FAILED(hr)) {
-		pShellFolder->Release();
-		*lpItemIdList = NULL;
-		return(FALSE);
-	}
-	pShellFolder->Release();
-	return(TRUE);
-}
-
-bool CFolderDialog::GetItemIdListFromPath(LPCSTR lpszPath, LPITEMIDLIST *lpItemIdList)
-{
-	CWordArray	w;
-	w.SetSize((strlen(lpszPath) + 1) * 2);
-	MultiByteToWideChar(CP_ACP, 0, lpszPath, -1, w.GetData(), w.GetSize());
-	return(GetItemIdListFromPath(w.GetData(), lpItemIdList));
-}
-
 bool CFolderDialog::BrowseFolder(LPCSTR Title, CString& Folder, LPCSTR Root, UINT Flags)
 {
 	LPMALLOC lpMalloc;
@@ -54,7 +27,7 @@ bool CFolderDialog::BrowseFolder(LPCSTR Title, CString& Folder, LPCSTR Root, UIN
 	char szBuffer[_MAX_PATH];
 	LPITEMIDLIST pidlRoot = 0;
 	if (Root)
-		GetItemIdListFromPath(Root, &pidlRoot);
+		__assume(false);
     BROWSEINFO	bi;
 	bi.hwndOwner = AfxGetMainWnd()->m_hWnd;
     bi.pidlRoot = pidlRoot;

@@ -692,7 +692,7 @@ void CAutoSliderCtrl::OnCustomdraw(NMHDR *pNMHDR, LRESULT *pResult)
 	case CDDS_ITEMPOSTPAINT:
 		if (pNMCD->dwItemSpec == TBCD_THUMB) {
 			// draw transport indicator on trackbar's thumb
-			static	const	IndRad = 3;		// indicator radius, in logical coordinates
+			static	const	int IndRad = 3;		// indicator radius, in logical coordinates
 			static	const	CPoint	IndPos(0, -1);	// indicator offset from thumb center
 			CRect	ir;		// indicator rect
 			ir = CRect(m_ThumbRect.CenterPoint(), m_ThumbRect.CenterPoint());

@@ -47,7 +47,7 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CSelectSliderCtrl
 
-static const DRAG_TOLERANCE = 4;	// in logical coordinates
+static const int DRAG_TOLERANCE = 4;	// in logical coordinates
 
 CBrush	CSelectSliderCtrl::m_BrChannel;
 CBrush	CSelectSliderCtrl::m_BrDisabled;

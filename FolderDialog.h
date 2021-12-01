@@ -24,16 +24,6 @@ public:
 		LPCSTR	Root = NULL,	// Optional root path to browse from.
 		UINT	Flags = 0		// See SHBrowseForFolder for more info.
 	);
-
-private:
-	bool	GetItemIdListFromPath(
-		LPWSTR	lpszPath,
-		LPITEMIDLIST	*lpItemIdList
-	);
-	bool	GetItemIdListFromPath(
-		LPCSTR	lpszPath, 
-		LPITEMIDLIST	*lpItemIdList
-	);
 };
 
 #endif

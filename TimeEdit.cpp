@@ -134,7 +134,8 @@ int CTimeEdit::ClampTime(int Time) const
 
 int CTimeEdit::GetAppropriateUnit(int Time)
 {
-	for (int i = 0; i < UNITS; i++) {
+	int i;
+	for (i = 0; i < UNITS; i++) {
 		if (Time / m_Numer[i + 2] == 0)
 			break;
 	}

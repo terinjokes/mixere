@@ -97,7 +97,8 @@ bool CMixerInfo::VerifyAudioLinks()
 	int	Count = m_Chan.GetSize();
 	CStringArray	Path;
 	Path.SetSize(Count);
-	for (int i = 0; i < Count; i++)
+	int i;
+	for (i = 0; i < Count; i++)
 		Path[i] = m_Chan[i].m_Path;
 	CMissingFilesDlg	mfd(Path, CChannel::GetFileFilter());
 	switch (mfd.Check()) {
