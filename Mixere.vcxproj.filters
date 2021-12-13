@@ -428,9 +428,6 @@
     <None Include="res\cflinear.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\cursor2.cur">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\dragmulti.cur">
       <Filter>Resource Files</Filter>
     </None>

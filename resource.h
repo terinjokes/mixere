@@ -1,5 +1,5 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by Mixere.rc
 //
 #define IDR_MAINFRAME                   101
@@ -202,7 +202,6 @@
 #define IDC_DRAG_SINGLE                 1050
 #define IDC_FADER_TYPE                  1051
 #define IDC_FONT_SAMPLE                 1052
-#define IDC_HAND                        1053
 #define IDC_LICENSE                     1054
 #define IDC_LIST                        1055
 #define IDC_MS_FADE_EDIT                1056
@@ -274,10 +273,10 @@
 #define ID_TOOLS_OPTIONS                32814
 
 // Next default values for new objects
-//
+// 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_3D_CONTROLS                1
+#define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        304
 #define _APS_NEXT_COMMAND_VALUE         32815
 #define _APS_NEXT_CONTROL_VALUE         1079

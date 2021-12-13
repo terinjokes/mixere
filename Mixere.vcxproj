@@ -324,7 +324,6 @@ if exist mixere.chm copy mixere.chm Debug
     <None Include="ReadMe.txt" />
     <None Include="res\cfdipless.ico" />
     <None Include="res\cflinear.ico" />
-    <None Include="res\cursor2.cur" />
     <None Include="res\dragmulti.cur" />
     <None Include="res\dragsingle.cur" />
     <None Include="res\loopd.ico" />

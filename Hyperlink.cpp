@@ -31,7 +31,7 @@ static char THIS_FILE[] = __FILE__;
 
 CHyperlink::CHyperlink()
 {
-	m_Cursor = AfxGetApp()->LoadCursor(IDC_HAND);
+	m_Cursor = LoadCursor(nullptr, IDC_HAND);
 	m_Visited = FALSE;
 	m_Hovering = FALSE;
 	m_ColorLink		= RGB(0, 0, 255);	// blue

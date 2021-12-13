@@ -1,4 +1,4 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -27,18 +25,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
     "#define _AFX_NO_OLE_RESOURCES\r\n"
@@ -66,32 +64,51 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Mixere.ico"
-IDI_CFDIPLESS           ICON    DISCARDABLE     "res\\cfdipless.ico"
-IDI_LOOPD               ICON    DISCARDABLE     "res\\loopd.ico"
-IDI_LOOPU               ICON    DISCARDABLE     "res\\loopu.ico"
-IDI_PAUSED              ICON    DISCARDABLE     "res\\paused.ico"
-IDI_PAUSEU              ICON    DISCARDABLE     "res\\pauseu.ico"
-IDI_PLAYD               ICON    DISCARDABLE     "res\\playd.ico"
-IDI_PLAYU               ICON    DISCARDABLE     "res\\playu.ico"
-IDI_STOPD               ICON    DISCARDABLE     "res\\stopd.ico"
-IDI_STOPU               ICON    DISCARDABLE     "res\\stopu.ico"
-IDI_MINUTESU            ICON    DISCARDABLE     "res\\minutesu.ico"
-IDI_MINUTESD            ICON    DISCARDABLE     "res\\minutesd.ico"
-IDI_MUTEU               ICON    DISCARDABLE     "res\\muteu.ico"
-IDI_MUTED               ICON    DISCARDABLE     "res\\muted.ico"
-IDI_SOLOD               ICON    DISCARDABLE     "res\\solod.ico"
-IDI_SOLOU               ICON    DISCARDABLE     "res\\solou.ico"
-IDR_MIXERETYPE          ICON    DISCARDABLE     "res\\MixereDoc.ico"
-IDI_STAGGER             ICON    DISCARDABLE     "res\\stagger.ico"
-IDI_CFLINEAR            ICON    DISCARDABLE     "res\\cflinear.ico"
+IDR_MAINFRAME           ICON                    "res\\Mixere.ico"
+
+IDI_CFDIPLESS           ICON                    "res\\cfdipless.ico"
+
+IDI_LOOPD               ICON                    "res\\loopd.ico"
+
+IDI_LOOPU               ICON                    "res\\loopu.ico"
+
+IDI_PAUSED              ICON                    "res\\paused.ico"
+
+IDI_PAUSEU              ICON                    "res\\pauseu.ico"
+
+IDI_PLAYD               ICON                    "res\\playd.ico"
+
+IDI_PLAYU               ICON                    "res\\playu.ico"
+
+IDI_STOPD               ICON                    "res\\stopd.ico"
+
+IDI_STOPU               ICON                    "res\\stopu.ico"
+
+IDI_MINUTESU            ICON                    "res\\minutesu.ico"
+
+IDI_MINUTESD            ICON                    "res\\minutesd.ico"
+
+IDI_MUTEU               ICON                    "res\\muteu.ico"
+
+IDI_MUTED               ICON                    "res\\muted.ico"
+
+IDI_SOLOD               ICON                    "res\\solod.ico"
+
+IDI_SOLOU               ICON                    "res\\solou.ico"
+
+IDR_MIXERETYPE          ICON                    "res\\MixereDoc.ico"
+
+IDI_STAGGER             ICON                    "res\\stagger.ico"
+
+IDI_CFLINEAR            ICON                    "res\\cflinear.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Menu
 //
 
-IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+IDR_MAINFRAME MENU
 BEGIN
     POPUP "&File"
     BEGIN
@@ -121,7 +138,7 @@ BEGIN
     END
 END
 
-IDR_MIXERETYPE MENU PRELOAD DISCARDABLE 
+IDR_MIXERETYPE MENU
 BEGIN
     POPUP "&File"
     BEGIN
@@ -210,7 +227,7 @@ BEGIN
     END
 END
 
-IDR_POPUP MENU DISCARDABLE 
+IDR_POPUP MENU
 BEGIN
     POPUP "Popup"
     BEGIN
@@ -243,10 +260,10 @@ END
 // Accelerator
 //
 
-IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+IDR_MAINFRAME ACCELERATORS
 BEGIN
-    191,            ID_TOGGLE_SOLO,         VIRTKEY, NOINVERT
-    220,            ID_END_SOLO,            VIRTKEY, NOINVERT
+    VK_OEM_2,       ID_TOGGLE_SOLO,         VIRTKEY, NOINVERT
+    VK_OEM_5,       ID_END_SOLO,            VIRTKEY, NOINVERT
     "A",            ID_TOGGLE_AUTO_DLG,     VIRTKEY, NOINVERT
     "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
     "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
@@ -290,12 +307,12 @@ BEGIN
     "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
 END
 
-IDR_AUTO_SLIDER ACCELERATORS DISCARDABLE 
+IDR_AUTO_SLIDER ACCELERATORS
 BEGIN
     "A",            ID_TOGGLE_AUTO_DLG,     VIRTKEY, NOINVERT
 END
 
-IDR_MULTI_AUTO_DLG ACCELERATORS DISCARDABLE 
+IDR_MULTI_AUTO_DLG ACCELERATORS
 BEGIN
     VK_F5,          ID_AUTO_VOLUME,         VIRTKEY, NOINVERT
     VK_F6,          ID_AUTO_PAN,            VIRTKEY, NOINVERT
@@ -303,7 +320,7 @@ BEGIN
     VK_F8,          ID_AUTO_POS,            VIRTKEY, NOINVERT
 END
 
-IDR_AUTO_DLG ACCELERATORS DISCARDABLE 
+IDR_AUTO_DLG ACCELERATORS
 BEGIN
     "A",            ID_TOGGLE_AUTO_DLG,     VIRTKEY, NOINVERT
     "L",            ID_AUTO_TOGGLE_LOOP,    VIRTKEY, NOINVERT
@@ -323,59 +340,45 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 207, 106
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_ABOUTBOX DIALOG 0, 0, 207, 106
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About Mixere"
 FONT 8, "MS Sans Serif"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
     DEFPUSHBUTTON   "OK",IDOK,160,7,40,14,WS_GROUP
-    EDITTEXT        IDC_LICENSE,7,48,193,51,ES_MULTILINE | ES_READONLY | 
-                    WS_VSCROLL
-    LTEXT           "Mixere\nPowered by Audiere\nCopyLeft 2005 Chris Korda",
-                    IDC_ABOUT_TEXT,40,7,110,24
-    LTEXT           "http://mixere.sourceforge.net",IDC_ABOUT_URL,40,31,110,
-                    8,SS_NOTIFY
+    EDITTEXT        IDC_LICENSE,7,48,193,51,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+    LTEXT           "Mixere\nPowered by Audiere\nCopyLeft 2005 Chris Korda",IDC_ABOUT_TEXT,40,7,110,24
+    LTEXT           "http://mixere.sourceforge.net",IDC_ABOUT_URL,40,31,110,8,SS_NOTIFY
 END
 
-IDD_FORMLIST_FORM DIALOG DISCARDABLE  0, 0, 358, 181
-STYLE WS_CHILD | WS_CLIPCHILDREN
+IDD_FORMLIST_FORM DIALOG 0, 0, 358, 181
+STYLE DS_SETFONT | WS_CHILD | WS_CLIPCHILDREN
 FONT 8, "MS Sans Serif"
 BEGIN
 END
 
 IDD_CHANNEL DIALOGEX 0, 0, 529, 16
-STYLE WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+STYLE DS_SETFONT | WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
 EXSTYLE WS_EX_ACCEPTFILES
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     CTEXT           "",IDC_CH_NUMBER,0,3,16,10,SS_CENTERIMAGE
-    LTEXT           "",IDC_CH_NAME,17,1,112,14,SS_NOPREFIX | SS_NOTIFY | 
-                    SS_CENTERIMAGE,WS_EX_DLGMODALFRAME
-    CONTROL         "Play",IDC_CH_PLAY,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,134,1,14,14
-    CONTROL         "Pause",IDC_CH_PAUSE,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,151,1,14,14
-    CONTROL         "Stop",IDC_CH_STOP,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,168,1,14,14
-    CONTROL         "Loop",IDC_CH_LOOP,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,185,1,14,14
-    CONTROL         "Mute",IDC_CH_MUTE,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,202,1,14,14
-    CONTROL         "Solo",IDC_CH_SOLO,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,219,1,14,14
-    CONTROL         "Volume",IDC_CH_VOL,"msctls_trackbar32",
-                    TBS_ENABLESELRANGE | WS_TABSTOP,238,0,72,16
-    CONTROL         "Pan",IDC_CH_PAN,"msctls_trackbar32",TBS_ENABLESELRANGE | 
-                    WS_TABSTOP,310,0,72,16
-    CONTROL         "Pitch",IDC_CH_PITCH,"msctls_trackbar32",
-                    TBS_ENABLESELRANGE | WS_TABSTOP,382,0,72,16
-    CONTROL         "Position",IDC_CH_POS,"msctls_trackbar32",
-                    TBS_ENABLESELRANGE | WS_TABSTOP,453,0,72,16
+    LTEXT           "",IDC_CH_NAME,17,1,112,14,SS_NOPREFIX | SS_NOTIFY | SS_CENTERIMAGE,WS_EX_DLGMODALFRAME
+    CONTROL         "Play",IDC_CH_PLAY,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,134,1,14,14
+    CONTROL         "Pause",IDC_CH_PAUSE,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,151,1,14,14
+    CONTROL         "Stop",IDC_CH_STOP,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,168,1,14,14
+    CONTROL         "Loop",IDC_CH_LOOP,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,185,1,14,14
+    CONTROL         "Mute",IDC_CH_MUTE,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,202,1,14,14
+    CONTROL         "Solo",IDC_CH_SOLO,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,219,1,14,14
+    CONTROL         "Volume",IDC_CH_VOL,"msctls_trackbar32",TBS_ENABLESELRANGE | WS_TABSTOP,238,0,72,16
+    CONTROL         "Pan",IDC_CH_PAN,"msctls_trackbar32",TBS_ENABLESELRANGE | WS_TABSTOP,310,0,72,16
+    CONTROL         "Pitch",IDC_CH_PITCH,"msctls_trackbar32",TBS_ENABLESELRANGE | WS_TABSTOP,382,0,72,16
+    CONTROL         "Position",IDC_CH_POS,"msctls_trackbar32",TBS_ENABLESELRANGE | WS_TABSTOP,453,0,72,16
 END
 
-IDD_PROPERTIES_DLG DIALOG DISCARDABLE  0, 0, 150, 58
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_PROPERTIES_DLG DIALOG 0, 0, 150, 58
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Properties"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -385,35 +388,25 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,80,37,50,14
 END
 
-IDD_AUTO_DLG DIALOG DISCARDABLE  0, 0, 161, 62
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_AUTO_DLG DIALOG 0, 0, 161, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Automation"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Auto Time",IDC_AUTO_TIME_POS,"msctls_trackbar32",
-                    WS_TABSTOP,5,5,151,16
-    CONTROL         "Auto Play",IDC_AUTO_PLAY,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,5,25,14,14
-    CONTROL         "Auto Pause",IDC_AUTO_PAUSE,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,21,25,14,14
-    CONTROL         "Auto Stop",IDC_AUTO_STOP,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,37,25,14,14
-    CONTROL         "Auto Loop",IDC_AUTO_LOOP,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,53,25,14,14
-    CONTROL         "Auto Minutes",IDC_AUTO_MINUTES,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,69,25,14,14
-    EDITTEXT        IDC_AUTO_TIME_EDIT,85,25,71,14,ES_AUTOHSCROLL | 
-                    ES_WANTRETURN
-    CONTROL         "Auto Time",IDC_AUTO_TIME_SPIN,"msctls_updown32",
-                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,25,11,
-                    14
-    COMBOBOX        IDC_AUTO_WAVEFORM,5,44,72,56,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Auto Time",IDC_AUTO_TIME_POS,"msctls_trackbar32",WS_TABSTOP,5,5,151,16
+    CONTROL         "Auto Play",IDC_AUTO_PLAY,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,5,25,14,14
+    CONTROL         "Auto Pause",IDC_AUTO_PAUSE,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,21,25,14,14
+    CONTROL         "Auto Stop",IDC_AUTO_STOP,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,37,25,14,14
+    CONTROL         "Auto Loop",IDC_AUTO_LOOP,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,53,25,14,14
+    CONTROL         "Auto Minutes",IDC_AUTO_MINUTES,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,69,25,14,14
+    EDITTEXT        IDC_AUTO_TIME_EDIT,85,25,71,14,ES_AUTOHSCROLL | ES_WANTRETURN
+    CONTROL         "Auto Time",IDC_AUTO_TIME_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,25,11,14
+    COMBOBOX        IDC_AUTO_WAVEFORM,5,44,72,56,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Close",IDOK,85,43,71,14
 END
 
-IDD_MISSING_FILES_DLG DIALOG DISCARDABLE  0, 0, 316, 28
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_MISSING_FILES_DLG DIALOG 0, 0, 316, 28
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Missing Files"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -423,14 +416,12 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,239,7,70,14
 END
 
-IDD_REPLACE_FILES_DLG DIALOG DISCARDABLE  0, 0, 273, 242
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_REPLACE_FILES_DLG DIALOG 0, 0, 273, 242
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Replace Files"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,7,7,259,176
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,7,259,176
     PUSHBUTTON      "Browse...",IDC_BROWSE,14,190,72,14
     PUSHBUTTON      "Search Folder...",IDC_SEARCH_FOLDER,100,190,72,14
     PUSHBUTTON      "Search All",IDC_SEARCH_ALL,186,190,72,14
@@ -438,8 +429,8 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,195,221,50,14
 END
 
-IDD_FILE_SEARCH_DLG DIALOG DISCARDABLE  0, 0, 154, 47
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_FILE_SEARCH_DLG DIALOG 0, 0, 154, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "File Search"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -447,201 +438,156 @@ BEGIN
     CTEXT           "Searching...",IDC_STATUS,7,7,140,8
 END
 
-IDD_MULTI_AUTO_DLG DIALOG DISCARDABLE  0, 0, 161, 106
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_MULTI_AUTO_DLG DIALOG 0, 0, 161, 106
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Auto Slider",IDC_AUTO_SLIDER,"msctls_trackbar32",
-                    TBS_ENABLESELRANGE | WS_TABSTOP,5,5,132,16
-    CHECKBOX        "Auto Stagger",IDC_AUTO_STAGGER,142,5,14,14,BS_ICON | 
-                    BS_PUSHLIKE
+    CONTROL         "Auto Slider",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_ENABLESELRANGE | WS_TABSTOP,5,5,132,16
+    CHECKBOX        "Auto Stagger",IDC_AUTO_STAGGER,142,5,14,14,BS_ICON | BS_PUSHLIKE
     LTEXT           "Current:",IDC_STATIC,6,22,26,8
     LTEXT           "Start:",IDC_STATIC,58,22,18,8
     LTEXT           "End:",IDC_STATIC,108,22,16,8
     EDITTEXT        IDC_AUTO_POS_EDIT,5,31,48,14,ES_AUTOHSCROLL
-    CONTROL         "Auto Time",IDC_AUTO_POS_SPIN,"msctls_updown32",
-                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,44,31,11,
-                    14
+    CONTROL         "Auto Time",IDC_AUTO_POS_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,44,31,11,14
     EDITTEXT        IDC_AUTO_START_EDIT,57,31,48,14,ES_AUTOHSCROLL
-    CONTROL         "Auto Time",IDC_AUTO_START_SPIN,"msctls_updown32",
-                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,96,31,11,
-                    14
+    CONTROL         "Auto Time",IDC_AUTO_START_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,96,31,11,14
     EDITTEXT        IDC_AUTO_END_EDIT,108,31,48,14,ES_AUTOHSCROLL
-    CONTROL         "Auto Time",IDC_AUTO_END_SPIN,"msctls_updown32",
-                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,31,11,
-                    14
-    CONTROL         "Auto Time",IDC_AUTO_TIME_POS,"msctls_trackbar32",
-                    WS_TABSTOP,5,49,151,16
-    CONTROL         "Auto Play",IDC_AUTO_PLAY,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,5,69,14,14
-    CONTROL         "Auto Pause",IDC_AUTO_PAUSE,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,21,69,14,14
-    CONTROL         "Auto Stop",IDC_AUTO_STOP,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,37,69,14,14
-    CONTROL         "Auto Loop",IDC_AUTO_LOOP,"Button",BS_3STATE | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,53,69,14,14
-    CONTROL         "Auto Minutes",IDC_AUTO_MINUTES,"Button",BS_AUTOCHECKBOX | 
-                    BS_ICON | BS_PUSHLIKE | WS_TABSTOP,69,69,14,14
-    EDITTEXT        IDC_AUTO_TIME_EDIT,85,69,71,14,ES_AUTOHSCROLL | 
-                    ES_WANTRETURN
-    CONTROL         "Auto Time",IDC_AUTO_TIME_SPIN,"msctls_updown32",
-                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,69,11,
-                    14
-    COMBOBOX        IDC_AUTO_WAVEFORM,5,88,72,56,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Auto Time",IDC_AUTO_END_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,31,11,14
+    CONTROL         "Auto Time",IDC_AUTO_TIME_POS,"msctls_trackbar32",WS_TABSTOP,5,49,151,16
+    CONTROL         "Auto Play",IDC_AUTO_PLAY,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,5,69,14,14
+    CONTROL         "Auto Pause",IDC_AUTO_PAUSE,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,21,69,14,14
+    CONTROL         "Auto Stop",IDC_AUTO_STOP,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,37,69,14,14
+    CONTROL         "Auto Loop",IDC_AUTO_LOOP,"Button",BS_3STATE | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,53,69,14,14
+    CONTROL         "Auto Minutes",IDC_AUTO_MINUTES,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,69,69,14,14
+    EDITTEXT        IDC_AUTO_TIME_EDIT,85,69,71,14,ES_AUTOHSCROLL | ES_WANTRETURN
+    CONTROL         "Auto Time",IDC_AUTO_TIME_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,147,69,11,14
+    COMBOBOX        IDC_AUTO_WAVEFORM,5,88,72,56,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Close",IDOK,85,87,71,14
 END
 
-IDD_CROSSFADER_BAR DIALOG DISCARDABLE  0, 0, 243, 19
-STYLE WS_CHILD
+IDD_CROSSFADER_BAR DIALOG 0, 0, 243, 19
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    COMBOBOX        IDC_SOURCE_A,4,3,72,56,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Slider3",IDC_AUTO_SLIDER,"msctls_trackbar32",
-                    TBS_ENABLESELRANGE | WS_TABSTOP,78,1,72,16
-    COMBOBOX        IDC_SOURCE_B,152,3,72,56,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
-    CONTROL         "",IDC_FADER_TYPE,"Button",BS_AUTOCHECKBOX | BS_ICON | 
-                    BS_PUSHLIKE | WS_TABSTOP,227,3,12,12
+    COMBOBOX        IDC_SOURCE_A,4,3,72,56,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider3",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_ENABLESELRANGE | WS_TABSTOP,78,1,72,16
+    COMBOBOX        IDC_SOURCE_B,152,3,72,56,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_FADER_TYPE,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,227,3,12,12
 END
 
-IDD_VOLUME_BAR DIALOG DISCARDABLE  0, 0, 80, 19
-STYLE WS_CHILD
+IDD_VOLUME_BAR DIALOG 0, 0, 80, 19
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Volume",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_NOTICKS | 
-                    TBS_ENABLESELRANGE | WS_TABSTOP,3,1,72,16
+    CONTROL         "Volume",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_NOTICKS | TBS_ENABLESELRANGE | WS_TABSTOP,3,1,72,16
 END
 
-IDD_TEMPO_BAR DIALOG DISCARDABLE  0, 0, 134, 19
-STYLE WS_CHILD
+IDD_TEMPO_BAR DIALOG 0, 0, 134, 19
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Tempo",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_NOTICKS | 
-                    TBS_ENABLESELRANGE | WS_TABSTOP,3,1,72,16
+    CONTROL         "Tempo",IDC_AUTO_SLIDER,"msctls_trackbar32",TBS_NOTICKS | TBS_ENABLESELRANGE | WS_TABSTOP,3,1,72,16
     EDITTEXT        IDC_BPM_EDIT,78,2,52,14,ES_AUTOHSCROLL
-    CONTROL         "Spin1",IDC_BPM_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | 
-                    UDS_AUTOBUDDY | UDS_ARROWKEYS,124,2,10,14
+    CONTROL         "Spin1",IDC_BPM_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,124,2,10,14
 END
 
-IDD_MS_FADE_BAR DIALOG DISCARDABLE  0, 0, 168, 19
-STYLE WS_CHILD
+IDD_MS_FADE_BAR DIALOG 0, 0, 168, 19
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "M/S Fade",IDC_MS_FADE_SLIDER,"msctls_trackbar32",
-                    WS_TABSTOP,3,1,72,16
-    CONTROL         "M/S Minutes",IDC_MS_FADE_MINUTES,"Button",
-                    BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,78,
-                    2,14,14
+    CONTROL         "M/S Fade",IDC_MS_FADE_SLIDER,"msctls_trackbar32",WS_TABSTOP,3,1,72,16
+    CONTROL         "M/S Minutes",IDC_MS_FADE_MINUTES,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,78,2,14,14
     EDITTEXT        IDC_MS_FADE_EDIT,94,2,70,14,ES_AUTOHSCROLL
-    CONTROL         "Spin1",IDC_MS_FADE_SPIN,"msctls_updown32",
-                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,156,2,12,
-                    14
+    CONTROL         "Spin1",IDC_MS_FADE_SPIN,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,156,2,12,14
 END
 
-IDD_OPTS_SLIDERS_DLG DIALOG DISCARDABLE  0, 0, 170, 101
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_OPTS_SLIDERS_DLG DIALOG 0, 0, 170, 101
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "Sliders"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "Display Smoothness:",IDC_STATIC,57,7,66,8
     RTEXT           "Min",IDC_ANIM_SPEED_MIN,15,21,12,8
-    CONTROL         "Slider1",IDC_ANIM_SPEED,"msctls_trackbar32",
-                    TBS_AUTOTICKS | WS_TABSTOP,33,18,100,20
+    CONTROL         "Slider1",IDC_ANIM_SPEED,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,33,18,100,20
     LTEXT           "Max",IDC_ANIM_SPEED_MAX,139,21,14,8
     CONTROL         "Middle-click shows auto dialog",IDC_AUTO_MIDDLE_CLICK,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,46,112,10
     CONTROL         "Automate volume unpauses audio",IDC_AUTO_VOL_UNPAUSE,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,60,123,10
-    CONTROL         "Auto-trigger turns off audio looping",
-                    IDC_AUTO_TRIG_LOOP_OFF,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,19,75,123,10
+    CONTROL         "Auto-trigger turns off audio looping",IDC_AUTO_TRIG_LOOP_OFF,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,19,75,123,10
 END
 
-IDD_OPTS_GENERAL_DLG DIALOG DISCARDABLE  0, 0, 170, 101
-STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+IDD_OPTS_GENERAL_DLG DIALOG 0, 0, 170, 101
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
 CAPTION "General"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "Undo",IDC_STATIC,14,7,140,33
     RTEXT           "Levels:",IDC_STATIC,27,20,24,8
     EDITTEXT        IDC_UNDO_LEVELS,54,18,30,14,ES_AUTOHSCROLL | ES_NUMBER
-    CONTROL         "Unlimited",IDC_UNDO_UNLIMITED,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,95,20,45,10
-    CONTROL         "Display Tooltips",IDC_DISPLAY_TOOLTIPS,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,52,50,65,10
+    CONTROL         "Unlimited",IDC_UNDO_UNLIMITED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,95,20,45,10
+    CONTROL         "Display Tooltips",IDC_DISPLAY_TOOLTIPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,52,50,65,10
     RTEXT           "Audio Device:",IDC_STATIC,22,73,46,8
-    COMBOBOX        IDC_AUDIO_DEVICE,73,71,71,55,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_AUDIO_DEVICE,73,71,71,55,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
 END
 
-IDD_OPTS_APPEAR_DLG DIALOG DISCARDABLE  0, 0, 168, 101
-STYLE WS_POPUP | WS_DISABLED | WS_CAPTION
+IDD_OPTS_APPEAR_DLG DIALOG 0, 0, 168, 101
+STYLE DS_SETFONT | WS_POPUP | WS_DISABLED | WS_CAPTION
 CAPTION "Appearance"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "Font",IDC_STATIC,7,7,154,51
     PUSHBUTTON      "Choose...",IDC_CHOOSE_FONT,16,17,50,14
     PUSHBUTTON      "Default",IDC_DEFAULT_FONT,72,17,50,14
-    CONTROL         "",IDC_FONT_SAMPLE,"Static",SS_LEFTNOWORDWRAP | 
-                    SS_SUNKEN | WS_GROUP,16,36,136,14
+    CONTROL         "",IDC_FONT_SAMPLE,"Static",SS_LEFTNOWORDWRAP | SS_SUNKEN | WS_GROUP,16,36,136,14
     GROUPBOX        "Color",IDC_STATIC,7,61,154,33
-    COMBOBOX        IDC_COLOR_LIST,15,73,56,43,CBS_DROPDOWNLIST | WS_VSCROLL | 
-                    WS_TABSTOP
+    COMBOBOX        IDC_COLOR_LIST,15,73,56,43,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Choose...",IDC_CHOOSE_COLOR,102,72,50,14
     LTEXT           "",IDC_COLOR_SAMPLE,77,72,18,14,SS_SUNKEN
 END
 
-IDD_EDIT_SNAPS_DLG DIALOG DISCARDABLE  0, 0, 188, 154
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_EDIT_SNAPS_DLG DIALOG 0, 0, 188, 154
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Edit Snapshots"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Snapshots:",IDC_STATIC,7,3,36,8
-    LISTBOX         IDC_SNAP_LIST,7,13,110,107,LBS_NOINTEGRALHEIGHT | 
-                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_SNAP_LIST,7,13,110,107,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     LTEXT           "Shortcut &Key:",IDC_STATIC,7,123,44,8
-    CONTROL         "HotKey1",IDC_SNAP_HOTKEY,"msctls_hotkey32",WS_BORDER | 
-                    WS_TABSTOP,7,133,90,14
+    CONTROL         "HotKey1",IDC_SNAP_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,7,133,90,14
     LTEXT           "S&ort by:",IDC_STATIC,125,3,25,8
-    COMBOBOX        IDC_SNAP_SORT,125,13,56,47,CBS_DROPDOWNLIST | WS_VSCROLL | 
-                    WS_TABSTOP
+    COMBOBOX        IDC_SNAP_SORT,125,13,56,47,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "&Restore",IDC_SNAP_RESTORE,125,30,56,14
     PUSHBUTTON      "Re&name",IDC_SNAP_RENAME,125,48,56,14
     PUSHBUTTON      "&Delete",IDC_SNAP_DELETE,125,66,56,14
     GROUPBOX        "Restore type",IDC_STATIC,125,84,56,36,WS_GROUP
-    CONTROL         "&Exact",IDC_SNAP_EXACT,"Button",BS_AUTORADIOBUTTON | 
-                    WS_GROUP,134,95,34,10
-    CONTROL         "S&mooth",IDC_SNAP_SMOOTH,"Button",BS_AUTORADIOBUTTON,
-                    134,106,40,10
+    CONTROL         "&Exact",IDC_SNAP_EXACT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,134,95,34,10
+    CONTROL         "S&mooth",IDC_SNAP_SMOOTH,"Button",BS_AUTORADIOBUTTON,134,106,40,10
     DEFPUSHBUTTON   "Close",IDOK,125,133,56,14
 END
 
-IDD_SNAPSHOT_BAR DIALOG DISCARDABLE  0, 0, 82, 19
-STYLE WS_CHILD
+IDD_SNAPSHOT_BAR DIALOG 0, 0, 82, 19
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    COMBOBOX        IDC_SNAPSHOT_COMBO,6,3,72,90,CBS_DROPDOWNLIST | 
-                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SNAPSHOT_COMBO,6,3,72,90,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
 END
 
-IDD_TAKE_SNAP_DLG DIALOG DISCARDABLE  0, 0, 150, 68
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_TAKE_SNAP_DLG DIALOG 0, 0, 150, 68
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Take Snapshot"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "Name:",IDC_STATIC,7,8,22,8
     EDITTEXT        IDC_SNAP_NAME_EDIT,33,6,110,14,ES_AUTOHSCROLL
     LTEXT           "Shortcut &Key:",IDC_STATIC,7,27,44,8
-    CONTROL         "HotKey1",IDC_SNAP_HOTKEY,"msctls_hotkey32",WS_BORDER | 
-                    WS_TABSTOP,55,25,88,14
+    CONTROL         "HotKey1",IDC_SNAP_HOTKEY,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,55,25,88,14
     DEFPUSHBUTTON   "OK",IDOK,20,47,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,80,47,50,14
 END
 
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -664,18 +610,14 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", "CKCI\0"
-            VALUE "FileDescription", "Mixere\0"
-            VALUE "FileVersion", "1, 1, 0, 0\0"
-            VALUE "InternalName", "Mixere\0"
-            VALUE "LegalCopyright", "Chris Korda\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "Mixere.EXE\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Mixere Application\0"
-            VALUE "ProductVersion", "1, 1, 0, 0\0"
-            VALUE "SpecialBuild", "\0"
+            VALUE "CompanyName", "CKCI"
+            VALUE "FileDescription", "Mixere"
+            VALUE "FileVersion", "1, 1, 0, 0"
+            VALUE "InternalName", "Mixere"
+            VALUE "LegalCopyright", "Chris Korda"
+            VALUE "OriginalFilename", "Mixere.EXE"
+            VALUE "ProductName", "Mixere Application"
+            VALUE "ProductVersion", "1, 1, 0, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -684,8 +626,6 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -693,7 +633,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -817,16 +757,19 @@ END
 // Bitmap
 //
 
-IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
-IDB_SORTD               BITMAP  DISCARDABLE     "res\\sortd.bmp"
-IDB_SORTU               BITMAP  DISCARDABLE     "res\\sortu.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+IDB_SORTD               BITMAP                  "res\\sortd.bmp"
+
+IDB_SORTU               BITMAP                  "res\\sortu.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Toolbar
 //
 
-IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 20
+IDR_MAINFRAME TOOLBAR 16, 20
 BEGIN
     BUTTON      ID_FILE_NEW
     BUTTON      ID_FILE_OPEN
@@ -851,28 +794,29 @@ END
 // Cursor
 //
 
-IDC_DRAG_SINGLE         CURSOR  DISCARDABLE     "res\\dragsingle.cur"
-IDC_DRAG_MULTI          CURSOR  DISCARDABLE     "res\\dragmulti.cur"
-IDC_HAND                CURSOR  DISCARDABLE     "res\\cursor2.cur"
+IDC_DRAG_SINGLE         CURSOR                  "res\\dragsingle.cur"
+
+IDC_DRAG_MULTI          CURSOR                  "res\\dragmulti.cur"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE PRELOAD DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDR_MAINFRAME           "Mixere"
     IDR_MIXERETYPE          "\nMixere\nMixere\nMixere Files (*.mix)\n.mix\nMixere.Document\nMixere Document"
 END
 
-STRINGTABLE PRELOAD DISCARDABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_APP_TITLE       "Mixere"
     AFX_IDS_IDLEMESSAGE     "Ready"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_FILE_NEW             "Create a new document\nNew"
     ID_FILE_OPEN            "Open an existing document\nOpen"
@@ -881,14 +825,14 @@ BEGIN
     ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_APP_ABOUT            "Display program information, version number and copyleft\nAbout"
     ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
     ID_HELP_INDEX           "List Help topics\nHelp"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_FILE_MRU_FILE1       "Open this document"
     ID_FILE_MRU_FILE2       "Open this document"
@@ -908,13 +852,13 @@ BEGIN
     ID_FILE_MRU_FILE16      "Open this document"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
     ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_WINDOW_ARRANGE       "Arrange all minimized document windows\nArrange Icons"
     ID_WINDOW_CASCADE       "Arrange the windows as overlapping tiles\nCascade"
@@ -923,7 +867,7 @@ BEGIN
     ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_EDIT_CLEAR           "Erase the selection\nErase"
     ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
@@ -938,7 +882,7 @@ BEGIN
     ID_EDIT_REDO            "Redo the previously undone action\nRedo"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_SCSIZE          "Change the window size"
     AFX_IDS_SCMOVE          "Change the window position"
@@ -949,13 +893,13 @@ BEGIN
     AFX_IDS_SCCLOSE         "Close the active window and prompt to save the documents"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_SCRESTORE       "Restore the window to normal size"
     AFX_IDS_SCTASKLIST      "Activate Task List"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_AUTO_WAVEFORM       "Auto Waveform"
     IDS_AUTO_WAVE_RAMP_DOWN "Ramp Down"
@@ -975,7 +919,7 @@ BEGIN
     IDS_CH_NUMBER           "#"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_CH_PAN              "Pan"
     IDS_CH_PAUSE            "Pause"
@@ -995,7 +939,7 @@ BEGIN
     IDS_FLU_COLUMN_WIDTH    "Column Width"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_FLU_CUT             "Cut"
     IDS_FLU_DELETE          "Delete"
@@ -1015,7 +959,7 @@ BEGIN
     IDS_MASTER              "Master"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_MASTER_VOLUME       "Master Volume"
     IDS_MS_FADE_BAR         "M/S Fade"
@@ -1035,7 +979,7 @@ BEGIN
     IDS_MU_SHOW_SNAPSHOT    "Show Snapshots"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_APP_ABOUT_LICENSE   "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111 USA."
     IDS_APP_ABOUT_TEXT      "Mixere Version %d.%d.%d.%d\nCopyleft 2005 Chris Korda\nPowered by Audiere %d.%d.%d.%d"
@@ -1047,7 +991,7 @@ BEGIN
     IDS_AUTO_TRANSPORT      "Auto Transport"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_MU_SHOW_TEMPO       "Show Tempo"
     IDS_MU_SHOW_VOLUME      "Show Volume"
@@ -1067,7 +1011,7 @@ BEGIN
     IDS_SSK_ASSIGNED        "Key '%1' is assigned to '%2'.\nReassign it to '%3'?"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_SSK_RSVD_CMD        "Key '%1' is reserved for '%2'."
     IDS_SSK_RSVD_MENU       "Key '%1' is reserved for menus."
@@ -1087,7 +1031,7 @@ BEGIN
     IDS_VOLUME_BAR          "Volume"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_CONTEXT_INSERT       "Insert empty rows\nInsert"
     ID_CROSSFADER           "Show or hide crossfader dialog\nCrossfader"
@@ -1107,7 +1051,7 @@ BEGIN
     ID_MIXER_TEMPO          "Show or hide tempo bar\nTempo"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_MIXER_VOLUME         "Show or hide volume bar\nVolume"
     ID_MS_FADE              "Show or hide mute/solo fade bar\nM/S Fade"
@@ -1126,7 +1070,7 @@ BEGIN
     ID_TOOLS_OPTIONS        "Display options dialog\nOptions"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_AUTO_PAN             "Edit pan\nPan"
     ID_AUTO_PITCH           "Edit pitch\nPitch"
@@ -1137,13 +1081,13 @@ BEGIN
     ID_CONTEXT_DELETE       "Delete the selection\nDelete"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_VIEW_TOOLBAR         "Shows or hides the toolbar\nToolbar"
     ID_VIEW_STATUS_BAR      "Shows or hides the status bar\nStatus bar"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDC_AUTO_END_SPIN       "Fine up/down"
     IDC_AUTO_LOOP           "Loop automation"
@@ -1162,19 +1106,19 @@ BEGIN
     IDC_AUTO_TIME_SPIN      "Fine up/down"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDC_AUTO_WAVEFORM       "Automation waveform"
     IDC_BPM_EDIT            "Beats per minute"
     IDC_BPM_SPIN            "Fine up/down"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDC_FADER_TYPE          "Crossfade type"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDC_MS_FADE_EDIT        "Mute/solo time"
     IDC_MS_FADE_MINUTES     "Minutes/seconds"
@@ -1182,18 +1126,18 @@ BEGIN
     IDC_MS_FADE_SPIN        "Fine up/down"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDC_SOURCE_A            "Source A"
     IDC_SOURCE_B            "Source B"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDC_AUTO_END_EDIT       "Selection end"
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
