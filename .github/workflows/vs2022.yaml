@@ -1,0 +1,30 @@
+name: VS2022
+on:
+  - push
+  - pull_request
+
+jobs:
+  VS2022-Build:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+      - name: Build
+        shell: cmd
+        run: |
+          msbuild ./Mixere.sln /m /p:Configuration=Release,Platform=Win32
+          move .\Release\Mixere.exe .\Mixere_x86.exe
+      - name: Display SHA-256
+        run: sha256sum ./Mixere_x86.exe
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ github.event_name == 'push' }}
+        with:
+          name: VS2022
+          path: ./*.exe
