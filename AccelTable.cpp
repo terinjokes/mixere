@@ -100,7 +100,7 @@ CString CAccelTable::GetKeyNameText(LONG lParam)
 
 void CAccelTable::GetKeyName(const ACCEL& Accel, CString& KeyName)
 {
-	// this code thanks to Jörgen Sigvardsson
+	// this code thanks to JÃ¶rgen Sigvardsson
 	CString	s;
 	if (Accel.fVirt & FALT)
 		s += GetKeyNameText(MapVirtualKey(VK_MENU, 0));
