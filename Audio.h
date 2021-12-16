@@ -88,7 +88,7 @@ public:
 	static	double	LinearToLog(double x);	// for pitch to normal
 
 // Device handling
-	static	void	GetDeviceList(CStringArray& List);
+	static	std::vector<std::string> GetDeviceList();
 	static	LPCSTR	GetDevice();
 	static	bool	SetDevice(LPCSTR DeviceName);
 	static	bool	IsDeviceInUse();

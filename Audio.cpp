@@ -297,13 +297,19 @@ int CAudio::SecsToFrames(float Secs) const
 	return(int(Secs * m_SampleRate + 0.5));
 }
 
-void CAudio::GetDeviceList(CStringArray& List)
+std::vector<std::string> CAudio::GetDeviceList()
 {
-	vector<AudioDeviceDesc>	s;
+	std::vector<AudioDeviceDesc> s;
 	GetSupportedAudioDevices(s);
-	List.RemoveAll();
-	for (int i = 0; i < s.size(); i++)
-		List.Add(s[i].name.c_str());
+
+	std::vector<std::string> res;
+	res.reserve(s.size());
+	for (const auto& add : s)
+	{
+		res.push_back(add.name);
+	}
+
+	return res;
 }
 
 bool CAudio::SetDevice(LPCSTR DeviceName)

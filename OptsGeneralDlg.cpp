@@ -71,19 +71,16 @@ void COptsGeneralDlg::DoDataExchange(CDataExchange* pDX)
 
 void COptsGeneralDlg::PopulateAudioDevList()
 {
-	CStringArray	DevList;
-	CAudio::GetDeviceList(DevList);	// get device list from audio
-	CString	CurDev = m_CurAudioDev;
-	if (CurDev.IsEmpty())
-		CurDev = DEV_DEFAULT;
+	auto devlist = CAudio::GetDeviceList();
+	auto curdev = m_CurAudioDev.IsEmpty() ? DEV_DEFAULT : m_CurAudioDev;
+
 	m_AudioDevList.AddString(DEV_DEFAULT);
-	int	DevIdx = 0;
-	for (int i = 0; i < DevList.GetSize(); i++) {	// populate list
-		m_AudioDevList.AddString(DevList[i]);
-		if (DevList[i] == CurDev)
-			DevIdx = i + 1;
+	for (const auto& dev : devlist)
+	{
+		m_AudioDevList.AddString(dev.c_str());
 	}
-	m_AudioDevList.SetCurSel(DevIdx);	// set current selection
+
+	m_AudioDevList.SelectString(0, curdev);
 }
 
 void COptsGeneralDlg::SetAudioDevice()
