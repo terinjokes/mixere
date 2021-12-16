@@ -14,7 +14,7 @@ Mixere is an audio mixer for live productions. This repository contains my fork,
   - Works well in WINE.
 
 * Building
-** Windows 
+** Windows
   Mixere dates from the late 90s and early 2000s, and thus is not (yet) 64-bit compatible. Howver, the 32-bit debug and release builds can be built by opening the project file (Mixere.vcproj) in Visual Studio 2022.
 
 ** Elsewhere
@@ -23,4 +23,4 @@ Mixere is an audio mixer for live productions. This repository contains my fork,
    If you have success, do open an issue to explain how. Otherwise, for now, you're on your own.
    
 * License
-  Mixere is licensed under the [[./License.txt][GNU General Public License version 2]].
+  Mixere is licensed under the [[./License.txt][GNU General Public License version 2]] (or later).
