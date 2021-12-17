@@ -2,50 +2,61 @@
 // This program is free software; you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by the Free
 // Software Foundation; either version 2 of the License, or any later version.
-/*
-        chris korda
- 
-		revision history:
-		rev		date	comments
-        00      19jan04	initial version
-
-        retrieve version information
- 
-*/
 
 #include "stdafx.h"
 #include "VersionInfo.h"
 
-bool CVersionInfo::GetFileInfo(VS_FIXEDFILEINFO& Info, LPCSTR Path)
+#include <tuple>
+
+std::tuple<VS_FIXEDFILEINFO, bool> CVersionInfo::GetFileInfo(const std::string& path)
 {
-	ZeroMemory(&Info, sizeof(VS_FIXEDFILEINFO));
-	char	module[MAX_PATH];
-	if (Path != NULL)
-		strncpy(module, Path, MAX_PATH);
-	else
+	VS_FIXEDFILEINFO info;
+	std::string mod_path = path;
+	if (path.empty())
+	{
+		char module[MAX_PATH];
 		GetModuleFileName(AfxGetInstanceHandle(), module, MAX_PATH);
+		mod_path = module;
+	}
+
 	DWORD	handle;
-	DWORD	size = GetFileVersionInfoSize(module, &handle);
-	if (size) {
-		CString	buffer;
-		char	*pData = buffer.GetBuffer(size);
-		if (GetFileVersionInfo(module, handle, size, pData)) {
-			UINT	uInfoSize = 0;
-			PVOID	pInfo;
-			if (VerQueryValue(pData, "\\", &pInfo, &uInfoSize)) {
-				Info = *((VS_FIXEDFILEINFO *)pInfo);
-				return(TRUE);
-			}
+	const DWORD	size = GetFileVersionInfoSize(mod_path.c_str(), &handle);
+
+	if (!size)
+	{
+		return std::make_tuple(info, false);
+	}
+
+	std::vector<char> buffer(size);
+	if (GetFileVersionInfo(mod_path.c_str(), handle, size, buffer.data()))
+	{
+		UINT info_size = 0;
+		PVOID ffi;
+		if (VerQueryValue(buffer.data(), "\\", &ffi, &info_size))
+		{
+			info = *static_cast<VS_FIXEDFILEINFO*>(ffi);
+			return std::make_tuple(info, true);
 		}
 	}
-	return(FALSE);
+
+	return std::make_tuple(info, false);
 }
 
-bool CVersionInfo::GetModuleInfo(VS_FIXEDFILEINFO& Info, LPCSTR ModuleName)
+std::tuple<VS_FIXEDFILEINFO, bool> CVersionInfo::GetModuleInfo(const std::string& module_name)
 {
-	char	Path[MAX_PATH];
-	HMODULE	Hand = GetModuleHandle(ModuleName);
-	if (Hand != NULL && GetModuleFileName(Hand, Path, MAX_PATH))
-		return(GetFileInfo(Info, Path));
-	return(FALSE);
+	VS_FIXEDFILEINFO info;
+	char	mod[MAX_PATH];
+	const HMODULE	handle = GetModuleHandle(module_name.c_str());
+
+	if (handle == nullptr)
+	{
+		return std::make_tuple(info, false);
+	}
+
+	if (!GetModuleFileName(handle, mod, MAX_PATH))
+	{
+		return std::make_tuple(info, false);
+	}
+
+	return GetFileInfo(mod);
 }

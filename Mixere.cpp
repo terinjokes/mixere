@@ -2,29 +2,14 @@
 // This program is free software; you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by the Free
 // Software Foundation; either version 2 of the License, or any later version.
-/*
-        chris korda
-
-		revision history:
-		rev		date	comments
-        00      21nov03 initial version
-		01		19jan04	get version info for app and audiere
-		02		25sep04	add Win32 console
-		03		24dec04	change registry key
-		04		24dec04	add GPL text to about box
-		05		26dec04	add hyperlink to about box
-		06		30dec04	override IsIdleMessage to reduce OnIdle overhead
-		07		04jul07	check for minimum audiere version
-
-        mixer application
-
-*/
 
 // Mixere.cpp : Defines the class behaviors for the application.
 //
 
 #include "stdafx.h"
 #include "Mixere.h"
+
+#include <tuple>
 
 #include "MainFrm.h"
 #include "ChildFrm.h"
@@ -76,8 +61,11 @@ CMixere theApp;
 
 BOOL CMixere::InitInstance()
 {
-	VS_FIXEDFILEINFO	DLLInfo;
-	if (CVersionInfo::GetModuleInfo(DLLInfo, "audiere")) {
+	VS_FIXEDFILEINFO DLLInfo;
+	bool success;
+
+	std::tie(DLLInfo, success) = CVersionInfo::GetModuleInfo("audiere");
+	if (success) {
 		if (DLLInfo.dwFileVersionMS < MIN_AUDIERE_VER.HighPart
 		|| DLLInfo.dwFileVersionLS < MIN_AUDIERE_VER.LowPart) {
 			CString	msg;
@@ -241,9 +229,11 @@ BOOL CAboutDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 	
-	VS_FIXEDFILEINFO	AppInfo, DLLInfo;
-	CVersionInfo::GetFileInfo(AppInfo, NULL);
-	CVersionInfo::GetModuleInfo(DLLInfo, "audiere");
+	VS_FIXEDFILEINFO AppInfo, DLLInfo;
+	bool success;
+
+	std::tie(AppInfo, success) = CVersionInfo::GetFileInfo();
+	std::tie(DLLInfo, success) = CVersionInfo::GetModuleInfo("audiere");
 	CString	s;
 	s.Format(IDS_APP_ABOUT_TEXT,
 		HIWORD(AppInfo.dwFileVersionMS), LOWORD(AppInfo.dwFileVersionMS),
