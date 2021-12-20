@@ -132,7 +132,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CCrossfaderBar message handlers
 
-LONG CCrossfaderBar::OnInitDialog(UINT wParam, LONG lParam)
+LRESULT CCrossfaderBar::OnInitDialog(WPARAM wParam, LPARAM lParam)
 {
 	CAutoSliderDlgBar::OnInitDialog(wParam, lParam);
 

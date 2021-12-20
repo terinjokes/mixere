@@ -1432,11 +1432,11 @@ void CMixereView::OnUpdateSnapshots(CCmdUI* pCmdUI)
 	pCmdUI->SetCheck(IsDlgBarVisible(DLGBAR_SNAPSHOT));
 }
 
-LRESULT	CMixereView::OnSetDocTitle(UINT wParam, LONG lParam)
+LRESULT	CMixereView::OnSetDocTitle(WPARAM wParam, LPARAM lParam)
 {
 	m_MultiMix->UpdateMixerName(this);	// update main frame bars
 	UpdateDlgBarTitles();
-	return(0);
+	return FALSE;
 }
 
 BOOL CMixereView::OnCommand(WPARAM wParam, LPARAM lParam) 
@@ -1456,7 +1456,7 @@ void CMixereView::OnEditFind()
 		FR_DOWN | FR_HIDEWHOLEWORD, this);
 }
 
-LONG CMixereView::OnFindReplace(WPARAM wParam, LPARAM lParam)
+LRESULT CMixereView::OnFindReplace(WPARAM wParam, LPARAM lParam)
 {
 	CFindReplaceDialog *frd = CFindReplaceDialog::GetNotifier(lParam);
 	if (frd->IsTerminating()) {
@@ -1474,5 +1474,5 @@ LONG CMixereView::OnFindReplace(WPARAM wParam, LPARAM lParam)
 		m_FindSearchDown = frd->SearchDown() != 0;
 		FindNext();
 	}
-	return(0);
+	return FALSE;
 }

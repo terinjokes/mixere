@@ -122,7 +122,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CMSFadeBar message handlers
 
-LONG CMSFadeBar::OnInitDialog(UINT wParam, LONG lParam)
+LRESULT CMSFadeBar::OnInitDialog(WPARAM wParam, LPARAM lParam)
 {
 	CDialogBarEx::OnInitDialog(wParam, lParam);
 	SetWindowText(LDS(MS_FADE_BAR));

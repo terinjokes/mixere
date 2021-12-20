@@ -81,7 +81,7 @@ protected:
 	afx_msg void OnSelchangeSourceB();
 	afx_msg void OnFaderType();
 	//}}AFX_MSG
-	afx_msg LONG OnInitDialog(UINT wParam, LONG lParam);
+	afx_msg LRESULT OnInitDialog(WPARAM wParam, LPARAM lParam);
 	DECLARE_MESSAGE_MAP()
 
 // Constants

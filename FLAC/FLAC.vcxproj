@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\third\flac\include\FLAC\all.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\assert.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\callback.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\export.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\format.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\metadata.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\ordinals.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\stream_decoder.h" />
+    <ClInclude Include="..\third\flac\include\FLAC\stream_encoder.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\all.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\bitmath.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\bitreader.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\bitwriter.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\cpu.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\crc.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\fixed.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\float.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\format.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\lpc.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\macros.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\md5.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\memory.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\metadata.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\ogg_decoder_aspect.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\ogg_encoder_aspect.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\ogg_helper.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\ogg_mapping.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\stream_encoder.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\stream_encoder_framing.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\private\window.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\protected\all.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\protected\stream_decoder.h" />
+    <ClInclude Include="..\third\flac\src\libFLAC\include\protected\stream_encoder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\third\flac\src\libFLAC\bitmath.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\bitreader.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\bitwriter.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\cpu.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\crc.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\fixed.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\fixed_intrin_sse2.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\fixed_intrin_ssse3.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\float.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\format.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\lpc.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\lpc_intrin_avx2.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\lpc_intrin_sse.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\lpc_intrin_sse2.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\lpc_intrin_sse41.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\lpc_intrin_vsx.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\md5.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\memory.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\metadata_iterators.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\metadata_object.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\ogg_decoder_aspect.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\ogg_encoder_aspect.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\ogg_helper.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\ogg_mapping.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\stream_decoder.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\stream_encoder.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\stream_encoder_framing.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\stream_encoder_intrin_avx2.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\stream_encoder_intrin_sse2.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\stream_encoder_intrin_ssse3.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\window.c" />
+    <ClCompile Include="..\third\flac\src\libFLAC\windows_unicode_filenames.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ogg\ogg.vcxproj">
+      <Project>{7f357886-e54d-488e-862b-2f6c82fa07bc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{2247e135-b4ce-4f3a-ac88-9ca5e19deda9}</ProjectGuid>
+    <RootNamespace>FLAC</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>PACKAGE_VERSION="1.3.3";FLAC_API_EXPORTS;FLAC__HAS_OGG;FLAC__OVERFLOW_DETECT;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\third\flac\src\libFLAC\include;..\third\flac\include;..\third\ogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>PACKAGE_VERSION="1.3.3";FLAC_API_EXPORTS;FLAC__HAS_OGG;FLAC__OVERFLOW_DETECT;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\third\flac\src\libFLAC\include;..\third\flac\include;..\third\ogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>PACKAGE_VERSION="1.3.3";FLAC_API_EXPORTS;FLAC__HAS_OGG;FLAC__OVERFLOW_DETECT;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\third\flac\src\libFLAC\include;..\third\flac\include;..\third\ogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>PACKAGE_VERSION="1.3.3";FLAC_API_EXPORTS;FLAC__HAS_OGG;FLAC__OVERFLOW_DETECT;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\third\flac\src\libFLAC\include;..\third\flac\include;..\third\ogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -86,7 +86,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CSnapshotBar message handlers
 
-LONG CSnapshotBar::OnInitDialog(UINT wParam, LONG lParam)
+LRESULT CSnapshotBar::OnInitDialog(WPARAM wParam, LPARAM lParam)
 {
 	CDialogBarEx::OnInitDialog(wParam, lParam);
 	SetWindowText(LDS(SNAPSHOT_BAR));

@@ -218,7 +218,7 @@ void CMainFrame::OnUpdateToolsMastervol(CCmdUI* pCmdUI)
 	pCmdUI->SetCheck(m_MultiMix->IsDlgBarVisible(CMultiMix::DLGBAR_MASTERVOL));
 }
 
-void CMainFrame::OnTimer(UINT nIDEvent)
+void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 {
 	m_MultiMix->TimerHook();
 	CAutoSliderCtrl::ResetAnimCount();

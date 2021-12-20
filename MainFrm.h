@@ -80,7 +80,7 @@ protected:
 	afx_msg void OnToolsMastervol();
 	afx_msg void OnUpdateToolsMastervol(CCmdUI* pCmdUI);
 	afx_msg void OnToolsOptions();
-	afx_msg void OnTimer(UINT nIDEvent);
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	afx_msg void OnDestroy();
 	afx_msg void OnDropFiles(HDROP hDropInfo);
 	afx_msg void OnUpdateIndicatorMute(CCmdUI* pCmdUI);

@@ -61,7 +61,7 @@ protected:
 	//{{AFX_MSG(CTempoBar)
 	afx_msg void OnDeltaposBpmSpin(NMHDR* pNMHDR, LRESULT* pResult);
 	//}}AFX_MSG
-	afx_msg LONG OnInitDialog(UINT wParam, LONG lParam);
+	afx_msg LRESULT OnInitDialog(WPARAM wParam, LPARAM lParam);
 	DECLARE_MESSAGE_MAP()
 
 // Constants

@@ -1306,7 +1306,7 @@ void CFormListView::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 	m_Hdr.OnViewHScroll(nSBCode, nPos, pScrollBar);
 }
 
-void CFormListView::OnTimer(UINT nIDEvent) 
+void CFormListView::OnTimer(UINT_PTR nIDEvent)
 {
 	if (m_ScrollDelta) {	// if auto-scrolling view
 		ScrollToPosition(CPoint(GetScrollPosition() 

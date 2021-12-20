@@ -54,7 +54,7 @@ protected:
 	// Generated message map functions
 	//{{AFX_MSG(CVolumeBar)
 	//}}AFX_MSG
-	afx_msg LONG OnInitDialog(UINT wParam, LONG lParam);
+	afx_msg LRESULT OnInitDialog(WPARAM wParam, LPARAM lParam);
 	DECLARE_MESSAGE_MAP()
 
 	NOCOPIES(CVolumeBar);

@@ -4,13 +4,14 @@ on:
   - pull_request
 
 jobs:
-  VS2022-Build:
+  VS2022-Build-x86:
     runs-on: windows-2022
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          submodules: true
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1.1
         with:
@@ -26,5 +27,34 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{ github.event_name == 'push' }}
         with:
-          name: VS2022
-          path: ./*.exe
+          name: VS2022-win32
+          path: |
+            ./*.exe
+            ./Debug/Audiere.dll
+  VS2022-Build-x64:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+      - name: Build
+        shell: cmd
+        run: |
+          msbuild ./Mixere.sln /m /p:Configuration=Release,Platform=x64
+          move .\x64\Release\Mixere.exe .\Mixere_x64.exe
+      - name: Display SHA-256
+        run: sha256sum ./Mixere_x64.exe
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        if: ${{ github.event_name == 'push' }}
+        with:
+          name: VS2022-win64
+          path: |
+            ./*.exe
+            ./x64/Audiere.dll

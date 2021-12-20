@@ -113,7 +113,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CAutoSliderDlgBar message handlers
 
-LONG CAutoSliderDlgBar::OnInitDialog(UINT wParam, LONG lParam) 
+LRESULT CAutoSliderDlgBar::OnInitDialog(WPARAM wParam, LPARAM lParam) 
 {
 	CDialogBarEx::OnInitDialog(wParam, lParam);
 

@@ -198,7 +198,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CDialogBarEx message handlers
 
-LONG CDialogBarEx::OnInitDialog(UINT wParam, LONG lParam)
+LRESULT CDialogBarEx::OnInitDialog(WPARAM wParam, LPARAM lParam)
 {
 	BOOL bRet = HandleInitDialog(wParam, lParam);
 

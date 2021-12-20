@@ -1,0 +1,12 @@
+[submodule "third/Audiere"]
+	path = third/Audiere
+	url = https://github.com/poikilos/Audiere.git
+[submodule "third/flac"]
+	path = third/flac
+	url = https://github.com/xiph/flac.git
+[submodule "third/ogg"]
+	path = third/ogg
+	url = https://github.com/xiph/ogg.git
+[submodule "third/vorbis"]
+	path = third/vorbis
+	url = https://github.com/xiph/vorbis.git

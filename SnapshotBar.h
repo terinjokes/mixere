@@ -62,7 +62,7 @@ protected:
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnSelchangeSnapshotCombo();
 	//}}AFX_MSG
-	afx_msg LONG OnInitDialog(UINT wParam, LONG lParam);
+	afx_msg LRESULT OnInitDialog(WPARAM wParam, LPARAM lParam);
 	DECLARE_MESSAGE_MAP()
 
 // Member data

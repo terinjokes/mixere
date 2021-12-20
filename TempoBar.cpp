@@ -76,7 +76,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CTempoBar message handlers
 
-LONG CTempoBar::OnInitDialog(UINT wParam, LONG lParam)
+LRESULT CTempoBar::OnInitDialog(WPARAM wParam, LPARAM lParam)
 {
 	CAutoSliderDlgBar::OnInitDialog(wParam, lParam);
 	SetWindowText(LDS(TEMPO_BAR));
