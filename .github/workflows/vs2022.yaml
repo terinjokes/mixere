@@ -20,17 +20,19 @@ jobs:
         shell: cmd
         run: |
           msbuild ./Mixere.sln /m /p:Configuration=Release,Platform=Win32
-          move .\Release\Mixere.exe .\Mixere_x86.exe
+          mkdir .\output
+          move .\Release\Mixere.exe .\output\Mixere.exe
+          move .\Release\Audiere.dll .\output\Audiere.dll
       - name: Display SHA-256
-        run: sha256sum ./Mixere_x86.exe
+        run: |
+          sha256sum ./output/Mixere.exe
+          sha256sum ./output/Audiere.dll
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         if: ${{ github.event_name == 'push' }}
         with:
           name: VS2022-win32
-          path: |
-            ./*.exe
-            ./Debug/Audiere.dll
+          path: ./output/
   VS2022-Build-x64:
     runs-on: windows-2022
     steps:
@@ -47,14 +49,16 @@ jobs:
         shell: cmd
         run: |
           msbuild ./Mixere.sln /m /p:Configuration=Release,Platform=x64
-          move .\x64\Release\Mixere.exe .\Mixere_x64.exe
+          mkdir .\output
+          move .\x64\Release\Mixere.exe .\output\Mixere.exe
+          move .\x64\Release\Audiere.dll .\output\Audiere.dll
       - name: Display SHA-256
-        run: sha256sum ./Mixere_x64.exe
+        run: |
+          sha256sum ./output/Mixere.exe
+          sha256sum ./output/Audiere.dll
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         if: ${{ github.event_name == 'push' }}
         with:
           name: VS2022-win64
-          path: |
-            ./*.exe
-            ./x64/Audiere.dll
+          path: ./output/
