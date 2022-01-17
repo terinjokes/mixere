@@ -25,10 +25,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-LPCSTR	CMixere::HOME_PAGE_URL = "http://mixere.sourceforge.net";
+LPCSTR	CMixere::HOME_PAGE_URL = "https://github.com/terinjokes/mixere";
 
 // minimum audiere DLL version; note that initialization is little endian
-static const ULARGE_INTEGER	MIN_AUDIERE_VER = {MAKELONG(0, 4), MAKELONG(9, 1)};
+static const ULARGE_INTEGER	MIN_AUDIERE_VER = {MAKELONG(0, 1), MAKELONG(10, 1)};
 
 /////////////////////////////////////////////////////////////////////////////
 // CMixere

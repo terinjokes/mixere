@@ -70,6 +70,9 @@
 		60		26jun05	1.0.83
 		61		04jul07	1.1.00
 
+		https://github.com/terinjokes/mixere
+		62		16jan22 1.2.0
+
 		DON'T FORGET TO CHANGE RESOURCE VERSION INFO
 
 */

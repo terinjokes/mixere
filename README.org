@@ -6,21 +6,21 @@ Mixere is an audio mixer for live productions. This repository contains my fork,
 [[./docs/mixere.png]]
 
 * Features
-  - One-shot and looping playbacks, with dynamic start and end loop points.
-  - Multiple tracks. Indivudal tracks can be played, paused, stopped, muted, looped, or utilize automation independenty.
-  - Configurable fade in and out on playback and mute states.
-  - Track automation, allow for programming of volume, tempo, and pan settings.
-  - Unlimited undo and snapshots. Don't worry about losing state.
-  - Works well in WINE.
+- One-shot and looping playbacks, with dynamic start and end loop points.
+- Multiple tracks. Indivudal tracks can be played, paused, stopped, muted, looped, or utilize automation independenty.
+- Configurable fade in and out on playback and mute states.
+- Track automation, allow for programming of volume, tempo, and pan settings.
+- Unlimited undo and snapshots. Don't worry about losing state.
+- Works well in WINE.
 
 * Building
 ** Windows
-  Mixere dates from the late 90s and early 2000s, and thus is not (yet) 64-bit compatible. Howver, the 32-bit debug and release builds can be built by opening the project file (Mixere.vcproj) in Visual Studio 2022.
+Mixere 32-bit and 64-bit builds can be build by opening the solution (=Mixere.sln=) in Visual Studio 2022. Optionally, the solutions can be build with =msbuild=, see CI builds for an example.
 
 ** Elsewhere
-   Building a project using the Microsoft Foundation Class libaries on non-MSVC compilers is certainly an effort. It may be possible to setup an =msbuild= environment within WINE. I'd love to get cross-compiled builds from *nix working.
+Building a project using the Microsoft Foundation Class libaries on non-MSVC compilers is certainly an effort. It may be possible to setup an =msbuild= environment within WINE. I'd love to get cross-compiled builds from *nix working.
 
-   If you have success, do open an issue to explain how. Otherwise, for now, you're on your own.
+If you have success, do open an issue to explain how. Otherwise, for now, you're on your own.
    
 * License
   Mixere is licensed under the [[./License.txt][GNU General Public License version 2]] (or later).

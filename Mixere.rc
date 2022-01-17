@@ -340,16 +340,16 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG 0, 0, 207, 106
+IDD_ABOUTBOX DIALOGEX 0, 0, 207, 106
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About Mixere"
-FONT 8, "MS Sans Serif"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
     DEFPUSHBUTTON   "OK",IDOK,160,7,40,14,WS_GROUP
     EDITTEXT        IDC_LICENSE,7,48,193,51,ES_MULTILINE | ES_READONLY | WS_VSCROLL
     LTEXT           "Mixere\nPowered by Audiere\nCopyLeft 2005 Chris Korda",IDC_ABOUT_TEXT,40,7,110,24
-    LTEXT           "http://mixere.sourceforge.net",IDC_ABOUT_URL,40,31,110,8,SS_NOTIFY
+    LTEXT           "https://github.com/terinjokes/mixere",IDC_ABOUT_URL,40,31,110,8,SS_NOTIFY
 END
 
 IDD_FORMLIST_FORM DIALOG 0, 0, 358, 181
@@ -594,8 +594,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,0,0
- PRODUCTVERSION 1,1,0,0
+ FILEVERSION 1,2,0,0
+ PRODUCTVERSION 1,2,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -612,12 +612,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "CKCI"
             VALUE "FileDescription", "Mixere"
-            VALUE "FileVersion", "1, 1, 0, 0"
+            VALUE "FileVersion", "1.2.0.0"
             VALUE "InternalName", "Mixere"
             VALUE "LegalCopyright", "Chris Korda"
             VALUE "OriginalFilename", "Mixere.EXE"
             VALUE "ProductName", "Mixere Application"
-            VALUE "ProductVersion", "1, 1, 0, 0"
+            VALUE "ProductVersion", "1.2.0.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -797,6 +797,17 @@ END
 IDC_DRAG_SINGLE         CURSOR                  "res\\dragsingle.cur"
 
 IDC_DRAG_MULTI          CURSOR                  "res\\dragmulti.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUTBOX AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -982,7 +993,7 @@ END
 STRINGTABLE
 BEGIN
     IDS_APP_ABOUT_LICENSE   "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111 USA."
-    IDS_APP_ABOUT_TEXT      "Mixere Version %d.%d.%d.%d\nCopyleft 2005 Chris Korda\nPowered by Audiere %d.%d.%d.%d"
+    IDS_APP_ABOUT_TEXT      "Mixere Version %d.%d.%d.%d\nCopyleft 2005 Chris Korda\nCopyleft 2022 Terin Stock\nPowered by Audiere %d.%d.%d.%d"
     IDS_AUTO                "Auto"
     IDS_AUTO_DIALOG         "Auto Dialog"
     IDS_AUTO_QUICK_START    "Auto Start"
