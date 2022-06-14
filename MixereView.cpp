@@ -174,9 +174,9 @@ void CMixereView::GetInfo(CMixerInfo& info) const
 	for (auto i = 0; i < COLUMNS; i++)
 		info.m_ColumnWidth[i] = GetColumnWidth(i);
 	const auto chans = GetItemCount();
-	info.m_Chan.SetSize(chans);
-	for (auto i = 0; i < chans; i++)
-		GetChan(i)->GetInfo(&info.m_Chan[i]);
+	info.channels.resize(chans);
+	for (auto i = 0; i < info.channels.size(); i++)
+		GetChan(i)->GetInfo(&info.channels[i]);
 	m_VolumeBar.GetInfo(info.m_AutoVol);
 	m_TempoBar.GetInfo(info.m_AutoTempo);
 	m_MSFadeBar.GetInfo(info.m_MSFade);
@@ -194,16 +194,16 @@ bool CMixereView::SetInfo(const CMixerInfo& info)
 		SetColumnWidth(i, info.m_ColumnWidth[i]);
 
 	// set the channel count
-	int chans = info.m_Chan.GetSize();
+	const int chans = info.channels.size();
 	if (SetItemCount(chans) < chans) // if create failed, bail out
 		return false;
 
 	// set the mixer controls
 	std::set<std::string> err_paths;
-	for (auto i = 0; i < chans; i++)
+	for (auto i = 0; i < info.channels.size(); i++)
 	{
-		if (!GetChan(i)->OpenItem(&info.m_Chan[i])) // if can't load audio file
-			err_paths.insert(info.m_Chan[i].m_Path);
+		if (!GetChan(i)->OpenItem(&info.channels[i])) // if can't load audio file
+			err_paths.insert(info.channels[i].m_Path);
 	}
 	// if audio files couldn't be loaded, display error message
 	if (!err_paths.empty())
@@ -222,7 +222,7 @@ bool CMixereView::SetInfo(const CMixerInfo& info)
 
 	// redraw channels all at once, looks and sounds better
 	for (auto i = 0; i < chans; i++)
-		GetChan(i)->SetInfo(&info.m_Chan[i]);
+		GetChan(i)->SetInfo(&info.channels[i]);
 
 	ScrollToPosition(CPoint(0, 0));
 	ClearSelection();

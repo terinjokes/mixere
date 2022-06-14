@@ -51,10 +51,10 @@ CMixerInfo::CMixerInfo()
 
 void CMixerInfo::Reset()
 {
-	int	count = DEFAULT_CHANNEL_COUNT;
-	m_Chan.SetSize(count);
+	constexpr int count = DEFAULT_CHANNEL_COUNT;
+	channels.resize(count);
 	for (int i = 0; i < count; i++)
-		m_Chan[i].Reset();
+		channels[i].Reset();
 }
 
 void CMixerInfo::Serialize(CArchive& ar)
@@ -66,7 +66,7 @@ void CMixerInfo::Serialize(CArchive& ar)
 		ar << m_ChanIDs;
 		ar << GetChanCount();
 		for (int i = 0; i < GetChanCount(); i++)
-			m_Chan[i].Serialize(ar, m_Version);
+			channels[i].Serialize(ar, m_Version);
 	} else {
 		// read header and check signature
 		int	Count, FileSig;
@@ -77,9 +77,9 @@ void CMixerInfo::Serialize(CArchive& ar)
 		ar >> m_ChanIDs;
 		ar >> Count;
 		// read channels into our array
-		m_Chan.SetSize(Count);
+		channels.resize(Count);
 		for (int i = 0; i < Count; i++)
-			m_Chan[i].Serialize(ar, m_Version);
+			channels[i].Serialize(ar, m_Version);
 		if (!VerifyAudioLinks())
 			AfxThrowArchiveException(CArchiveException::none);
 	}
@@ -89,17 +89,17 @@ void CMixerInfo::Serialize(CArchive& ar)
 	m_AutoTempo.Serialize(ar, m_Version);
 	m_MSFade.Serialize(ar, m_Version);
 	m_DockState.Serialize(ar);
-	m_Snapshot.Serialize(ar, m_Version, m_Chan.GetData(), m_Chan.GetSize());
+	m_Snapshot.Serialize(ar, m_Version, channels.data(), channels.size());
 }
 
 bool CMixerInfo::VerifyAudioLinks()
 {
-	int	Count = m_Chan.GetSize();
+	int	Count = channels.size();
 	CStringArray	Path;
 	Path.SetSize(Count);
 	int i;
 	for (i = 0; i < Count; i++)
-		Path[i] = m_Chan[i].m_Path;
+		Path[i] = channels[i].m_Path;
 	CMissingFilesDlg	mfd(Path, CChannel::GetFileFilter());
 	switch (mfd.Check()) {
 	case IDOK:
@@ -110,11 +110,11 @@ bool CMixerInfo::VerifyAudioLinks()
 	}
 	// store the corrected links
 	for (i = 0; i < Count; i++) {
-		if (!m_Chan[i].IsEmpty()) {	// if channel not empty
+		if (!channels[i].IsEmpty()) {	// if channel not empty
 			if (Path[i].IsEmpty())		// and file not found
-				m_Chan[i].Reset();			// reset channel
+				channels[i].Reset();			// reset channel
 			else
-				strncpy(m_Chan[i].m_Path, Path[i], MAX_PATH);
+				strncpy(channels[i].m_Path, Path[i], MAX_PATH);
 		}
 	}
 	return(TRUE);

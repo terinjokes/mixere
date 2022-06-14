@@ -18,6 +18,8 @@
 
 #include <afxtempl.h>
 #include <afxadv.h>
+#include <vector>
+
 #include "ChanInfo.h"
 #include "Snapshot.h"
 
@@ -28,7 +30,7 @@ public:
 	static const int DEFAULT_CHANNEL_COUNT;
 	int		m_Version;
 	DWORD	m_ChanIDs;
-	CArray<CChanInfo, CChanInfo&>	m_Chan;
+	std::vector<CChanInfo> channels;
 	CAutoInfo	m_AutoVol;
 	CAutoInfo	m_AutoTempo;
 	CChanInfo	m_ChanDefaults;
@@ -47,7 +49,7 @@ public:
 
 inline int CMixerInfo::GetChanCount() const
 {
-	return(m_Chan.GetSize());
+	return channels.size();
 }
 
 #endif
