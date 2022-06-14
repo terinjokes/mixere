@@ -2,76 +2,6 @@
 // This program is free software; you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by the Free
 // Software Foundation; either version 2 of the License, or any later version.
-/*
-        chris korda
-
-		revision history:
-		rev		date	comments
-        00      21nov03 initial version
-		01		04dec03	use CStringArray to pass paths to link check 
-		02		05dec03	add master volume
-		03		11dec03	add options dialog
-		04		26dec03 bump file version to 2 for automation
-		05		11jan04	ResetMixer and Serialize must reset header ctrl in SDI
-		06		17jan04	add mute/solo
-		07		18jan04	move serialize to mixer info object
-		08		19jan04	convert to MDI
-		09		20jan04	add get extension and drop files
-		10		22jan04	move editing stuff here
-		11		26jan04	add automation editor
-		12		26jan04	add GetChan accessor
-		13		27jan04	add HasToolTips accessor
-		14		31jan04	sort on title instead of file name
-		15		08feb04	include channel defaults in mixer info
-		16		10feb04	include column widths in mixer info
-		17		11feb04	mixer set info can fail now
-		18		11feb04	add recovery from create channel failure
-		19		11feb04	make channel visible with ShowWindow, not ModifyStyle
-		20		13feb04	header control is a member of mixer now
-		21		17feb04	create volume dialog in Create, not ctor
-		22		22feb04	add undo
-		23		22feb04	in OnDestroy, check created flag before setting volume
-		24		10mar04	add tempo
-		25		12mar04	add edit name
-		26		24mar04	display error message if SetInfo can't open audio files
-		27		26mar04	add keep solo
-		28		16apr04	add mute/solo time dialog
-		29		19apr04	add CreateDlg
-		30		19apr04	OnMSFade was testing tempo dialog's IsVisible
-		31		10may04	mute/solo time dialog wasn't getting enable tooltips
-		32		11may04	add set title font
-		33		14may04 in OnSolo, soloed channel now controls soft muting enable
-		34		24jun04	auto slider's SetInfo sets position and selection now 
-		35		25sep04	can't zero volume in OnDestroy, bars already destroyed
-		36		28sep04	add dock state to set/get info
-		37		01oct04	combine with mixer object
-		38		01oct04 horizontal docking only, else header control loses sync
-		39		02oct04 lost implementation of get master volume, put it back
-		40		03oct04	after restoring bar state, must reapply our tip state
-		41		18nov04	add color scheme
-		42		19nov04	allow set defaults on empty channel
-		43		24dec04	add multi auto dlg to timer hook
-		44		29dec04	use SetInfoNotify in undo auto edit so audio gets updated
-		45		03jan05	append file version to clipboard format ID string
-		46		04jan05	undo play from pause wasn't restoring audio positions
-		47		04jan05	verify bar state before restoring it
-		48		06jan05	restore transport undo state with SetTransportAndPos
-		49		09jan05	add go
-		50		10jan05	add channel ID
-		51		13jan05	SetInfo must enable status bar mute/solo indicators
-		52		14jan05	number column header now sorts by channel ID
-		53		16jan05	add snapshots
-		54		20jan05	add OnSetDocTitle to handle document title changes
-		55		31jan05	FindUndoable must check for control bar window IDs
-		56		01feb05	add snapshot undo codes to GetUndoTitle
-		57		03feb05	in EditAuto, if not modified, cancel edit
-		58		05feb05	add snapshot hot keys
-		59		07feb05	add find dialog
-		60		24feb05	change find implementation to allow FindNext
-		
-		mixer view
-
-*/
 
 // MixereView.cpp : implementation of the CMixereView class
 //
@@ -82,6 +12,10 @@
 #include "ChildFrm.h"
 #include "MixereDoc.h"
 #include "MixereView.h"
+
+#include <iterator>
+#include <set>
+#include <sstream>
 
 #include "PropertiesDlg.h"
 #include "Channel.h"	// for transport enum
@@ -234,75 +168,87 @@ void CMixereView::UpdateDlgBarTitles()
 /////////////////////////////////////////////////////////////////////////////
 // CMixereView serialization
 
-void CMixereView::GetInfo(CMixerInfo& Info) const
+void CMixereView::GetInfo(CMixerInfo& info) const
 {
-	int	cols = COLUMNS;
-	Info.m_ColumnWidth.SetSize(cols);
-	int i;
-	for (i = 0; i < cols; i++)
-		Info.m_ColumnWidth[i] = GetColumnWidth(i);
-	int	chans = GetItemCount();
-	Info.m_Chan.SetSize(chans);
-	for (i = 0; i < chans; i++)
-		GetChan(i)->GetInfo(&Info.m_Chan[i]);
-	m_VolumeBar.GetInfo(Info.m_AutoVol);
-	m_TempoBar.GetInfo(Info.m_AutoTempo);
-	m_MSFadeBar.GetInfo(Info.m_MSFade);
-	m_ChildFrm->GetDockState(Info.m_DockState);
-	Info.m_ChanDefaults = m_ChanDefaults;
-	Info.m_ChanIDs = m_ChanIDs;
+	info.m_ColumnWidth.SetSize(COLUMNS);
+	for (auto i = 0; i < COLUMNS; i++)
+		info.m_ColumnWidth[i] = GetColumnWidth(i);
+	const auto chans = GetItemCount();
+	info.m_Chan.SetSize(chans);
+	for (auto i = 0; i < chans; i++)
+		GetChan(i)->GetInfo(&info.m_Chan[i]);
+	m_VolumeBar.GetInfo(info.m_AutoVol);
+	m_TempoBar.GetInfo(info.m_AutoTempo);
+	m_MSFadeBar.GetInfo(info.m_MSFade);
+	m_ChildFrm->GetDockState(info.m_DockState);
+	info.m_ChanDefaults = m_ChanDefaults;
+	info.m_ChanIDs = m_ChanIDs;
 }
 
-bool CMixereView::SetInfo(const CMixerInfo& Info)
+bool CMixereView::SetInfo(const CMixerInfo& info)
 {
-	CWaitCursor	wc;
-	m_MSFadeBar.SetInfo(Info.m_MSFade);	// before creating channels
+	m_MSFadeBar.SetInfo(info.m_MSFade); // before creating channels
 	// set the column widths
-	int	cols = Info.m_ColumnWidth.GetSize();
-	int i;
-	for (i = 0; i < cols; i++)
-		SetColumnWidth(i, Info.m_ColumnWidth[i]);
+	const auto cols = info.m_ColumnWidth.GetSize();
+	for (auto i = 0; i < cols; i++)
+		SetColumnWidth(i, info.m_ColumnWidth[i]);
+
 	// set the channel count
-	int	chans = Info.m_Chan.GetSize();
-	if (SetItemCount(chans) < chans)	// if create failed, bail out
-		return(FALSE);
+	int chans = info.m_Chan.GetSize();
+	if (SetItemCount(chans) < chans) // if create failed, bail out
+		return false;
+
 	// set the mixer controls
-	CStringArray	ErrPath;
-	for (i = 0; i < chans; i++) {
-		if (!GetChan(i)->OpenItem(&Info.m_Chan[i]))		// if can't load audio file
-			AddStringUnique(ErrPath, Info.m_Chan[i].m_Path);	// add its path to list
+	std::set<std::string> err_paths;
+	for (auto i = 0; i < chans; i++)
+	{
+		if (!GetChan(i)->OpenItem(&info.m_Chan[i])) // if can't load audio file
+			err_paths.insert(info.m_Chan[i].m_Path);
 	}
 	// if audio files couldn't be loaded, display error message
-	if (ErrPath.GetSize())
-		MsgBoxStrList(LDS(CANT_LOAD_AUDIO), ErrPath);
-	m_VolumeBar.SetInfo(Info.m_AutoVol);
-	m_TempoBar.SetInfo(Info.m_AutoTempo);
-	m_ChanDefaults = Info.m_ChanDefaults;
-	m_ChanIDs = Info.m_ChanIDs;
+	if (!err_paths.empty())
+	{
+		std::ostringstream s;
+
+		std::copy(err_paths.begin(), err_paths.end(), std::ostream_iterator<std::string>(s, "\n"));
+		const auto msg = std::string(LDS(CANT_LOAD_AUDIO)).append(s.str());
+		AfxMessageBox(msg.c_str());
+	}
+
+	m_VolumeBar.SetInfo(info.m_AutoVol);
+	m_TempoBar.SetInfo(info.m_AutoTempo);
+	m_ChanDefaults = info.m_ChanDefaults;
+	m_ChanIDs = info.m_ChanIDs;
+
 	// redraw channels all at once, looks and sounds better
-	for (i = 0; i < chans; i++)
-		GetChan(i)->SetInfo(&Info.m_Chan[i]);
+	for (auto i = 0; i < chans; i++)
+		GetChan(i)->SetInfo(&info.m_Chan[i]);
+
 	ScrollToPosition(CPoint(0, 0));
 	ClearSelection();
 	SetCurPos(0);
 	ClearUndoHistory();
+
 	// restore our bar state
-	if (CMainFrame::VerifyDockState(Info.m_DockState, m_ChildFrm))
-		m_ChildFrm->SetDockState(Info.m_DockState);
+	if (CMainFrame::VerifyDockState(info.m_DockState, m_ChildFrm))
+		m_ChildFrm->SetDockState(info.m_DockState);
+
 	// restoring bar state enables bar tool tips; reapply our tip state
-	for (i = 0; i < DLGBARS; i++)
-		m_DlgBar[i]->EnableToolTips(m_HasToolTips);
+	for (auto& dlg_bar : m_DlgBar)
+		dlg_bar->EnableToolTips(m_HasToolTips);
+
 	// attach to snapshot object and update our snapshot bar
-	m_Snapshot = const_cast<CSnapshot *>(&Info.m_Snapshot);
+	m_Snapshot = const_cast<CSnapshot*>(&info.m_Snapshot);
 	m_Snapshot->SetMixer(this);
 	m_Snapshot->UpdateList();
+
 	// enable status bar panes as needed; see note in CColorStatusBar::Reset
-	CColorStatusBar	*csb = ((CMainFrame *)AfxGetMainWnd())->GetStatusBar();
+	CColorStatusBar* csb = dynamic_cast<CMainFrame*>(AfxGetMainWnd())->GetStatusBar();
 	if (GetMuteCount())
 		csb->EnablePane(CMainFrame::SBP_MUTE);
 	if (GetSoloCount())
 		csb->EnablePane(CMainFrame::SBP_SOLO);
-	return(TRUE);
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1369,7 +1315,7 @@ void CMixereView::OnSetDefaults()
 
 void CMixereView::OnUpdatePlay(CCmdUI* pCmdUI) 
 {
-	pCmdUI->Enable(GetSelCount() || !IsCurEmpty());
+	pCmdUI->Enable((GetSelCount() > 0) || !IsCurEmpty());
 }
 
 void CMixereView::OnUpdateEndSolo(CCmdUI* pCmdUI) 

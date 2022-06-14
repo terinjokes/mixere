@@ -2,16 +2,6 @@
 // This program is free software; you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by the Free
 // Software Foundation; either version 2 of the License, or any later version.
-/*
-        chris korda
- 
-		revision history:
-		rev		date	comments
-        00      21nov03 initial version
-
-		mixer view
- 
-*/
 
 // MixereView.h : interface of the CMixereView class
 //
@@ -73,8 +63,8 @@ public:
 // Attributes
 	CMixereDoc	*GetDocument();
 	CChannel	*GetChan(int Idx) const;
-	void	GetInfo(CMixerInfo& Info) const;
-	bool	SetInfo(const CMixerInfo& Info);
+	void	GetInfo(CMixerInfo& info) const;
+	bool	SetInfo(const CMixerInfo& info);
 	int		GetMuteCount() const;
 	int		GetSoloCount() const;
 	float	GetVolume() const;
@@ -231,7 +221,7 @@ protected:
 		int		m_Pos;
 		BYTE	m_Transport;
 	} TRANSPORT_UNDO_STATE;
-	typedef struct : TRANSPORT_UNDO_STATE {
+	typedef struct GO_UNDO_STATE : TRANSPORT_UNDO_STATE {
 		struct {
 			double	m_Pos;
 			BYTE	m_Transport;
