@@ -8,12 +8,12 @@ jobs:
     runs-on: windows-2022
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
       - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1.1
+        uses: microsoft/setup-msbuild@v2
         with:
           msbuild-architecture: x64
       - name: Build
@@ -28,7 +28,7 @@ jobs:
           sha256sum ./output/Mixere.exe
           sha256sum ./output/Audiere.dll
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'push' }}
         with:
           name: VS2022-win32
@@ -37,12 +37,12 @@ jobs:
     runs-on: windows-2022
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
       - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1.1
+        uses: microsoft/setup-msbuild@v2
         with:
           msbuild-architecture: x64
       - name: Build
@@ -57,7 +57,7 @@ jobs:
           sha256sum ./output/Mixere.exe
           sha256sum ./output/Audiere.dll
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'push' }}
         with:
           name: VS2022-win64
