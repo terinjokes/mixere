@@ -1,0 +1,25 @@
+name: msvc
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: windows-2022
+    strategy:
+      matrix:
+        arch:
+          - amd64
+          - win32
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+      - uses: actions/setup-python@v5
+      - name: install meson
+        run: python -m pip install meson ninja
+      - run: meson setup build
+      - run: meson compile -C build

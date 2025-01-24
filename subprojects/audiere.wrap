@@ -1,0 +1,9 @@
+[wrap-git]
+url = https://github.com/Poikilos/Audiere.git
+revision = 7fb87cd75157c4e0e091353eaa4846f30c436fb9
+depth = 1
+
+patch_directory = audiere
+
+[provide]
+audiere = audiere_dep
