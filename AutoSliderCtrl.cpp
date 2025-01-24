@@ -308,7 +308,7 @@ void CAutoSliderCtrl::Notify(int NotificationCode)
 		nmh.hwndFrom = m_hWnd;
 		nmh.idFrom = GetDlgCtrlID();
 		nmh.code = NotificationCode;
-		Parent->SendMessage(WM_NOTIFY, nmh.idFrom, long(&nmh));
+		Parent->SendMessage(WM_NOTIFY, nmh.idFrom,  reinterpret_cast<LPARAM>(&nmh));
 	}
 }
 
